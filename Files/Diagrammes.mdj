@@ -2839,7 +2839,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGQknnblAb70rk="
 							},
-							"name": "Id"
+							"name": "Id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -2847,7 +2848,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGQknnblAb70rk="
 							},
-							"name": "Email"
+							"name": "Email",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -2855,7 +2857,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGQknnblAb70rk="
 							},
-							"name": "Password"
+							"name": "Password",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -2863,7 +2866,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGQknnblAb70rk="
 							},
-							"name": "Fname"
+							"name": "Fname",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -2871,7 +2875,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGQknnblAb70rk="
 							},
-							"name": "Lname"
+							"name": "Lname",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -2879,7 +2884,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGQknnblAb70rk="
 							},
-							"name": "profiles"
+							"name": "profiles",
+							"type": ""
 						}
 					]
 				},
@@ -2897,7 +2903,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGQknp5CwfPAJY="
 							},
-							"name": "Id"
+							"name": "Id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -2905,7 +2912,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGQknp5CwfPAJY="
 							},
-							"name": "User-Id"
+							"name": "User-Id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -2913,7 +2921,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGQknp5CwfPAJY="
 							},
-							"name": "Name"
+							"name": "Name",
+							"type": ""
 						}
 					]
 				},
@@ -2946,7 +2955,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGQknwlYAmxtI0="
 							},
-							"name": "trailer"
+							"name": "trailer",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -2954,7 +2964,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGQknwlYAmxtI0="
 							},
-							"name": "video"
+							"name": "video",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -2962,7 +2973,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGQknwlYAmxtI0="
 							},
-							"name": "cardImg"
+							"name": "cardImg",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -2970,7 +2982,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGQknwlYAmxtI0="
 							},
-							"name": "BgImg"
+							"name": "BgImg",
+							"type": ""
 						}
 					]
 				},
@@ -3033,7 +3046,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGQknxfygoFtdg="
 							},
-							"name": "Description"
+							"name": "Description",
+							"type": ""
 						}
 					]
 				},
@@ -3051,7 +3065,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGQkn2VCQzLL30="
 							},
-							"name": "Id"
+							"name": "Id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3059,7 +3074,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGQkn2VCQzLL30="
 							},
-							"name": "Title"
+							"name": "Title",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3067,7 +3083,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGQkn2VCQzLL30="
 							},
-							"name": "LogoImg"
+							"name": "LogoImg",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3075,7 +3092,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGQkn2VCQzLL30="
 							},
-							"name": "Rating"
+							"name": "Rating",
+							"type": ""
 						}
 					]
 				},
@@ -3125,7 +3143,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGQkn9LERNgIWI="
 							},
-							"name": "Id"
+							"name": "Id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3133,7 +3152,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGQkn9LERNgIWI="
 							},
-							"name": "Serie-Id"
+							"name": "Serie-Id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3141,7 +3161,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGQkn9LERNgIWI="
 							},
-							"name": "episodes"
+							"name": "episodes",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3149,7 +3170,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGQkn9LERNgIWI="
 							},
-							"name": "BgImg"
+							"name": "BgImg",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3157,7 +3179,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGQkn9LERNgIWI="
 							},
-							"name": "CardImg"
+							"name": "CardImg",
+							"type": ""
 						}
 					]
 				},
@@ -3175,7 +3198,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGQkn9nERO6yVE="
 							},
-							"name": "Id"
+							"name": "Id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3183,7 +3207,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGQkn9nERO6yVE="
 							},
-							"name": "cardImg"
+							"name": "cardImg",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3191,7 +3216,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGQkn9nERO6yVE="
 							},
-							"name": "video"
+							"name": "video",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3199,7 +3225,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGQkn9nERO6yVE="
 							},
-							"name": "description"
+							"name": "description",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3207,7 +3234,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGQkn9nERO6yVE="
 							},
-							"name": "duree"
+							"name": "duree",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3215,7 +3243,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGQkn9nERO6yVE="
 							},
-							"name": "rating"
+							"name": "rating",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3223,7 +3252,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGQkn9nERO6yVE="
 							},
-							"name": "Season-Id"
+							"name": "Season-Id",
+							"type": ""
 						}
 					]
 				}
