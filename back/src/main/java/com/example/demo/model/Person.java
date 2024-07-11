@@ -16,7 +16,7 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name="Email")
+    @Column(name="Email", unique = true, nullable = false)
     private String email;
 
     @Column(name="pass")
@@ -32,6 +32,7 @@ public class Person {
     private Integer profiles;
     
     public Person(){
+        this.profiles = 0;
     }
 
     public Person(String email, String pass, String fname, String lname, Integer profiles){
@@ -40,7 +41,7 @@ public class Person {
         this.pass = pass;
         this.fname = fname;
         this.lname = lname;
-        this.profiles = profiles;
+        this.profiles = 0;
     }
 
     public int getId(){

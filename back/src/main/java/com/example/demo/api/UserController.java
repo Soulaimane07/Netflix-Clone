@@ -1,9 +1,12 @@
 package com.example.demo.api;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +22,7 @@ import com.example.demo.model.Person;
 
 @RequestMapping("api/v1/users")
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 public class UserController {
     @Autowired
     UserRepo repo;
@@ -27,6 +31,16 @@ public class UserController {
     @ResponseStatus(code = HttpStatus.CREATED)
     public Person addUser(@RequestBody Person user){
         return repo.save(user);
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<Person> login(@RequestBody Person user){
+        Optional<Person> person = repo.findByEmailAndPass(user.getEmail(), user.getPass());
+        if (person.isPresent()) {
+            return ResponseEntity.ok(person.get());
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
     }
 
     @GetMapping
@@ -45,13 +59,18 @@ public class UserController {
     }
 
     @PutMapping(path = "{id}")
-    public Person updateUserById(@RequestBody Person newuser, @PathVariable("id") Integer id){
-        Person user = repo.findById(id).get();
-        user.setEmail(newuser.getEmail());
-        user.setFname(newuser.getFname());
-        user.setLname(newuser.getLname());
-        user.setPass(newuser.getPass());
-        repo.save(user);
-        return user;
+    public ResponseEntity<Person> updateUserById(@RequestBody Person newUser, @PathVariable("id") Integer id){
+        Optional<Person> optionalUser = repo.findById(id);
+        if (optionalUser.isPresent()) {
+            Person user = optionalUser.get();
+            if (newUser.getEmail() != null) user.setEmail(newUser.getEmail());
+            if (newUser.getFname() != null) user.setFname(newUser.getFname());
+            if (newUser.getLname() != null) user.setLname(newUser.getLname());
+            if (newUser.getPass() != null) user.setPass(newUser.getPass());
+            repo.save(user);
+            return ResponseEntity.ok(user);
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
     }
 }
