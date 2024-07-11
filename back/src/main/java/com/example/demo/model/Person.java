@@ -1,28 +1,49 @@
 package com.example.demo.model;
 
-import java.util.UUID;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Data;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
+@Entity
+@Data
+@Table(name="users")
 public class Person {
-    private final UUID id;
-    private final String email;
-    private final String password;
-    private final String fname;
-    private final String lname;
-    private final Number profiles;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    @Column(name="Email")
+    private String email;
+
+    @Column(name="pass")
+    private String pass;
+
+    @Column(name="fname")
+    private String fname;
+
+    @Column(name="lname")
+    private String lname;
+
+    @Column(name="profiles")
+    private Integer profiles;
     
-    
-    public Person(@JsonProperty("id") UUID id, @JsonProperty("email") String email, @JsonProperty("password") String password, @JsonProperty("fname") String fname, @JsonProperty("lname") String lname, @JsonProperty("profiles") Number profiles){
-        this.id = id;
+    public Person(){
+    }
+
+    public Person(String email, String pass, String fname, String lname, Integer profiles){
+        super();
         this.email = email;
-        this.password = password;
+        this.pass = pass;
         this.fname = fname;
         this.lname = lname;
         this.profiles = profiles;
     }
 
-    public UUID getId(){
+    public int getId(){
         return id;
     }
 
@@ -31,7 +52,7 @@ public class Person {
     }
     
     public String getPassword(){
-        return password;
+        return pass;
     }
     
     public String getFname(){
@@ -42,7 +63,7 @@ public class Person {
         return lname;
     }
 
-    public Number getProfiles(){
+    public Integer getProfiles(){
         return profiles;
     }
 }
