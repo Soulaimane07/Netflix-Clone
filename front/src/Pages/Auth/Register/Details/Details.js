@@ -1,64 +1,19 @@
-import React, { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import Footer from '../../../Components.js/Footer'
-import Spinner from '../../../Components.js/Spinner';
-import Error from '../../../Components.js/Alerts/Error';
-import axios from 'axios';
-import { BaseUrl } from '../../../Components.js/Variables';
+import React from 'react'
+import Footer from '../../../../Components.js/Footer'
+import { Link } from 'react-router-dom'
 
-function Signup() {
-  useEffect(() => {
-    document.title = 'Disney+ | Register';
-  }, []);
-
-    const navigate = useNavigate()
-
-    const [email, setEmail] = useState("")
-    const [pass, setPass] = useState("")
-    const [fname, setFname] = useState("")
-    const [lname, setLname] = useState("")
-
-    let cond = email === "" || pass === "" || pass.length < 4 || fname === "" || lname === ""
-    const [loading, setLoading] = useState(false)
-    const [error, setError] = useState(false)
-
-    useEffect(()=>{
-        setError(false)
-    }, [email, pass, fname, lname])
-
-    const SignupFun = (e) => {
-        e.preventDefault()
-        setLoading(true)
-        setError(false)
-
-        axios.post(`${BaseUrl}/users`, {email, pass, fname, lname})
-            .then((res)=>{
-                if(res.status === 201){
-                    console.log(res)
-                    localStorage.setItem("disney-user", JSON.stringify(res.data))
-                    navigate('/register/profile')
-                    setLoading(false)
-                } else {
-                    console.log(res)
-                    setLoading(false)
-                    setError(true)
-                }
-            })
-            .catch((err)=> {
-                console.error(err);
-                setLoading(false)
-                setError(true)
-            })
-    }
-
+function Details() {
   return (
     <>
         <div className='Header min-h-screen bg-primary p-10 items-center' style={{ backgroundImage: `url(../assets/images/stars_bg.webp)`}}>
             <Link to="/">
                 <img src='../assets/images/disney-plus-logo.webp' className='w-20' alt="logo" />
             </Link>
+            <div className='text-center text-white'>
+                <h1 className=' text-4xl font-medium'> Interests </h1>
+            </div>
 
-            <div className='w-3/12  mx-auto text-white'>
+            {/* <div className='w-3/12  mx-auto text-white'>
                 <h2 className=' opacity-70 text-center mb-4'>STEP 2 OF 4</h2>
                 <form onSubmit={SignupFun} className='mb-10'>
                     <h1 className='text-center text-3xl font-medium mb-10'> Create your account </h1>
@@ -99,11 +54,11 @@ function Signup() {
                     <a href='#' className=' text-gray-400'>Terms of Service</a> 
                     apply.
                 </p>
-            </div>
+            </div> */}
         </div>
         <Footer />
     </>
   )
 }
 
-export default Signup
+export default Details

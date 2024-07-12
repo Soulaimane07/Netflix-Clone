@@ -5,6 +5,7 @@ import Login from '../Pages/Auth/Login/Login'
 import Phase1 from '../Pages/Auth/Register/Phase1'
 import Signup from '../Pages/Auth/Register/Signup'
 import Profile from '../Pages/Auth/Register/Profile'
+import Details from '../Pages/Auth/Register/Details/Details'
 
 function Auth() {
   return (
@@ -16,6 +17,7 @@ function Auth() {
               <Route index element={<Phase1 />} />
               <Route path='signup' element={<Signup />} />
               <Route path='profile' element={<Profile />} />
+              <Route path='details' element={<Details />} />
             </Route>
         </Routes>
     </BrowserRouter>

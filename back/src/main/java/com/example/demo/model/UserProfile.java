@@ -22,8 +22,9 @@ public class UserProfile {
     @JoinColumn(name = "user_id")
     private Person user;
 
-    @Column(name="profileid")
-    private int profileId;
+    @ManyToOne
+    @JoinColumn(name="profile_id")
+    private Profile profile;
 
     @Column(name="name")
     private String name;
@@ -31,10 +32,10 @@ public class UserProfile {
     public UserProfile() {
     }
 
-    public UserProfile(Person user, int profileId, String name){
+    public UserProfile(Person user, Profile profile, String name){
         super();
         this.user = user;
-        this.profileId = profileId;
+        this.profile = profile;
         this.name = name;
     }
 
@@ -44,5 +45,9 @@ public class UserProfile {
     
     public void setUser(Person user){
         this.user = user;
+    }
+
+    public String getProfile(){
+        return this.profile.getImage();
     }
 }
