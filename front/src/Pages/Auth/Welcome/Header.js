@@ -21,7 +21,7 @@ function Header() {
             <section className=' justify-center flex flex-col'>
                 <img src='../assets/images/disney-plus-logo.webp' alt="logo" className='w-72 mx-auto mb-10' />
                 <p className=' text-white text-3xl w-2/3 text-center mx-auto mb-8'> Stream brand new Disney+ Originals, blockbusters, binge-worthy series and more </p>
-                <Link className="bg-button w-1/3 mx-auto text-center text-white px-6 py-4 rounded-md" to="/signup"> Sign Up Now </Link>
+                <Link className="bg-button w-1/3 mx-auto text-center text-white px-6 py-4 rounded-md" to="/register"> Sign Up Now </Link>
             </section>
         </article>
     </header>

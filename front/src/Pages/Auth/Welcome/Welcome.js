@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from './Header'
 import Faq from './Faq'
 import Footer from '../../../Components.js/Footer'
 
 function Welcome() {
+  useEffect(() => {
+    document.title = 'Disney+ | The greatest stories, all in one place';
+  }, []);
+
   return (
     <div className=' min-h-screen bg-primary'>
       <Header />

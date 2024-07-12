@@ -47,3 +47,8 @@ Header {
   text-decoration: none;
   list-style: none;
 }
+
+
+.Scroll::-webkit-scrollbar {
+  display: none;
+}
