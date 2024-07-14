@@ -4,7 +4,8 @@ import Auth from './Interfaces/Auth';
 import User from './Interfaces/User';
 
 function App() {
-  const logged = useSelector(state => state.user.isLogged)
+  // const logged = useSelector(state => state.user.isLogged)
+  const logged = true
 
   return (
     <>

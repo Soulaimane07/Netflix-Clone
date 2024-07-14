@@ -40,7 +40,7 @@
 
 
 
-Header {
+.Header {
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
@@ -51,4 +51,13 @@ Header {
 
 .Scroll::-webkit-scrollbar {
   display: none;
+}
+
+.GradientBottm {
+  background-image: linear-gradient(180deg, #0f1014, #0f1014ae, transparent);
+}
+.GradientTop {
+  background-image: 
+    linear-gradient(0deg, #0f1014, #0f1014c0, #0f101475, #0f101431, transparent, transparent),
+    linear-gradient(80deg, #0f1014, #0f1014ae, transparent, transparent, transparent);
 }

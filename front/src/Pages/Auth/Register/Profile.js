@@ -70,7 +70,7 @@ function Profile() {
                     <ul className=' flex flex-row px-20  overflow-x-scroll Scroll space-x-4 py-4 scroll-smooth justify-around'>
                         {profiles?.map((item,key)=>(
                             <li onClick={()=> setProfile(item.id)} key={key} className={`hover:border-white transition-all border-4 border-transparent cursor-pointer rounded-full   p-0 m-0 ${profile === null || profile === item.id ? "opacity-100 transition-all" : "opacity-60 transition-all"} ${!error & profile === item.id && "bg-white transition-all opacity-100"} ${(error && profile === item.id) && "bg-red-600"}`}> 
-                                <img src={item.image} className='w-40' /> 
+                                <img src={item.image} className='w-40' alt='profile' /> 
                             </li>
                         ))}
                     </ul>
