@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Home from '../Pages/User/Home/Home'
 
 function User() {
@@ -7,6 +7,7 @@ function User() {
     <BrowserRouter>
         <Routes>
             <Route path='/browse' element={<Home />} />
+            <Route path='/*' element={<Navigate to="/browse" replace={true} />} />
         </Routes>
     </BrowserRouter>
   )

@@ -47,7 +47,7 @@
             <scope>annotationProcessor</scope>
         </dependency>
 
-        <!-- DataStax and Cassandra Dependencies -->
+        <!-- DataStax and Cassandra Dependencies
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-cassandra</artifactId>
@@ -55,9 +55,10 @@
         <dependency>
             <groupId>com.datastax.oss</groupId>
             <artifactId>java-driver-core</artifactId>
-            <version>4.13.0</version> <!-- Adjust version as needed -->
+            <version>4.13.0</version>
         </dependency>
-        <!-- DataStax Astra SDK -->
+
+        DataStax Astra SDK 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-parent</artifactId>
@@ -70,47 +71,8 @@
 			<groupId>com.datastax.astra</groupId>
 			<artifactId>astra-db-java</artifactId>
 			<version>1.0.0</version>
-		</dependency>
+		</dependency> -->
     </dependencies>
 
-    <repositories>
-        <repository>
-            <id>central</id>
-            <url>https://repo.maven.apache.org/maven2</url>
-        </repository>
-        <!-- Add other repositories if needed -->
-    </repositories>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>3.0.0</version>
-        <configuration>
-          <executable>java</executable>
-          <mainClass>com.example.Quickstart</mainClass>
-        </configuration>
-        <executions>
-          <execution>
-            <goals>
-              <goal>java</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>11</source>
-          <target>11</target>
-        </configuration>
-      </plugin>
-        </plugins>
-    </build>
 </project>
