@@ -2,25 +2,35 @@ import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
 import Auth from './Interfaces/Auth';
 import User from './Interfaces/User';
-import { login, logout } from './Components.js/Redux/Slices/UserSlice';
+import { login, logout, setProfilee } from './Components.js/Redux/Slices/UserSlice';
+import PreLogged from './Interfaces/PreLogged';
 
 function App() {
+  let dispatch = useDispatch()
 
   let user = JSON.parse(localStorage.getItem('Disney-user'))
-  const logged = useSelector(state => state.user.isLogged)
-  // const logged = false
-
-  let dispatch = useDispatch()
+  let userProfile = JSON.parse(localStorage.getItem('Disney-user-profile'))
 
   if (user) {
     dispatch(login(user))
+    if(userProfile) {
+      dispatch(setProfilee(userProfile))
+    }
   } else {
     dispatch(logout())
   }
+  
+  const logged = useSelector(state => state.user.logged)
+  const preLogged = useSelector(state => state.user.preLogged)
+
+
 
   return (
     <>
-      {!logged ? <Auth /> : <User />}
+      {!logged ? 
+        !preLogged ? <Auth /> : <PreLogged />
+        : <User />
+      }
     </>
   );
 }

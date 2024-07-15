@@ -9,12 +9,27 @@ export const GetProfiles = () => {
         axios.get(`${BaseUrl}/profiles`)
             .then(res => {
                 setData(res.data)
-                console.log(res);
             })    
             .catch(err => {
                 console.log(err);
             })
     }, [])
+
+    return data
+}
+
+export const GetUserProfiles = (userId) => {
+    const [data, setData] = useState([])
+
+    useEffect(()=> {
+        axios.get(`${BaseUrl}/users/getProfiles/${userId}`)
+            .then(res => {
+                setData(res.data)
+            })    
+            .catch(err => {
+                console.log(err);
+            })
+    }, [userId])
 
     return data
 }
