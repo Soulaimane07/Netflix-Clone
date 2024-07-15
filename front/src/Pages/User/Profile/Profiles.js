@@ -1,10 +1,15 @@
 import { GetUserProfiles } from '../../../Components.js/Functions'
 import { useDispatch } from 'react-redux'
 import { setProfilee } from '../../../Components.js/Redux/Slices/UserSlice'
+import { useEffect } from 'react'
 
 function Profiles({user, profilee}) {
     const dispatch = useDispatch()
     const userProfiles = GetUserProfiles(user?.id)
+
+    useEffect(() => {
+        document.title = 'Disney+ | Profile';
+    }, []);
 
   return (
     <div className='mt-20'>
