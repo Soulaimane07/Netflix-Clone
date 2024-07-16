@@ -6,6 +6,7 @@ import Phase1 from '../Pages/Auth/Register/Phase1'
 import Signup from '../Pages/Auth/Register/Signup'
 import Profile from '../Pages/Auth/Register/Profile'
 import Details from '../Pages/Auth/Register/Details/Details'
+import TestPayment from '../Pages/Auth/TestPayment'
 
 function Auth() {
   
@@ -13,6 +14,7 @@ function Auth() {
   return (
     <BrowserRouter>
         <Routes>
+            <Route path='/payment' element={<TestPayment />} />
             <Route path='/' element={<Welcome />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register'>

@@ -31,6 +31,7 @@ function App() {
         !preLogged ? <Auth /> : <PreLogged />
         : <User />
       }
+      
     </>
   );
 }

@@ -46,6 +46,11 @@
             <artifactId>lombok</artifactId>
             <scope>annotationProcessor</scope>
         </dependency>
+        <dependency>
+            <groupId>com.stripe</groupId>
+            <artifactId>stripe-java</artifactId>
+            <version>20.62.0</version>
+        </dependency>
 
         <!-- DataStax and Cassandra Dependencies
         <dependency>
