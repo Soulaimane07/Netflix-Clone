@@ -40,7 +40,7 @@ public class PaymentController {
             .setCancelUrl("http://localhost:3000/subscribe")
             .addLineItem(SessionCreateParams.LineItem.builder()
                 .setQuantity(1L)
-                .setPrice(priceId) // Use the price ID here
+                .setPrice(priceId)
                 .build()
             )
             .build();
