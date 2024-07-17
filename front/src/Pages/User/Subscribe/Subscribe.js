@@ -96,7 +96,7 @@ function Subscribe() {
             </div>
 
             <div  className='text-white  flex '>
-                <div className='flex w-full   Sub' style={{ backgroundImage: `url(../assets/images/login-bg.jpg)`}}>
+                <div className='flex w-full   Sub' style={{ backgroundImage: `url(../assets/images/login-bg.png)`}}>
                     <div className='w-full SubscribeGrad pt-10'>
                         <h1 className=' bg-primary px-20 text-4xl font-medium'> Subscribe now and start streaming </h1>
                         <p className=' px-20 flex items-center space-x-2 opacity-60 pb-2- pt-10'> <FaCheck className='mr-2' /> Cancel anytime (effective at the end of your billing period)</p>
