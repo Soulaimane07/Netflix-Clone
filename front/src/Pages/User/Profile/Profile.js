@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Header from './Header'
 import { useSelector } from 'react-redux'
 import Profiles from './Profiles'
+import Footer from '../../../Components.js/Footer'
 
 function Profile() {
   const user = useSelector(state => state.user.user)
@@ -43,7 +44,7 @@ function Profile() {
                 
             </div>
         </div>
-        {/* <Footer /> */}
+        <Footer />
     </>
   )
 }

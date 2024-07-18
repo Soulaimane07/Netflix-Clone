@@ -3,12 +3,32 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Home from '../Pages/User/Home/Home'
 import Profile from '../Pages/User/Profile/Profile'
 import Subscribe from '../Pages/User/Subscribe/Subscribe'
+import Networks from '../Pages/User/Networks/Networks'
+import Network from '../Pages/User/Network/Network'
+import Series from '../Pages/User/Series/Series'
+import Movies from '../Pages/User/Movies/Movies'
+import Gendres from '../Pages/User/Gendres/Gendres'
+import Gendre from '../Pages/User/Gendre/Gendre'
 
 function User() {
   return (
     <BrowserRouter>
         <Routes>
             <Route path='/browse' element={<Home />} />
+            <Route path='/networks'>
+              <Route index element={<Networks />} />
+              <Route path=":id" element={<Network />} />
+            </Route>
+            <Route path='/gendres'>
+              <Route index element={<Gendres />} />
+              <Route path=":id" element={<Gendre />} />
+            </Route>
+            <Route path='/series'>
+              <Route index element={<Series />} />
+            </Route>
+            <Route path='/movies'>
+              <Route index element={<Movies />} />
+            </Route>
             <Route path='/profile' element={<Profile />} />
             <Route path='/subscribe' element={<Subscribe />} />
             <Route path='/*' element={<Navigate to="/browse" replace={true} />} />

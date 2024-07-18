@@ -20,7 +20,7 @@ function Navbar() {
     ]
 
   return (
-    <nav className='GradientBottm z-10 flex items-center px-14 py-5 fixed top-0 w-full justify-between'>
+    <nav className='GradientBottm z-50 flex items-center px-14 py-5 fixed top-0 w-full justify-between'>
         <div className='flex items-center space-x-10'>
             <Link to="/browse">
                 <img src="../assets/images/disney-plus-logo.webp" alt='logo' className='w-20' />

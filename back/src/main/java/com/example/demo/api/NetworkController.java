@@ -1,6 +1,7 @@
 package com.example.demo.api;
 
-import org.hibernate.mapping.List;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -30,7 +31,7 @@ public class NetworkController {
     }
 
     @GetMapping
-    public java.util.List<Network> getAllProfiles(){
+    public List<Network> getAllProfiles(){
         return repo.findAll();
     }
 
