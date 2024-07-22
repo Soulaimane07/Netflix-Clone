@@ -4,6 +4,9 @@
 /node_modules
 /.pnp
 .pnp.js
+/Files/Scrapping/bg
+/Files/Scrapping/card
+/Files/Scrapping/logo
 
 # testing
 /coverage
