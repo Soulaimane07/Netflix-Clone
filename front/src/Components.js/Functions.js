@@ -29,7 +29,7 @@ export const GetNetwork = (id) => {
             .catch(err => {
                 console.log(err);
             })
-    }, [])
+    }, [id])
 
     return data
 }
@@ -77,7 +77,7 @@ export const GetGendre = (id) => {
             .catch(err => {
                 console.log(err);
             })
-    }, [])
+    }, [id])
 
     return data
 }

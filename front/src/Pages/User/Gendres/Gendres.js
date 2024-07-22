@@ -2,9 +2,11 @@ import Navbar from '../Navbar/Navbar'
 import { GetGendres } from '../../../Components.js/Functions'
 import { Link } from 'react-router-dom'
 import Footer from '../../../Components.js/Footer'
+import { useState } from 'react'
 
 function Gendres() {
     const gendres = GetGendres()
+    const [hover, setHover] = useState(false)
 
   return (
     <div className=' bg-primary min-h-screen'>
@@ -15,8 +17,17 @@ function Gendres() {
 
             <div className='grid grid-cols-6 px-40 justify-center items-center gap-4 mt-10'>
                 {gendres.map((item,key)=>(
-                    <Link to={`/gendres/${item.id}`} key={key} className='w-64 hover:bg-blue-500 py-10 items-center text-center hover:scale-105 transition-all bg-gray-400 bg-opacity-25 rounded-md'>
-                        <h2 className='font-medium text-lg'> {item.title} </h2>
+                    <Link 
+                      className='w-64 h-28 overflow-hidden flex justify-center items-center text-center hover:scale-105 transition-all bg-gray-400 bg-opacity-25 rounded-md'
+                      onMouseLeave={()=> setHover(false)}
+                      onMouseEnter={()=> setHover(key)} 
+                      to={`/gendres/${item.id}`} 
+                      key={key} 
+                    >
+                        {key === hover 
+                          ? <img src={item.image} alt='genre' className=' object-cover w-full h-full' />
+                          : <h2 className='font-medium text-lg'> {item.title} </h2> 
+                        }
                     </Link>
                 ))}
             </div>

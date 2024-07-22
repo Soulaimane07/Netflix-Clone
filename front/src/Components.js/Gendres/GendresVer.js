@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 
 function GendresVer() {
     let gendres = GetGendres()
+    
 
   return (
     <ul className='items-stretch '>
