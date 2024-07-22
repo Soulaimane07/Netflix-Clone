@@ -9,12 +9,14 @@ import Series from '../Pages/User/Series/Series'
 import Movies from '../Pages/User/Movies/Movies'
 import Gendres from '../Pages/User/Gendres/Gendres'
 import Gendre from '../Pages/User/Gendre/Gendre'
+import Work from '../Pages/User/Work/Work'
 
 function User() {
   return (
     <BrowserRouter>
         <Routes>
             <Route path='/browse' element={<Home />} />
+            <Route path='/work/:id' element={<Work />} />
             <Route path='/networks'>
               <Route index element={<Networks />} />
               <Route path=":id" element={<Network />} />

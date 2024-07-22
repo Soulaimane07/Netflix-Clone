@@ -4,12 +4,12 @@ import { PiLineVertical } from "react-icons/pi";
 import { FaPlay } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa6";
 
-function Header() {
+function Header({item}) {
   return (
-    <header style={{ backgroundImage: `url(../assets/images/bg.jpg)`}} className=' relative h-screen Header flex items-center'>
+    <header style={{ backgroundImage: `url(${item.bgimage})`}} className=' relative h-screen Header flex items-center'>
         <div className='px-20 GradientTop h-full w-full flex items-center'>
             <div className='w-1/3'>
-                <img src='../assets/images/logo.png' alt='logo' className='w-full' />
+                <img src={item.logoimage} alt='logo' className='w-full' />
                 <div className='flex space-x-2 items-center mt-8 opacity-80'>
                     <p> 2024 </p> <FaCircle size={6} />
                     <p> 1h 32m </p> <FaCircle size={6} />

@@ -97,3 +97,38 @@ export const GetUserProfiles = (userId) => {
 
     return data
 }
+
+
+
+
+export const GetMovies = () => {
+    const [data, setData] = useState([])
+
+    useEffect(()=> {
+        axios.get(`${BaseUrl}/movies`)
+            .then(res => {
+                setData(res.data)
+            })    
+            .catch(err => {
+                console.log(err);
+            })
+    }, [])
+
+    return data
+}
+
+export const GetMovie = (id) => {
+    const [data, setData] = useState({})
+
+    useEffect(()=> {
+        axios.get(`${BaseUrl}/movies/${id}`)
+            .then(res => {
+                setData(res.data)
+            })    
+            .catch(err => {
+                console.log(err);
+            })
+    }, [id])
+
+    return data
+}
