@@ -4,8 +4,11 @@ import Header from './Header'
 import { useSelector } from 'react-redux'
 import Profiles from './Profiles'
 import Footer from '../../../Components.js/Footer'
+import { GoTop } from '../../../Components.js/Functions'
 
 function Profile() {
+  GoTop()
+
   const user = useSelector(state => state.user.user)
   const profile = useSelector(state => state.user.profile)
 

@@ -4,10 +4,14 @@ import Gendres from '../../../Components.js/Gendres/Gendres'
 import Header from '../../../Components.js/Header/Header'
 import Footer from '../../../Components.js/Footer'
 import GendresVer from '../../../Components.js/Gendres/GendresVer'
-import { GetMovie } from '../../../Components.js/Functions'
+import { GetMovie, GetMoviesByGendre, GoTop } from '../../../Components.js/Functions'
 
 function Movies() {
+  GoTop()
+
   let movie = GetMovie(1)
+  let GendresWithMovies = GetMoviesByGendre()
+
 
   return (
     <div className=' bg-primary min-h-screen'>
@@ -17,7 +21,7 @@ function Movies() {
         <Header item={movie} />
         <div className='min-h-screen'> 
             <Gendres />
-            <GendresVer />
+            <GendresVer data={GendresWithMovies} />
         </div>
       </div>
 

@@ -66,6 +66,30 @@ export const GetGendres = () => {
     return data
 }
 
+export const GetMoviesByGendre = () => {
+    const [data, setData] = useState([]);
+    let genres = GetGendres();
+
+    useEffect(() => {
+        const fetchMovies = async () => {
+            try {
+                const moviesData = await Promise.all(genres.map(async genre => {
+                    const res = await axios.get(`${BaseUrl}/movies/gendre/${genre.id}`);
+                    return { movies: res.data, genre };
+                }));
+                setData(moviesData);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        fetchMovies();
+    }, [genres]); 
+
+    return data;
+}
+
+
 export const GetGendre = (id) => {
     const [data, setData] = useState({})
 
@@ -131,4 +155,43 @@ export const GetMovie = (id) => {
     }, [id])
 
     return data
+}
+
+export const GetMoviesByNetwork = (id) => {
+    const [data, setData] = useState([])
+
+    useEffect(()=> {
+        axios.get(`${BaseUrl}/movies/network/${id}`)
+            .then(res => {
+                setData(res.data)
+            })    
+            .catch(err => {
+                console.log(err);
+            })
+    }, [id])
+
+    return data
+}
+
+export const GetMoviesByGenre = (id) => {
+    const [data, setData] = useState([])
+
+    useEffect(()=> {
+        axios.get(`${BaseUrl}/movies/gendre/${id}`)
+            .then(res => {
+                setData(res.data)
+            })    
+            .catch(err => {
+                console.log(err);
+            })
+    }, [id])
+
+    return data
+}
+
+
+export const GoTop = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
 }

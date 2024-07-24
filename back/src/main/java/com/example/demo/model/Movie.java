@@ -1,11 +1,14 @@
 package com.example.demo.model;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -39,9 +42,15 @@ public class Movie {
     @Column(name="video")
     private String video;
 
-    @ManyToOne
-    @JoinColumn(name="genreid")
-    private Gendre genre;
+    @Column(name="desc")
+    private String desc;
+
+    @Column(name="year")
+    private int year;
+
+    @ManyToMany
+    private List<Gendre> genres;
+
 
     @ManyToOne
     @JoinColumn(name="networkid")
@@ -50,7 +59,7 @@ public class Movie {
     public Movie() {
     }
 
-    public Movie(String title, String logoimage, String cardimage, String bgimage, String rating, String trailer, String video, Gendre genre, Network network){
+    public Movie(String title, String logoimage, String cardimage, String bgimage, String rating, String trailer, String video, List<Gendre> genre, Network network){
         super();
         this.title = title;
         this.logoimage = logoimage;
@@ -59,7 +68,7 @@ public class Movie {
         this.rating = rating;
         this.trailer = trailer;
         this.video = video;
-        this.genre = genre;
+        this.genres = genre;
         this.network = network;
     }
     

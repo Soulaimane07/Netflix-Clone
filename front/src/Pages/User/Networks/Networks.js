@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import Navbar from '../Navbar/Navbar'
-import { GetNetworks } from '../../../Components.js/Functions'
+import { GetNetworks, GoTop } from '../../../Components.js/Functions'
 import Network from '../../../Components.js/Networks/Network'
 import Footer from '../../../Components.js/Footer'
 
 function Networks() {
+  GoTop()
+
     const networks = GetNetworks()
     const [play, setPlay] = useState(false)
 

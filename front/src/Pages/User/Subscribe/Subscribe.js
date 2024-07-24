@@ -6,9 +6,12 @@ import Footer from '../../../Components.js/Footer';
 import { FaAngleRight } from "react-icons/fa6";
 import axios from 'axios';
 import Spinner from '../../../Components.js/Spinner';
+import { GoTop } from '../../../Components.js/Functions';
 
 
 function Subscribe() {
+  GoTop()
+
     const Products = [
         {
           "title": "All",

@@ -4,9 +4,11 @@ import Header from '../../../Components.js/Header/Header'
 import Gendres from '../../../Components.js/Gendres/Gendres'
 import Footer from '../../../Components.js/Footer'
 import GendresVer from '../../../Components.js/Gendres/GendresVer'
-import { GetMovie } from '../../../Components.js/Functions'
+import { GetMovie, GoTop } from '../../../Components.js/Functions'
 
 function Series() {
+  GoTop()
+
   let movie = GetMovie(1)
 
   return (

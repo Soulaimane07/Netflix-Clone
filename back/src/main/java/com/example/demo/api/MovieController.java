@@ -1,6 +1,8 @@
 package com.example.demo.api;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -44,5 +46,13 @@ public class MovieController {
         repo.deleteById(id);
     }
 
-    
+    @GetMapping(path = "/network/{id}")
+    public List<Movie> getMoviesByNetwork(@PathVariable("id") int networkId) {
+        return repo.findByNetworkId(networkId);
+    }
+
+    @GetMapping(path = "/gendre/{id}")
+    public List<Movie> getMoviesByGenre(@PathVariable("id") int genreId) {
+        return repo.findByGenresId(genreId);
+    }
 }

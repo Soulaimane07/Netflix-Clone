@@ -1,10 +1,12 @@
 import Navbar from '../Navbar/Navbar'
-import { GetGendres } from '../../../Components.js/Functions'
+import { GetGendres, GoTop } from '../../../Components.js/Functions'
 import { Link } from 'react-router-dom'
 import Footer from '../../../Components.js/Footer'
 import { useState } from 'react'
 
 function Gendres() {
+  GoTop()
+
     const gendres = GetGendres()
     const [hover, setHover] = useState(false)
 

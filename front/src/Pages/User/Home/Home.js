@@ -4,14 +4,17 @@ import Header from '../../../Components.js/Header/Header'
 import Networks from '../../../Components.js/Networks/Networks';
 import Footer from '../../../Components.js/Footer';
 import GendresVer from '../../../Components.js/Gendres/GendresVer';
-import { GetMovie } from '../../../Components.js/Functions';
+import { GetMovie, GetMoviesByGendre, GoTop } from '../../../Components.js/Functions';
 
 function Home() {
+  GoTop()
+
   useEffect(() => {
     document.title = 'Disney+ | Browse';
   }, []);
 
-  let movie = GetMovie(1)
+  let GendresWithMovies = GetMoviesByGendre()
+  let movie = GetMovie(2)
 
 
   return (
@@ -22,7 +25,7 @@ function Home() {
         <Header item={movie} />
         <div className='min-h-screen'> 
           <Networks />
-          <GendresVer />
+          <GendresVer data={GendresWithMovies} />
         </div>
       </div>
 
