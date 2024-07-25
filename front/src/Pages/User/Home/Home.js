@@ -14,7 +14,7 @@ function Home() {
   }, []);
 
   let GendresWithMovies = GetMoviesByGendre()
-  let movie = GetMovie(2)
+  let movie = GetMovie(10)
 
 
   return (
@@ -23,6 +23,7 @@ function Home() {
 
       <div className='text-white'>
         <Header item={movie} />
+        
         <div className='min-h-screen'> 
           <Networks />
           <GendresVer data={GendresWithMovies} />

@@ -42,11 +42,11 @@ public class Movie {
     @Column(name="video")
     private String video;
 
-    @Column(name="desc")
-    private String desc;
+    @Column(name="description")
+    private String description;
 
     @Column(name="year")
-    private int year;
+    private Integer year;
 
     @ManyToMany
     private List<Gendre> genres;
@@ -59,7 +59,7 @@ public class Movie {
     public Movie() {
     }
 
-    public Movie(String title, String logoimage, String cardimage, String bgimage, String rating, String trailer, String video, List<Gendre> genre, Network network){
+    public Movie(String title, String logoimage, String cardimage, String bgimage, String rating, String desc, int year, String trailer, String video, List<Gendre> genre, Network network){
         super();
         this.title = title;
         this.logoimage = logoimage;
@@ -70,6 +70,8 @@ public class Movie {
         this.video = video;
         this.genres = genre;
         this.network = network;
+        this.year = year;
+        this.description = desc;
     }
     
 }

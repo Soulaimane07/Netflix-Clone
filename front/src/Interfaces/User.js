@@ -10,8 +10,12 @@ import Movies from '../Pages/User/Movies/Movies'
 import Gendres from '../Pages/User/Gendres/Gendres'
 import Gendre from '../Pages/User/Gendre/Gendre'
 import Work from '../Pages/User/Work/Work'
+import Watch from '../Pages/User/Watch/Watch'
+import { useSelector } from 'react-redux'
 
 function User() {
+  const opened = useSelector(state => state.watch.opened)
+
   return (
     <BrowserRouter>
         <Routes>
@@ -35,6 +39,7 @@ function User() {
             <Route path='/subscribe' element={<Subscribe />} />
             <Route path='/*' element={<Navigate to="/browse" replace={true} />} />
         </Routes>
+        {opened && <Watch />}
     </BrowserRouter>
   )
 }

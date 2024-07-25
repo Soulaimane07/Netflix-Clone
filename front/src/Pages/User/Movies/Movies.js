@@ -9,7 +9,7 @@ import { GetMovie, GetMoviesByGendre, GoTop } from '../../../Components.js/Funct
 function Movies() {
   GoTop()
 
-  let movie = GetMovie(1)
+  let movie = GetMovie(13)
   let GendresWithMovies = GetMoviesByGendre()
 
 

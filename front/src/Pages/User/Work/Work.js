@@ -4,22 +4,27 @@ import { GetMovie, GoTop } from '../../../Components.js/Functions';
 import Navbar from '../Navbar/Navbar';
 import Header from '../../../Components.js/Header/Header';
 import Footer from '../../../Components.js/Footer';
+import Movie from './Movie';
+import Serie from './Serie';
 
 function Work() {
-  GoTop()
+    GoTop()
 
     const {id} = useParams()
-    let movie = GetMovie(id)
+    let work = GetMovie(id)
 
+    console.log(work);
 
   return (
     <div className=' bg-primary min-h-screen'>
       <Navbar />
 
       <div className='text-white'>
-        <Header item={movie} />
-        <div className='min-h-screen'> 
-          <video src={movie.trailer} controls muted className='w-80' />
+        <Header item={work} />
+
+        <div className='pb-48'> 
+          <Movie data={work} />
+          {/* <Serie data={movie} /> */}
         </div>
       </div>
 
