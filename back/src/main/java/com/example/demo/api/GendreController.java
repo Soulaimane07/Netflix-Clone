@@ -21,7 +21,7 @@ import com.example.demo.model.Gendre;
 
 @RequestMapping("api/v1/gendres")
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = {"http://localhost:3000", "http://netflixfront.s3-website.eu-west-3.amazonaws.com"})
 public class GendreController {
     @Autowired
     GendreRepo repo;

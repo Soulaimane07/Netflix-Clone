@@ -19,7 +19,7 @@ import com.example.demo.model.UserProfile;
 
 @RequestMapping("api/v1/userprofiles")
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = {"http://localhost:3000", "http://netflixfront.s3-website.eu-west-3.amazonaws.com"})
 public class UserProfileController {
     private final UserProfileRepo repo;
     private final UserRepo repoUser;

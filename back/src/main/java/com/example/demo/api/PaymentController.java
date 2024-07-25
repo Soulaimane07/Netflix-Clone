@@ -17,7 +17,7 @@ import com.example.demo.model.Payment;
 
 @RestController
 @RequestMapping("api/v1/payments")
-@CrossOrigin(origins = "http://localhost:3000/*")
+@CrossOrigin(origins = {"http://localhost:3000", "http://netflixfront.s3-website.eu-west-3.amazonaws.com"})
 public class PaymentController {
 
     @Value("${stripe.api.key}")
