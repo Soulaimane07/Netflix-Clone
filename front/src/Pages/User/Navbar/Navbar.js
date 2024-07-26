@@ -6,7 +6,7 @@ import Profile from './Profile'
 function Navbar() {
     const links = [
         {
-            "title": "Home",
+            "title": "Browse",
             "link": "/browse"
         },
         {

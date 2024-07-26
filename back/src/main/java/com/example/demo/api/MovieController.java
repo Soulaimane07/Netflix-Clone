@@ -16,7 +16,10 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.Repo.MovieRepo;
+import com.example.demo.Repo.ProfileRepo;
 import com.example.demo.model.Movie;
+import com.example.demo.model.Profile;
+import com.example.demo.model.Series;
 
 @RequestMapping("api/v1/movies")
 @RestController
@@ -24,6 +27,9 @@ import com.example.demo.model.Movie;
 public class MovieController {
     @Autowired
     MovieRepo repo;
+
+    @Autowired
+    private ProfileRepo profileRepo;
 
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
@@ -54,5 +60,31 @@ public class MovieController {
     @GetMapping(path = "/gendre/{id}")
     public List<Movie> getMoviesByGenre(@PathVariable("id") int genreId) {
         return repo.findByGenresId(genreId);
+    }
+
+
+
+    @PostMapping("/{profileId}/favorites/{movieId}")
+    @ResponseStatus(code = HttpStatus.OK)
+    public void addFavoriteSeries(@PathVariable("profileId") Integer profileId, @PathVariable("movieId") Integer movieId) {
+        Profile profile = profileRepo.findById(profileId).orElseThrow(() -> new RuntimeException("Profile not found"));
+        Movie series = repo.findById(movieId).orElseThrow(() -> new RuntimeException("Series not found"));
+        
+        if (!profile.getFavoriteMovies().contains(series)) {
+            profile.getFavoriteMovies().add(series);
+            profileRepo.save(profile);
+        }
+    }
+
+    @DeleteMapping("/{profileId}/favorites/{movieId}")
+    @ResponseStatus(code = HttpStatus.OK)
+    public void removeFavoriteSeries(@PathVariable("profileId") Integer profileId, @PathVariable("movieId") Integer movieId) {
+        Profile profile = profileRepo.findById(profileId).orElseThrow(() -> new RuntimeException("Profile not found"));
+        Movie series = repo.findById(movieId).orElseThrow(() -> new RuntimeException("Series not found"));
+        
+        if (profile.getFavoriteSeries().contains(series)) {
+            profile.getFavoriteSeries().remove(series);
+            profileRepo.save(profile);
+        }
     }
 }
