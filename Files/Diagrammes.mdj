@@ -5673,30 +5673,11 @@
 									"model": {
 										"$ref": "AAAAAAGQ7qpwWkzeHTo="
 									},
-									"subViews": [
-										{
-											"_type": "UMLAttributeView",
-											"_id": "AAAAAAGQ7qq0bF8w1/Q=",
-											"_parent": {
-												"$ref": "AAAAAAGQ7qpwW0zpRr4="
-											},
-											"model": {
-												"$ref": "AAAAAAGQ7qq0X18SMBk="
-											},
-											"font": "Arial;13;0",
-											"left": 349,
-											"top": 526,
-											"width": 116.603515625,
-											"height": 13,
-											"text": "+Id",
-											"horizontalAlignment": 0
-										}
-									],
 									"font": "Arial;13;0",
 									"left": 344,
 									"top": 521,
 									"width": 126.603515625,
-									"height": 23
+									"height": 10
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -5709,7 +5690,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 344,
-									"top": 544,
+									"top": 531,
 									"width": 126.603515625,
 									"height": 10
 								},
@@ -7052,16 +7033,6 @@
 							"associationSide": {
 								"$ref": "AAAAAAGQ7qpwWkzfn7A="
 							}
-						}
-					],
-					"attributes": [
-						{
-							"_type": "UMLAttribute",
-							"_id": "AAAAAAGQ7qq0X18SMBk=",
-							"_parent": {
-								"$ref": "AAAAAAGQ7qpwWkzeHTo="
-							},
-							"name": "Id"
 						}
 					]
 				}
