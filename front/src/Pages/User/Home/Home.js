@@ -7,11 +7,7 @@ import GendresVer from '../../../Components.js/Gendres/GendresVer';
 import { GetMovie, GetMoviesByGendre, GoTop } from '../../../Components.js/Functions';
 
 function Home() {
-  GoTop()
-
-  useEffect(() => {
-    document.title = 'Disney+ | Browse';
-  }, []);
+  GoTop("Disney+ | More than you'd ever imagine")
 
   let GendresWithMovies = GetMoviesByGendre()
   let movie = GetMovie(10)
@@ -21,7 +17,7 @@ function Home() {
     <div className=' bg-primary min-h-screen'>
       <Navbar />
 
-      <div className='text-white'>
+      <div className='text-white pb-20'>
         <Header item={movie} />
         
         <div className='min-h-screen'> 

@@ -1,10 +1,13 @@
 package com.example.demo.model;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -18,6 +21,12 @@ public class Profile {
 
     @Column(name="image")
     private String image;
+
+    @ManyToMany
+    private List<Movie> favoriteMovies;
+
+    @ManyToMany
+    private List<Series> favoriteSeries;
 
     public Profile() {
     }

@@ -18,9 +18,9 @@ function Header({item}) {
     
     useEffect(() => {
         setTimeout(() => {
-            if (videoRef.current) {
+            if (videoRef?.current) {
                 setShowVideo(true)
-                videoRef.current.play();
+                videoRef?.current?.play();
             }
         }, 3000);
     }, []);
@@ -29,11 +29,9 @@ function Header({item}) {
     const formatTime = (seconds) => {
         const h = Math.floor(seconds / 3600);
         const m = Math.floor((seconds % 3600) / 60);
-        const s = Math.floor(seconds % 60);
     
         const formattedH = h > 0 ? `${h}:` : '';
         const formattedM = h > 0 ? String(m).padStart(2, '0') : m;
-        const formattedS = String(s).padStart(2, '0');
     
         return `${formattedH}h ${formattedM}m`;
     };
@@ -44,7 +42,7 @@ function Header({item}) {
     useEffect(() => {
         const videoElement = document.createElement('video');
         videoElement.style.display = 'none';
-        videoElement.src = item.trailer; 
+        videoElement.src = item?.trailer; 
     
         const handleLoadedMetadata = () => {
           const durationInSeconds = videoElement.duration;
@@ -89,11 +87,11 @@ function Header({item}) {
                     ))}  
                 </div>
                 <div className='mt-10 flex items-stretch space-x-4'>
-                    <button onClick={()=> dispatch(open(item))} className='flex items-center space-x-2 font-medium bg-white bg-opacity-30 transition-all hover:scale-105 hover:bg-opacity-40 rounded-md w-full justify-center py-3'> 
+                    <button onClick={()=> dispatch(open(item))} className='flex items-center space-x-2 font-medium bg-gray-400 bg-opacity-25 transition-all hover:scale-105 hover:bg-opacity-40 rounded-md justify-center py-4 w-3/4'> 
                         <FaPlay />
                         <p> Watch Now </p> 
                     </button>
-                    <button className='bg-white bg-opacity-30 transition-all hover:scale-105 hover:bg-opacity-40 rounded-md px-6'> 
+                    <button className='bg-gray-400 bg-opacity-25 transition-all hover:scale-105 hover:bg-opacity-40 rounded-md px-6'> 
                         <FaPlus size={18} />
                     </button>
                 </div>

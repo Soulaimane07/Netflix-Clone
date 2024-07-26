@@ -4,22 +4,24 @@ import Header from '../../../Components.js/Header/Header'
 import Gendres from '../../../Components.js/Gendres/Gendres'
 import Footer from '../../../Components.js/Footer'
 import GendresVer from '../../../Components.js/Gendres/GendresVer'
-import { GetMovie, GoTop } from '../../../Components.js/Functions'
+import { GetSerie, GetSeriesByGendre, GoTop } from '../../../Components.js/Functions'
 
 function Series() {
-  GoTop()
+  GoTop("Disney+ | Watch Hit TV Series")
 
-  let movie = GetMovie(1)
+  let series = GetSerie(1)
+  let GendresWithSeries = GetSeriesByGendre()
+
 
   return (
     <div className=' bg-primary min-h-screen'>
       <Navbar />
 
       <div className='text-white'>
-        <Header item={movie} />
+        <Header item={series} />
         <div className='min-h-screen'> 
             <Gendres />
-            <GendresVer />
+            <GendresVer data={GendresWithSeries} />
         </div>
       </div>
 

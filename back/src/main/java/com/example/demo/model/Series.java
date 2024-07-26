@@ -15,8 +15,8 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name="movies")
-public class Movie {
+@Table(name="series")
+public class Series {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -39,14 +39,14 @@ public class Movie {
     @Column(name="trailer")
     private String trailer;
 
-    @Column(name="video")
-    private String video;
-
     @Column(name="description")
     private String description;
 
     @Column(name="year")
     private Integer year;
+
+    @Column(name="seasons")
+    private Integer seasons;
 
     @ManyToMany
     private List<Gendre> genres;
@@ -55,10 +55,11 @@ public class Movie {
     @JoinColumn(name="networkid")
     private Network network;
 
-    public Movie() {
+
+    public Series() {
     }
 
-    public Movie(String title, String logoimage, String cardimage, String bgimage, String rating, String desc, int year, String trailer, String video, List<Gendre> genre, Network network){
+    public Series(String title, String logoimage, String cardimage, String bgimage, String rating, String desc, int year, int seasons, String trailer, List<Gendre> genre, Network network){
         super();
         this.title = title;
         this.logoimage = logoimage;
@@ -66,11 +67,10 @@ public class Movie {
         this.bgimage = bgimage;
         this.rating = rating;
         this.trailer = trailer;
-        this.video = video;
         this.genres = genre;
         this.network = network;
         this.year = year;
         this.description = desc;
+        this.seasons = seasons;
     }
-    
 }

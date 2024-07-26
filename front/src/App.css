@@ -105,3 +105,23 @@
 .SCROLL::-webkit-scrollbar {
   display: none;
 }
+
+
+
+
+
+.ListTitle {
+  span {
+    left: -100px;
+    position: relative;
+    opacity: 0;
+    transition: left 0.5s ease, opacity 0.5s ease;
+  }
+
+  &:hover {
+    span {
+      left: 0;
+      opacity: 1;
+    }
+  }
+}

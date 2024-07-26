@@ -27,6 +27,7 @@ public class ProfileController {
     @Autowired
     ProfileRepo repo;
 
+
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
     public Profile addProfile(@RequestBody Profile profile){

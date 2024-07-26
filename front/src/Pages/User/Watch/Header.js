@@ -1,7 +1,7 @@
 import React from 'react'
 import { BsArrowLeft } from "react-icons/bs";
 import { useDispatch } from 'react-redux';
-import { close, open } from '../../../Components.js/Redux/Slices/WatchSlice';
+import { close } from '../../../Components.js/Redux/Slices/WatchSlice';
 
 function Header({title}) {
     const dispatch = useDispatch()

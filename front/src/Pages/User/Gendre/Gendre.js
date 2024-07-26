@@ -6,7 +6,7 @@ import Footer from '../../../Components.js/Footer'
 import Work from '../../../Components.js/Work/Work'
 
 function Gendre() {
-  GoTop()
+  GoTop("Disney+ | More than you'd ever imagine")
 
     let {id} = useParams()
     let gendre = GetGendre(id)

@@ -5,6 +5,7 @@ import Spinner from '../../../Components.js/Spinner';
 import Error from '../../../Components.js/Alerts/Error';
 import axios from 'axios';
 import { BaseUrl } from '../../../Components.js/Variables';
+import Policies from '../Policies';
 
 function Signup() {
   useEffect(() => {
@@ -35,7 +36,7 @@ function Signup() {
             .then((res)=>{
                 if(res.status === 201){
                     console.log(res)
-                    localStorage.setItem("disney-user", JSON.stringify(res.data))
+                    localStorage.setItem("Disney-user", JSON.stringify(res.data))
                     navigate('/register/profile')
                     setLoading(false)
                 } else {
@@ -88,17 +89,7 @@ function Signup() {
                         }
                     </button>
                 </form>
-                <p className=' text-gray-500 text-justify text-xs'>
-                    We will use your information as detailed in the 
-                    <a href='/' className=' text-gray-400'> Subscriber Agreement </a>, 
-                    <a href='/' className=' text-gray-400'>Privacy Policy</a>, 
-                    <a href='/' className=' text-gray-400'>Cookie Policy</a>, 
-                    , including to personalise your experience and send service updates. By clicking “Get Code”, you agree to the terms of our Subscriber Agreement and you also acknowledge and agree that your personal data will be processed in accordance with applicable law outside of your country of residence including in countries that may provide a different level of data protection. This site is protected by reCAPTCHA and the Google 
-                    <a href='/' className=' text-gray-400'>Privacy Policy</a> 
-                    and 
-                    <a href='/' className=' text-gray-400'>Terms of Service</a> 
-                    apply.
-                </p>
+                <Policies />
             </div>
         </div>
         <Footer />

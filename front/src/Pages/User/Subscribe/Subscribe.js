@@ -10,7 +10,7 @@ import { GoTop } from '../../../Components.js/Functions';
 
 
 function Subscribe() {
-  GoTop()
+   GoTop("Disney+ | The greatest stories, all in one place")
 
     const Products = [
         {

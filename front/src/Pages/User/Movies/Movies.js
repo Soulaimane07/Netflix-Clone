@@ -7,7 +7,7 @@ import GendresVer from '../../../Components.js/Gendres/GendresVer'
 import { GetMovie, GetMoviesByGendre, GoTop } from '../../../Components.js/Functions'
 
 function Movies() {
-  GoTop()
+  GoTop("Disney+ | Stream Blockbuster Movies")
 
   let movie = GetMovie(13)
   let GendresWithMovies = GetMoviesByGendre()

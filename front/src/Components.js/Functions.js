@@ -190,8 +190,65 @@ export const GetMoviesByGenre = (id) => {
 }
 
 
-export const GoTop = () => {
+export const GoTop = (title) => {
     useEffect(() => {
         window.scrollTo(0, 0)
-      }, [])
+        title && (document.title = title)
+    }, [])
+}
+
+
+export const GetSeries = () => {
+    const [data, setData] = useState([])
+
+    useEffect(()=> {
+        axios.get(`${BaseUrl}/series`)
+            .then(res => {
+                setData(res.data)
+            })    
+            .catch(err => {
+                console.log(err);
+            })
+    }, [])
+
+    return data
+}
+
+export const GetSerie = (id) => {
+    const [data, setData] = useState({})
+
+    useEffect(()=> {
+        axios.get(`${BaseUrl}/series/${id}`)
+            .then(res => {
+                setData(res.data)
+            })    
+            .catch(err => {
+                console.log(err);
+            })
+    }, [id])
+
+    return data
+}
+
+export const GetSeriesByGendre = () => {
+    const [data, setData] = useState([]);
+    let genres = GetGendres();
+
+    useEffect(() => {
+        const fetchMovies = async () => {
+            try {
+                const moviesData = await Promise.all(genres.map(async genre => {
+                    const res = await axios.get(`${BaseUrl}/series/gendre/${genre.id}`);
+                    return { movies: res.data, genre };
+                }));
+                setData(moviesData);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        fetchMovies();
+    }, [genres]); 
+
+    return data;
 }
