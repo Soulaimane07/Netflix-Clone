@@ -31,13 +31,13 @@ function Profile() {
         setLoading(true)
         setError(false)
         
-        let user = JSON.parse(localStorage.getItem("disney-user"))
+        let user = JSON.parse(localStorage.getItem("Disney-user"))
 
         axios.post(`${BaseUrl}/userprofiles`, {user, profileId: profile, name})
             .then(res => {
                 if (res.status === 201) {
                     console.log(res.data);
-                    localStorage.setItem("disney-Profile", JSON.stringify(res.data))
+                    localStorage.setItem("Disney-user-profile", JSON.stringify(res.data))
                     navigate("/register/details")
                 } else {
                     setLoading(false)

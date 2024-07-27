@@ -34,22 +34,44 @@ public class UserProfileController {
         return repo.findAll();
     }
 
+    // @PostMapping
+    // public ResponseEntity<UserProfile> addUser(@RequestBody UserProfile userProfile) {
+    //     int userId = userProfile.getUser().getId();
+    //     Optional<Person> optionalUser = repoUser.findById(userId);
+
+    //     Person user = optionalUser.get();
+
+    //     if (user.getProfiles() < 5) {
+    //         user.setProfiles(user.getProfiles() + 1);
+    //         repoUser.save(user);
+
+    //         userProfile.setUser(user);
+    //         return ResponseEntity.status(HttpStatus.CREATED).body(repo.save(userProfile));
+    //     } else {
+    //         userProfile.setUser(user);
+    //         return ResponseEntity.status(HttpStatus.ACCEPTED).body(userProfile);
+    //     }
+    // }
+
     @PostMapping
     public ResponseEntity<UserProfile> addUser(@RequestBody UserProfile userProfile) {
-        int userId = userProfile.getUser().getId();
-        Optional<Person> optionalUser = repoUser.findById(userId);
+        int userProfileId = userProfile.getUser().getId();
+        Optional<Person> optionalPerson = repoUser.findById(userProfileId);
 
-        Person user = optionalUser.get();
+        if (optionalPerson.isPresent()) {
+            Person person = optionalPerson.get();
+            System.out.println("Person: " + person);
 
-        if (user.getProfiles() < 5) {
-            user.setProfiles(user.getProfiles() + 1);
-            repoUser.save(user);
-
-            userProfile.setUser(user);
-            return ResponseEntity.status(HttpStatus.CREATED).body(repo.save(userProfile));
+            if (person.getProfiles() >= 5) {
+                return ResponseEntity.status(HttpStatus.NOT_MODIFIED).build();
+            } else {
+                person.setProfiles();
+                repoUser.save(person);
+                userProfile.setUser(person);
+                return ResponseEntity.status(HttpStatus.CREATED).body(repo.save(userProfile));
+            }
         } else {
-            userProfile.setUser(user);
-            return ResponseEntity.status(HttpStatus.ACCEPTED).body(userProfile);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build(); // User not found
         }
     }
 

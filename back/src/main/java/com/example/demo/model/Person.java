@@ -67,4 +67,8 @@ public class Person {
     public Integer getProfiles(){
         return profiles;
     }
+
+    public void setProfiles() {
+        this.profiles++;
+    }
 }
