@@ -79,10 +79,10 @@ public class MovieController {
     @ResponseStatus(code = HttpStatus.OK)
     public void removeFavoriteSeries(@PathVariable("profileId") Integer profileId, @PathVariable("movieId") Integer movieId) {
         Profile profile = profileRepo.findById(profileId).orElseThrow(() -> new RuntimeException("Profile not found"));
-        Movie series = repo.findById(movieId).orElseThrow(() -> new RuntimeException("Series not found"));
+        Movie movie = repo.findById(movieId).orElseThrow(() -> new RuntimeException("Series not found"));
         
-        if (profile.getFavoriteSeries().contains(series)) {
-            profile.getFavoriteSeries().remove(series);
+        if (profile.getFavoriteMovies().contains(movie)) {
+            profile.getFavoriteMovies().remove(movie);
             profileRepo.save(profile);
         }
     }
