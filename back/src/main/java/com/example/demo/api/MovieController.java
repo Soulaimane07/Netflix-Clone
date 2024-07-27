@@ -19,7 +19,6 @@ import com.example.demo.Repo.MovieRepo;
 import com.example.demo.Repo.ProfileRepo;
 import com.example.demo.model.Movie;
 import com.example.demo.model.Profile;
-import com.example.demo.model.Series;
 
 @RequestMapping("api/v1/movies")
 @RestController
