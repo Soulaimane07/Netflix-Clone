@@ -29,6 +29,8 @@ public class UserProfile {
     @Column(name="name")
     private String name;
 
+    
+
     public UserProfile() {
     }
 

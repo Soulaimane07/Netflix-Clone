@@ -101,6 +101,10 @@
   background-image: linear-gradient(180deg, #0f1014, #0f1014ee, #0f1014d2, #0f1014a2, #0f101498, transparent);
 }
 
+.EpisodesGrad {
+  background-image: linear-gradient(0deg, #0f1014, #0f1014ee, #0f1014d2, #0f1014bf, #0f101498, transparent);
+
+}
 
 .SCROLL::-webkit-scrollbar {
   display: none;
@@ -111,7 +115,7 @@
 
 
 .ListTitle {
-  span {
+  span, .icon {
     left: -100px;
     position: relative;
     opacity: 0;
@@ -119,7 +123,7 @@
   }
 
   &:hover {
-    span {
+    span, .icon {
       left: 0;
       opacity: 1;
     }
@@ -142,4 +146,20 @@
 .slide-up-element.visible {
   opacity: 1;
   transform: translateY(0); /* Move to the original position */
+}
+
+
+
+
+.Episode {
+  img {
+    border: 3px solid transparent;
+  }
+
+  &:hover {
+
+    img {
+      border-color:rgba(255, 255, 255, 0.836);
+    }
+  }
 }

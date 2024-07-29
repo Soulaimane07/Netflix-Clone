@@ -17,9 +17,8 @@ function Profile() {
 
     useEffect(() => {
         dispatch(getProfile(profile.id))
-    }, [profile]);
+    }, [profile, dispatch]);
 
-    const profilee = useSelector(state => state.profile)
 
   return (
     <>

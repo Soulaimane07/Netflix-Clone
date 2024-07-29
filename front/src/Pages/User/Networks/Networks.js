@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Navbar from '../Navbar/Navbar'
 import { GetNetworks, GoTop } from '../../../Components.js/Functions'
 import Network from '../../../Components.js/Networks/Network'

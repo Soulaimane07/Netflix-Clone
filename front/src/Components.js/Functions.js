@@ -194,7 +194,7 @@ export const GoTop = (title) => {
     useEffect(() => {
         window.scrollTo(0, 0)
         title && (document.title = title)
-    }, [])
+    }, [title])
 }
 
 

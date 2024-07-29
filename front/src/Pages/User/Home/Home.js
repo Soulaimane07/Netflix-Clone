@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react'
 import Navbar from '../Navbar/Navbar'
 import Header from '../../../Components.js/Header/Header'
 import Networks from '../../../Components.js/Networks/Networks';
