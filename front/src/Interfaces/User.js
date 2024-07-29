@@ -12,6 +12,7 @@ import Gendre from '../Pages/User/Gendre/Gendre'
 import Work from '../Pages/User/Work/Work'
 import Watch from '../Pages/User/Watch/Watch'
 import { useSelector } from 'react-redux'
+import AddProfile from '../Pages/User/Profile/AddProfile'
 
 function User() {
   const opened = useSelector(state => state.watch.opened)
@@ -36,6 +37,7 @@ function User() {
               <Route index element={<Movies />} />
             </Route>
             <Route path='/profile' element={<Profile />} />
+            <Route path='/profile/add-profile' element={<AddProfile />} />
             <Route path='/subscribe' element={<Subscribe />} />
             <Route path='/*' element={<Navigate to="/browse" replace={true} />} />
         </Routes>

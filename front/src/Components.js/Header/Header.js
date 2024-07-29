@@ -64,7 +64,6 @@ function Header({item}) {
     }, [item]);
 
     const dispatch = useDispatch()
-    // console.log(item.trailer.);
 
 
 

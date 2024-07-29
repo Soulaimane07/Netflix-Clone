@@ -2,6 +2,8 @@ import { GetUserProfiles } from '../../../Components.js/Functions'
 import { useDispatch } from 'react-redux'
 import { setProfilee } from '../../../Components.js/Redux/Slices/UserSlice'
 import { useEffect } from 'react'
+import { GoPlus } from "react-icons/go";
+import { Link } from 'react-router-dom';
 
 function Profiles({user, profilee}) {
     const dispatch = useDispatch()
@@ -21,6 +23,13 @@ function Profiles({user, profilee}) {
                     <h2 className={`${profilee.id === item.id ? "opacity-100 transition-all" : "opacity-60 transition-all"}`}> {item.name} </h2>
                 </button>
             ))}
+            {userProfiles?.length < 5 &&
+                <Link to={"add-profile"} className={"hover:scale-105 transition-all flex flex-col opacity-70 hover:opacity-90"}> 
+                    <span className='p-8 cursor-pointer rounded-full border-2 '>
+                        <GoPlus size={40} className=' ' />
+                    </span>
+                </Link>
+            }
         </ul>
     </div>
   )

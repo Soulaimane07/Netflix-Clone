@@ -6,8 +6,10 @@ import { GetProfiles } from '../../../Components.js/Functions';
 import axios from 'axios';
 import { BaseUrl } from '../../../Components.js/Variables';
 import Error from '../../../Components.js/Alerts/Error';
+import { useDispatch } from 'react-redux';
+import { signout } from '../../../Components.js/Redux/Slices/UserSlice';
 
-function Profile() {
+function AddProfile() {
     useEffect(() => {
         document.title = 'Disney+ | Register';
     }, []);
@@ -15,6 +17,7 @@ function Profile() {
     const profiles = GetProfiles()
 
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
 
     const [profile, setProfile] = useState(null)
@@ -39,8 +42,8 @@ function Profile() {
             .then(res => {
                 if (res.status === 201) {
                     console.log(res.data);
-                    localStorage.setItem("Disney-user-profile", JSON.stringify(res.data))
-                    navigate("/register/details")
+                    navigate("/")
+                    dispatch(signout())
                 } else {
                     setLoading(false)
                     setError(true)
@@ -54,15 +57,7 @@ function Profile() {
     }
 
 
-    useEffect(() => {
-        const elements = document.querySelectorAll('.slide-up-element');
-        elements.forEach((element, index) => {
-          setTimeout(() => {
-            element.classList.add('visible');
-          }, index * 60); // Stagger by 100ms for each element
-        });
-    }, []);
-
+    
     
 
   return (
@@ -73,13 +68,11 @@ function Profile() {
             </Link>
 
             <div className='mx-auto text-white bg-opacity-10 overflow-hidden'>
-              <h2 className=' opacity-70 text-center mb-4'>STEP 3 OF 4</h2>
-
               <form onSubmit={Submit} className='mb-10 w-full'>
-                    <h1 className='text-center text-3xl font-medium mb-10 '> Create your profile </h1>
+                    <h1 className='text-center text-3xl font-medium mb-10 '> Create profile </h1>
                     <div className='h-12 flex items-center justify-center'><Error display={error} text="Profile cant be created !" /></div>
 
-                    <ul className=' flex flex-row px-20 slide-up-element overflow-x-scroll Scroll space-x-4 py-4 scroll-smooth justify-around'>
+                    <ul className=' flex flex-row px-20  overflow-x-scroll Scroll space-x-4 py-4 scroll-smooth justify-around'>
                         {profiles?.map((item,key)=>(
                             <li onClick={()=> setProfile(item)} key={key} className={`hover:border-white transition-all border-4 border-transparent cursor-pointer rounded-full   p-0 m-0 ${profile === null || profile?.id === item?.id ? "opacity-100 transition-all" : "opacity-60 transition-all"} ${!error & profile?.id === item?.id && "bg-white transition-all opacity-100"} ${(error && profile === item?.id) && "bg-red-600"}`}> 
                                 <img src={item.image} className='w-40' alt='profile' /> 
@@ -105,4 +98,4 @@ function Profile() {
   )
 }
 
-export default Profile
+export default AddProfile

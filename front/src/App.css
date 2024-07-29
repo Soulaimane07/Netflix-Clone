@@ -138,14 +138,13 @@
 
 .slide-up-element {
   opacity: 0;
-  transform: translateY(100px); /* Start 100px below the original position */
-  transition: opacity 1s ease-out, transform 0.5s ease-out; /* Animate the changes */
+  transform: translateY(100px);
+  transition: opacity 1s ease-out, transform 0.5s ease-out;
 }
 
-/* Final state: on-screen and fully visible */
 .slide-up-element.visible {
   opacity: 1;
-  transform: translateY(0); /* Move to the original position */
+  transform: translateY(0); 
 }
 
 

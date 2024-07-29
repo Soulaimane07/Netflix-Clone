@@ -26,8 +26,12 @@ export const userSlice = createSlice({
       state.logged = false
       state.preLogged = false
     },
+    signout: (state) => {
+      localStorage.removeItem('Disney-user-profile')
+      state.logged = false
+    },
   },
 })
 
-export const { login, setProfilee, logout, updateUser } = userSlice.actions
+export const { login, setProfilee, logout, updateUser, signout } = userSlice.actions
 export default userSlice.reducer
