@@ -79,23 +79,23 @@ function Header({item}) {
     }, []);
 
 
+    
     const userId = useSelector(state => state.user.profile.id)
-
     const AddToWatchList = async () => {
-        try {
+      try {
+
           let response = await axios.post(`${BaseUrl}/series/${userId}/favorites/${item?.id}`);
-          console.log(response);
           
           if (response.status === 200) {
-            dispatch(getProfile());
+            dispatch(getProfile(userId));
           } 
-          if(response.response.status === 500) {
+          if(response.status === 500) {
             // If the series API call doesn't return 200, try adding to movies
             response = await axios.post(`${BaseUrl}/movies/${userId}/favorites/${item?.id}`);
             console.log(response);
             
             if (response.status === 200) {
-              dispatch(getProfile());
+              dispatch(getProfile(userId));
             } else {
               console.error('Failed to add to watchlist');
             }

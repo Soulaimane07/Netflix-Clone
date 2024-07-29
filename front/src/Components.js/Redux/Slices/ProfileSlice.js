@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export const getProfile = createAsyncThunk('profiles', async (profileId)=> {
     try {
-      const response = await axios.get(`${BaseUrl}/profiles/${profileId}`)
+      const response = await axios.get(`${BaseUrl}/userprofiles/${profileId}`)
       return response.data
     } catch (error) {
       console.log(error);

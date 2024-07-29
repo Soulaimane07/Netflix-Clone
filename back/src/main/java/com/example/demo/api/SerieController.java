@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.Repo.ProfileRepo;
 import com.example.demo.Repo.SerieRepo;
-import com.example.demo.model.Profile;
+import com.example.demo.Repo.UserProfileRepo;
 import com.example.demo.model.Series;
+import com.example.demo.model.UserProfile;
 
 
 @RequestMapping("api/v1/series")
@@ -28,7 +28,7 @@ public class SerieController {
     SerieRepo repo;
     
     @Autowired
-    private ProfileRepo profileRepo;
+    private UserProfileRepo profileRepo;
 
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
@@ -67,7 +67,7 @@ public class SerieController {
     @PostMapping("/{profileId}/favorites/{seriesId}")
     @ResponseStatus(code = HttpStatus.OK)
     public void addFavoriteSeries(@PathVariable("profileId") Integer profileId, @PathVariable("seriesId") Integer seriesId) {
-        Profile profile = profileRepo.findById(profileId).orElseThrow(() -> new RuntimeException("Profile not found"));
+        UserProfile profile = profileRepo.findById(profileId).orElseThrow(() -> new RuntimeException("Profile not found"));
         Series series = repo.findById(seriesId).orElseThrow(() -> new RuntimeException("Series not found"));
         
         if (!profile.getFavoriteSeries().contains(series)) {
@@ -79,7 +79,7 @@ public class SerieController {
     @DeleteMapping("/{profileId}/favorites/{seriesId}")
     @ResponseStatus(code = HttpStatus.OK)
     public void removeFavoriteSeries(@PathVariable("profileId") Integer profileId, @PathVariable("seriesId") Integer seriesId) {
-        Profile profile = profileRepo.findById(profileId).orElseThrow(() -> new RuntimeException("Profile not found"));
+        UserProfile profile = profileRepo.findById(profileId).orElseThrow(() -> new RuntimeException("Profile not found"));
         Series series = repo.findById(seriesId).orElseThrow(() -> new RuntimeException("Series not found"));
         
         if (profile.getFavoriteSeries().contains(series)) {

@@ -1,11 +1,14 @@
 package com.example.demo.model;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -29,6 +32,12 @@ public class UserProfile {
     @Column(name="name")
     private String name;
 
+    @ManyToMany
+    private List<Movie> favoriteMovies;
+
+    @ManyToMany
+    private List<Series> favoriteSeries;
+
     
 
     public UserProfile() {
@@ -51,5 +60,9 @@ public class UserProfile {
 
     public String getProfile(){
         return this.profile.getImage();
+    }
+    
+    public void setProfile(Profile profile){
+        this.profile = profile;
     }
 }

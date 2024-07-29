@@ -25,7 +25,7 @@ function Episodes() {
                 index < displayEpisodes && <Episode data={item} key={index} season={seasonId} episode={index+1} />
             ))}
 
-            {episodes?.length > 10 && displayEpisodes != episodes?.length && 
+            {episodes?.length > 10 && displayEpisodes !== episodes?.length && 
                 <div onClick={()=> setDispayEpisodes(episodes?.length)} className='h-20 z-40 EpisodesGrad absolute bottom-0 left-0 flex justify-center items-end w-1/2'>
                     <button className=' bg-gray-400 bg-opacity-25 transition-all hover:scale-105 hover:bg-opacity-40 rounded-full px-6 py-2 text- flex items-center space-x-2'> <FaAngleDown /> <span> View More </span> </button>
                 </div>

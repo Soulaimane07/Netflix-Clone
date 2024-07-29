@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.Repo.MovieRepo;
-import com.example.demo.Repo.ProfileRepo;
+import com.example.demo.Repo.UserProfileRepo;
 import com.example.demo.model.Movie;
-import com.example.demo.model.Profile;
+import com.example.demo.model.UserProfile;
 
 @RequestMapping("api/v1/movies")
 @RestController
@@ -28,7 +28,7 @@ public class MovieController {
     MovieRepo repo;
 
     @Autowired
-    private ProfileRepo profileRepo;
+    private UserProfileRepo profileRepo;
 
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
@@ -66,7 +66,7 @@ public class MovieController {
     @PostMapping("/{profileId}/favorites/{movieId}")
     @ResponseStatus(code = HttpStatus.OK)
     public void addFavoriteSeries(@PathVariable("profileId") Integer profileId, @PathVariable("movieId") Integer movieId) {
-        Profile profile = profileRepo.findById(profileId).orElseThrow(() -> new RuntimeException("Profile not found"));
+        UserProfile profile = profileRepo.findById(profileId).orElseThrow(() -> new RuntimeException("Profile not found"));
         Movie series = repo.findById(movieId).orElseThrow(() -> new RuntimeException("Series not found"));
         
         if (!profile.getFavoriteMovies().contains(series)) {
@@ -78,7 +78,7 @@ public class MovieController {
     @DeleteMapping("/{profileId}/favorites/{movieId}")
     @ResponseStatus(code = HttpStatus.OK)
     public void removeFavoriteSeries(@PathVariable("profileId") Integer profileId, @PathVariable("movieId") Integer movieId) {
-        Profile profile = profileRepo.findById(profileId).orElseThrow(() -> new RuntimeException("Profile not found"));
+        UserProfile profile = profileRepo.findById(profileId).orElseThrow(() -> new RuntimeException("Profile not found"));
         Movie movie = repo.findById(movieId).orElseThrow(() -> new RuntimeException("Series not found"));
         
         if (profile.getFavoriteMovies().contains(movie)) {
