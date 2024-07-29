@@ -1,0 +1,18 @@
+[
+  {
+    "movie_id": 10,
+    "genres_id": 3
+  },
+  {
+    "movie_id": 11,
+    "genres_id": 13
+  },
+  {
+    "movie_id": 13,
+    "genres_id": 8
+  },
+  {
+    "movie_id": 14,
+    "genres_id": 5
+  }
+]

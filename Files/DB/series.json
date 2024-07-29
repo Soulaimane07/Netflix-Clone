@@ -1,0 +1,15 @@
+[
+  {
+    "id": 1,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Money+Heist.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Money+Heist.jpg",
+    "description": "Eight thieves take hostages and lock themselves in the Royal Mint of Spain as a criminal mastermind manipulates the police to carry out his plan.",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Money+Heist.jpg",
+    "rating": "18+",
+    "seasons": null,
+    "title": "Money Heist",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Money+Heist.mp4",
+    "year": 2017,
+    "networkid": 1
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "bgurl": "https://netflix-datafiles.s3.eu-west-3.amazonaws.com/Networks/Netflix/1687868067805.jpg",
+    "logourl": "https://netflix-datafiles.s3.eu-west-3.amazonaws.com/Networks/Netflix/1696160154845.png",
+    "name": "Netflix",
+    "videourl": "https://netflix-datafiles.s3.eu-west-3.amazonaws.com/Networks/Netflix/1687875204094.mp4"
+  },
+  {
+    "id": 2,
+    "bgurl": "https://netflix-datafiles.s3.eu-west-3.amazonaws.com/Networks/Disney/1687868213924.png",
+    "logourl": "https://netflix-datafiles.s3.eu-west-3.amazonaws.com/Networks/Disney/1696160619326.png",
+    "name": "Disney",
+    "videourl": "https://netflix-datafiles.s3.eu-west-3.amazonaws.com/Networks/Disney/1687875609291.mp4"
+  },
+  {
+    "id": 3,
+    "bgurl": "https://netflix-datafiles.s3.eu-west-3.amazonaws.com/Networks/Marvel/1266196-i-e504fc793d61.webp",
+    "logourl": "https://netflix-datafiles.s3.eu-west-3.amazonaws.com/Networks/Marvel/1696161299780.png",
+    "name": "Marvel",
+    "videourl": "https://netflix-datafiles.s3.eu-west-3.amazonaws.com/Networks/Marvel/1687875033185.mp4"
+  }
+]

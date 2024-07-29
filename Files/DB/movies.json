@@ -1,0 +1,54 @@
+[
+  {
+    "id": 10,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/movies/bg/Extraction+2.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/movies/card/Extraction+2.jpg",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/movies/logo/Extraction+2.jpg",
+    "rating": "18+",
+    "title": "Extraction 2",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/movies/trailer/Extraction+2.mp4",
+    "video": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/movies/trailer/Extraction+2.mp4",
+    "networkid": 1,
+    "year": 2023,
+    "description": "Back from the brink of death, highly skilled commando Tyler Rake takes on another dangerous mission: saving the imprisoned family of a ruthless gangster."
+  },
+  {
+    "id": 11,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/movies/bg/Under+Paris.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/movies/card/Under+Paris.jpg",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/movies/logo/Under+Paris.jpg",
+    "rating": "18+",
+    "title": "Under Paris",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/movies/trailer/Under+Paris.mp4",
+    "video": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/movies/trailer/Under+Paris.mp4",
+    "networkid": 1,
+    "year": 2024,
+    "description": "In order to save Paris from an international bloodbath, a grieving scientist is forced to face her tragic past when a giant shark appears in the Seine."
+  },
+  {
+    "id": 13,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/movies/bg/Damsel.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/movies/card/Damsel.jpg",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/movies/logo/Damsel.jpg",
+    "rating": "13+",
+    "title": "Damsel",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/movies/trailer/Damsel.mp4",
+    "video": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/movies/trailer/Damsel.mp4",
+    "networkid": 1,
+    "year": 2024,
+    "description": "A young woman's marriage to a charming prince turns into a fierce fight for survival when she's offered up as a sacrifice to a fire-breathing dragon."
+  },
+  {
+    "id": 14,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/movies/bg/We+Have+a+Ghost.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/movies/card/We+Have+a+Ghost.jpg",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/movies/logo/We+Have+a+Ghost.png",
+    "rating": "13+",
+    "title": "We Have a Ghost",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/movies/trailer/We+Have+a+Ghost.mp4",
+    "video": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/movies/trailer/We+Have+a+Ghost.mp4",
+    "networkid": 1,
+    "year": 2023,
+    "description": "After finding a ghost with a murky past haunting their new house, a family becomes internet sensations — and the targets of a shadowy government agency."
+  }
+]

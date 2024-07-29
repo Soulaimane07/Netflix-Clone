@@ -58,30 +58,5 @@
     "id": 13,
     "image": "https://netflix-datafiles.s3.eu-west-3.amazonaws.com/Gendres/thriller.jpg",
     "title": "Thriller"
-  },
-  {
-    "id": 14,
-    "image": null,
-    "title": null
-  },
-  {
-    "id": 15,
-    "image": null,
-    "title": null
-  },
-  {
-    "id": 16,
-    "image": null,
-    "title": null
-  },
-  {
-    "id": 17,
-    "image": null,
-    "title": null
-  },
-  {
-    "id": 18,
-    "image": null,
-    "title": null
   }
 ]
