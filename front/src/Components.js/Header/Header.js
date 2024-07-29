@@ -14,7 +14,7 @@ import { getProfile } from '../Redux/Slices/ProfileSlice';
 import { BaseUrl } from '../Variables';
 
 
-function Header({item}) {
+function Header({item, type}) {
     const [showVideo, setShowVideo] = useState(false)
     const [muted, setMuted] = useState(true)
     const videoRef = useRef(null);
@@ -81,26 +81,13 @@ function Header({item}) {
     
     const userId = useSelector(state => state.user.profile.id)
     const AddToWatchList = async () => {
-      try {
-
-          let response = await axios.post(`${BaseUrl}/series/${userId}/favorites/${item?.id}`);
-          
-          if (response.status === 200) {
-            dispatch(getProfile(userId));
-          } 
-          if(response.status === 500) {
-            // If the series API call doesn't return 200, try adding to movies
-            response = await axios.post(`${BaseUrl}/movies/${userId}/favorites/${item?.id}`);
-            console.log(response);
-            
-            if (response.status === 200) {
-              dispatch(getProfile(userId));
-            } else {
-              console.error('Failed to add to watchlist');
-            }
-          }
-        } catch (err) {
-          console.error('An error occurred while adding to watchlist:', err);
+        if(type === "movie"){
+          await axios.post(`${BaseUrl}/movies/${userId}/favorites/${item?.id}`);
+          dispatch(getProfile(userId));
+        }
+        if(type === "serie"){
+          await axios.post(`${BaseUrl}/series/${userId}/favorites/${item?.id}`);
+          dispatch(getProfile(userId));
         }
     };
 
@@ -114,6 +101,7 @@ function Header({item}) {
                 <img src={item?.logoimage} alt='logo' className='w-full slide-up-element' />
                 <div className='flex space-x-2 items-center mt-14 slide-up-element '>
                     <p className='opacity-80'> {item?.year} </p> <FaCircle size={6} className='opacity-80' />
+                    <p className=' bg-white bg-opacity-30 text-opacity-80 rounded-sm px-1 text-white'> {item?.rating} </p> <FaCircle size={6} className='opacity-80' />
                     <p className='opacity-80'> {duration} </p> <FaCircle size={6} className='opacity-80' />
                     <Link to={`/networks/${item?.network?.id}`} className='hover:text-blue-400 opacity-80 hover:opacity-100 hover:scale-105 transition-all'> {item?.network?.name} </Link> 
                 </div>

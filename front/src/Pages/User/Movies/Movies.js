@@ -18,7 +18,8 @@ function Movies() {
       <Navbar />
 
       <div className='text-white'>
-        <Header item={movie} />
+        <Header item={movie} type={"movie"} />
+        
         <div className='min-h-screen'> 
             <Gendres />
             <GendresVer data={GendresWithMovies} />

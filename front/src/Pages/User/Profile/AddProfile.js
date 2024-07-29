@@ -57,7 +57,14 @@ function AddProfile() {
     }
 
 
-    
+    useEffect(() => {
+        const elements = document.querySelectorAll('.slide-up-element');
+        elements.forEach((element, index) => {
+          setTimeout(() => {
+            element.classList.add('visible');
+          }, index * 60); // Stagger by 100ms for each element
+        });
+    }, []);
     
 
   return (
@@ -72,7 +79,7 @@ function AddProfile() {
                     <h1 className='text-center text-3xl font-medium mb-10 '> Create profile </h1>
                     <div className='h-12 flex items-center justify-center'><Error display={error} text="Profile cant be created !" /></div>
 
-                    <ul className=' flex flex-row px-20  overflow-x-scroll Scroll space-x-4 py-4 scroll-smooth justify-around'>
+                    <ul className=' flex flex-row px-20 slide-up-element overflow-x-scroll Scroll space-x-4 py-4 scroll-smooth justify-around'>
                         {profiles?.map((item,key)=>(
                             <li onClick={()=> setProfile(item)} key={key} className={`hover:border-white transition-all border-4 border-transparent cursor-pointer rounded-full   p-0 m-0 ${profile === null || profile?.id === item?.id ? "opacity-100 transition-all" : "opacity-60 transition-all"} ${!error & profile?.id === item?.id && "bg-white transition-all opacity-100"} ${(error && profile === item?.id) && "bg-red-600"}`}> 
                                 <img src={item.image} className='w-40' alt='profile' /> 

@@ -26,7 +26,7 @@ function Watch() {
     <div className='fixed z-50 top-0 bottom-0 left-0 bg-primary w-full h-screen text-white flex flex-col justify-between'>
 
         <div className='  w-full h-screen '>
-            <video  ref={videoRef} src={movie?.video} autoPlay={true} muted={true} className=' relative w-full h-screen object-cover' />
+            <video  ref={videoRef} src={movie?.video ? movie?.video : movie?.trailer} autoPlay={true} muted={true} className=' relative w-full h-screen object-cover' />
             
             <Header title={movie?.title} />
 

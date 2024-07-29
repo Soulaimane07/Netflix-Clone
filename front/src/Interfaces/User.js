@@ -21,7 +21,7 @@ function User() {
     <BrowserRouter>
         <Routes>
             <Route path='/browse' element={<Home />} />
-            <Route path='/work/:id' element={<Work />} />
+            <Route path='/work/:type/:id' element={<Work />} />
             <Route path='/networks'>
               <Route index element={<Networks />} />
               <Route path=":id" element={<Network />} />

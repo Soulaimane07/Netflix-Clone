@@ -12,13 +12,16 @@ function Series() {
   let series = GetSerie(1)
   let GendresWithSeries = GetSeriesByGendre()
 
+  console.log(series);
+
 
   return (
     <div className=' bg-primary min-h-screen'>
       <Navbar />
 
       <div className='text-white'>
-        <Header item={series} />
+        <Header item={series} type={"serie"} />
+        
         <div className='min-h-screen'> 
             <Gendres />
             <GendresVer data={GendresWithSeries} />

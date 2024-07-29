@@ -9,8 +9,7 @@ import { BaseUrl } from '../../../Components.js/Variables';
 import Serie from './Serie';
 
 function Work() {
-
-    const {id} = useParams()
+    const {type, id} = useParams()
 
 
     const fetchSerie = async (id) => {
@@ -34,14 +33,13 @@ function Work() {
     useEffect(() => {
       const getContent = async () => {
         try {
-          const series = await fetchSerie(id);
-          if (series) {
-            setContent(series);
-          } else {
+          if(type=== 'movie'){
             const movie = await fetchMovie(id);
-            if (movie) {
-              setContent(movie);
-            }
+            setContent(movie);
+          } 
+          if(type === 'serie') {
+            const series = await fetchSerie(id);
+            setContent(series);
           }
         } catch (err) {
           console.error(err);
@@ -61,10 +59,11 @@ function Work() {
       <Navbar />
 
       <div className='text-white'>
-        <Header item={content} />
+        <Header item={content} type={type} />
 
         <div className='pb-48'> 
-          {content?.video ? <Movie data={content} /> : <Serie data={content} />}
+          {type === 'movie' && <Movie data={content} />}
+          {type === 'serie' && <Serie data={content} />}
         </div>
       </div>
 
