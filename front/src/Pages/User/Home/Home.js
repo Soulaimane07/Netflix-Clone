@@ -10,7 +10,7 @@ function Home() {
 
   let GendresWithMovies = GetMoviesByGendre()
   let GendresWithSeries = GetSeriesByGendre()
-  let work = GetMovie(10)
+  let work = GetMovie(80)
 
   let works = GendresWithMovies
 

@@ -9,7 +9,7 @@ import { GetMovie, GetMoviesByGendre, GoTop } from '../../../Components.js/Funct
 function Movies() {
   GoTop("Disney+ | Stream Blockbuster Movies")
 
-  let movie = GetMovie(13)
+  let movie = GetMovie(3)
   let GendresWithMovies = GetMoviesByGendre()
 
 
