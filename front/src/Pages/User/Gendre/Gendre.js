@@ -1,5 +1,5 @@
 import Navbar from '../Navbar/Navbar'
-import { GetGendre, GetMoviesByGenre, GetSeriesByGendre, GetSeriesByGenre, GoTop } from '../../../Components.js/Functions'
+import { GetGendre, GetMoviesByGenre, GetSeriesByGenre, GoTop } from '../../../Components.js/Functions'
 import { useParams } from 'react-router-dom'
 import Footer from '../../../Components.js/Footer'
 import Work from '../../../Components.js/Work/Work'

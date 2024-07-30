@@ -48,7 +48,7 @@ function Work() {
       };
       
       getContent();
-    }, [id]);
+    }, [id, type]);
     
     GoTop()
     document.title = `${content?.title}  - Disney+` 
