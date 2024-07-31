@@ -105,6 +105,12 @@ def ScrappingDetails(data, url, newName):
     else:
         print(f'Failed to retrieve the webpage: {response.status_code}')
 
+
+
+
+
+
+
 if __name__ == "__main__":
     url = 'https://www.netflix.com/ma-en/browse/genre/839338'
     ScrappingData(url)

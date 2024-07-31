@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { IoSearch } from 'react-icons/io5'
-import { open, search } from '../../../Components.js/Redux/Slices/SearchSlice';
+import { search } from '../../../Components.js/Redux/Slices/SearchSlice';
 import { useDispatch } from 'react-redux';
 
 

@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { GetNetworks } from '../Functions'
-import { Link } from 'react-router-dom'
 import Network from './Network'
 
 function Networks() {
