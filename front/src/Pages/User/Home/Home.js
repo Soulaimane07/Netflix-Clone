@@ -10,26 +10,25 @@ function Home() {
 
   let GendresWithMovies = GetMoviesByGendre()
   let GendresWithSeries = GetSeriesByGendre()
-  let work = GetMovie(80)
+
+  let work = GetMovie(1)
+
 
   let works = GendresWithMovies
 
-  for (let index = 0; index < GendresWithSeries.length; index++) {
-    if(GendresWithSeries[index].movies?.length > 0){
-      works[index].movies = [...GendresWithMovies
-        [index].movies, ...GendresWithSeries[index].movies]
-      // works[index].movies.concat(GendresWithSeries[index].movies)
-    }
-  }
+  // for (let index = 0; index < GendresWithSeries.length; index++) {
+  //   if(GendresWithSeries[index].movies?.length > 0){
+  //     works[index].movies = [...GendresWithMovies[index].movies, ...GendresWithSeries[index].movies]
+  //   }
+  // }
 
-  console.log(works);
 
 
   return (
     <div className=' bg-primary min-h-screen'>
       <Navbar />
 
-      <div className='text-white pb-20'>
+      <div className='text-white pb-32'>
         <Header item={work} type={work?.video ? 'movie' : 'serie'} />
         
         <div className='min-h-screen'> 

@@ -162,3 +162,19 @@
     }
   }
 }
+
+
+
+
+.SearchItem {
+  .image {
+    transition: all 200ms;
+  }
+
+  &:hover {
+    .image {
+      scale: 103%;
+      transition: all 200ms;
+    }
+  }
+}

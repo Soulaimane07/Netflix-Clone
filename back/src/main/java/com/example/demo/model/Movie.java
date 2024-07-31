@@ -72,5 +72,9 @@ public class Movie {
         this.year = year;
         this.description = desc;
     }
+
+    public void setGenres(List<Gendre> genres){
+        this.genres = genres;
+    }
     
 }

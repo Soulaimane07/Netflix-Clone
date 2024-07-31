@@ -88,7 +88,7 @@ function Subscribe() {
 
   return (
     <>
-        <div className='bg-primary min-h-screen '>
+        <div className='bg-primary min-h-screen pb-32'>
             <div className='flex items-center space-x-10 px-20 py-10'>
                 <Link to={"/profile"} className=' opacity-80 hover:scale-110 hover:opacity-100 transition-all text-white flex items-center'>
                     <IoCloseOutline size={50} />

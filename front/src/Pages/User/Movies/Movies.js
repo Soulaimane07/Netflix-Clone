@@ -9,7 +9,7 @@ import { GetMovie, GetMoviesByGendre, GoTop } from '../../../Components.js/Funct
 function Movies() {
   GoTop("Disney+ | Stream Blockbuster Movies")
 
-  let movie = GetMovie(3)
+  let movie = GetMovie(9)
   let GendresWithMovies = GetMoviesByGendre()
 
 
@@ -17,7 +17,7 @@ function Movies() {
     <div className=' bg-primary min-h-screen'>
       <Navbar />
 
-      <div className='text-white'>
+      <div className='text-white pb-32'>
         <Header item={movie} type={"movie"} />
         
         <div className='min-h-screen'> 

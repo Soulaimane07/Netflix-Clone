@@ -23,7 +23,11 @@ function Header({item, type}) {
         setTimeout(() => {
             if (videoRef?.current) {
                 setShowVideo(true)
-                videoRef?.current?.play();
+                try {
+                    // videoRef?.current?.play()
+                } catch (error) {
+                    console.log(error);
+                }
             }
         }, 3000);
     }, []);
@@ -96,7 +100,7 @@ function Header({item, type}) {
   return (
     <header style={{ backgroundImage: `url(${item?.bgimage})`}} className=' h-screen Header flex items-center'>
         <video ref={videoRef} muted={muted} className='w-full relative object-cover h-full' src={item?.trailer}  poster={item?.bgimage} />
-        <div className=' absolute justify-between top-0 left-0 px-20 GradientTop h-full w-full flex items-end pb-40'>
+        <div className=' absolute justify-between top-0 left-0 px-20 GradientTop h-full w-full flex items-end pb-28'>
             <div className=' w-1/3'>
                 <img src={item?.logoimage} alt='logo' className='w-full slide-up-element' />
                 <div className='flex space-x-2 items-center mt-14 slide-up-element '>

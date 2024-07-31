@@ -30,10 +30,10 @@ function Gendre() {
     <div className=' bg-primary min-h-screen'>
         <Navbar />
         
-        <div className='text-white pt-14 min-h-screen'>
+        <div className='text-white pt-14 pb-32 min-h-screen'>
             <h1 className='GradHeder text-center font-bold text-5xl sticky pt-20 pb-10 top-0 z-10 '> {gendre.title} </h1>
 
-            <div className=' grid grid-cols-5 px-44 gap-4 '>
+            <div className=' grid grid-cols-4  px-40 gap-4 '>
               {works?.map((item,key)=>(
                 <Work item={item} key={key} />
               ))} 

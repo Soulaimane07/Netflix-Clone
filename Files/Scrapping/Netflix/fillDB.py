@@ -81,6 +81,11 @@ def ScrappingDetails(data, url, newName):
 
         year_element = moviedetails.find('span', class_="item-year")
         year = year_element.get_text(strip=True) if year_element else None
+        
+        season_element = moviedetails.find('span', class_="test_dur_str")
+        season = season_element.get_text(strip=True) if season_element else None
+
+        
 
         work = {
             "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/movies/bg/" + newName + ".jpg",
@@ -91,9 +96,12 @@ def ScrappingDetails(data, url, newName):
             "description": description,
             "rating": rating,
             "title": data["name"],
-            "year": year
+            "year": year,
+            "season": season
         }
-        insert_Data(work)
+
+        if season == None :
+            insert_Data(work)
     else:
         print(f'Failed to retrieve the webpage: {response.status_code}')
 

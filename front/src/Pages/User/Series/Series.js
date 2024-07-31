@@ -9,7 +9,7 @@ import { GetSerie, GetSeriesByGendre, GoTop } from '../../../Components.js/Funct
 function Series() {
   GoTop("Disney+ | Watch Hit TV Series")
 
-  let series = GetSerie(1)
+  let series = GetSerie(3)
   let GendresWithSeries = GetSeriesByGendre()
 
   console.log(series);
@@ -19,7 +19,7 @@ function Series() {
     <div className=' bg-primary min-h-screen'>
       <Navbar />
 
-      <div className='text-white'>
+      <div className='text-white pb-32'>
         <Header item={series} type={"serie"} />
         
         <div className='min-h-screen'> 

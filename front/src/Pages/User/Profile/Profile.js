@@ -22,7 +22,7 @@ function Profile() {
 
   return (
     <>
-        <div className='Header min-h-screen bg-primary ' style={{ backgroundImage: `url(../assets/images/stars_bg.webp)`}}>
+        <div className='Header min-h-screen bg-primary pb-32 ' style={{ backgroundImage: `url(../assets/images/stars_bg.webp)`}}>
             <div className=' bg-transparent transition-all  px-14 py-6 w-fit'>
                 <Link to="/" className=''>
                     <img src='../assets/images/disney-plus-logo.webp' className='w-20 ' alt="logo" />

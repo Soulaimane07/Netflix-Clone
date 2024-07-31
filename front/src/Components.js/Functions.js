@@ -302,3 +302,15 @@ export const GoTop = (title) => {
         title && (document.title = title)
     }, [title])
 }
+
+
+
+export const GenerateNumber = (min, max) => {
+    const [num, setNum] = useState(1)
+
+    useEffect(()=> {
+        setNum(Math.floor(Math.random() * (max - min + 1)) + min)
+    }, [min, max])
+
+    return num
+};

@@ -32,10 +32,10 @@ function Network() {
     <div className=' bg-primary min-h-screen'>
         <Navbar />
 
-        <div className='text-white min-h-screen pb-40'>
+        <div className='text-white min-h-screen pb-32'>
             <Header network={network} />
 
-            <div className=' grid grid-cols-5 px-44 gap-4 mt-14'>
+            <div className=' grid grid-cols-4 px-40 gap-4 mt-14'>
               {works?.map((item,key)=>(
                 <Work item={item} key={key} />
               ))}    

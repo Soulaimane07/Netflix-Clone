@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.Repo.MovieRepo;
 import com.example.demo.Repo.UserProfileRepo;
+import com.example.demo.Repo.GendreRepo;
+import com.example.demo.model.Gendre;
 import com.example.demo.model.Movie;
 import com.example.demo.model.UserProfile;
 
@@ -28,11 +30,25 @@ public class MovieController {
     MovieRepo repo;
 
     @Autowired
+    GendreRepo genreRepo;
+
+    @Autowired
     private UserProfileRepo profileRepo;
 
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
     public Movie addProfile(@RequestBody Movie movie){
+        return repo.save(movie);
+    }
+
+    @PostMapping("/{movieId}/genres")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Movie addGenres(@PathVariable int movieId, @RequestBody List<Integer> genreIds) {
+        Movie movie = repo.findById(movieId).orElseThrow(() -> new RuntimeException("Movie not found"));
+        
+        List<Gendre> genres = genreRepo.findAllById(genreIds);
+        movie.setGenres(genres);
+        
         return repo.save(movie);
     }
 

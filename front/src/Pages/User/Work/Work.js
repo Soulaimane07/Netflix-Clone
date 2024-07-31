@@ -58,13 +58,13 @@ function Work() {
     <div className=' bg-primary min-h-screen'>
       <Navbar />
 
-      <div className='text-white'>
+      <div className='text-white pb-32'>
         <Header item={content} type={type} />
 
-        <div className='pb-48'> 
+        <> 
           {type === 'movie' && <Movie data={content} />}
           {type === 'serie' && <Serie data={content} />}
-        </div>
+        </>
       </div>
 
       <Footer />

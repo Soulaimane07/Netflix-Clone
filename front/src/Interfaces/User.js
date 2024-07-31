@@ -13,9 +13,11 @@ import Work from '../Pages/User/Work/Work'
 import Watch from '../Pages/User/Watch/Watch'
 import { useSelector } from 'react-redux'
 import AddProfile from '../Pages/User/Profile/AddProfile'
+import Search from '../Pages/User/Search/Search'
 
 function User() {
-  const opened = useSelector(state => state.watch.opened)
+  const openedWatch = useSelector(state => state.watch.opened)
+  const openedSearch = useSelector(state => state.search.opened)
 
   return (
     <BrowserRouter>
@@ -41,7 +43,9 @@ function User() {
             <Route path='/subscribe' element={<Subscribe />} />
             <Route path='/*' element={<Navigate to="/browse" replace={true} />} />
         </Routes>
-        {opened && <Watch />}
+
+        {openedWatch && <Watch />}
+        {openedSearch && <Search />}
     </BrowserRouter>
   )
 }
