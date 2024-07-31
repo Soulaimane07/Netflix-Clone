@@ -97,6 +97,8 @@ function Header({item, type}) {
 
 
 
+    console.log(item);
+
   return (
     <header style={{ backgroundImage: `url(${item?.bgimage})`}} className=' h-screen Header flex items-center'>
         <video ref={videoRef} muted={muted} className='w-full relative object-cover h-full' src={item?.trailer}  poster={item?.bgimage} />
