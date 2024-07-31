@@ -19,5 +19,12 @@
     "logourl": "https://netflix-datafiles.s3.eu-west-3.amazonaws.com/Networks/Marvel/1696161299780.png",
     "name": "Marvel",
     "videourl": "https://netflix-datafiles.s3.eu-west-3.amazonaws.com/Networks/Marvel/1687875033185.mp4"
+  },
+  {
+    "id": 5,
+    "bgurl": "https://netflix-datafiles.s3.eu-west-3.amazonaws.com/Networks/CN/CN.webp",
+    "logourl": "https://netflix-datafiles.s3.eu-west-3.amazonaws.com/Networks/CN/CN.png",
+    "name": "Cartoon Network",
+    "videourl": "https://netflix-datafiles.s3.eu-west-3.amazonaws.com/Networks/CN/CN.mp4"
   }
 ]

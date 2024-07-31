@@ -1,6 +1,622 @@
 [
   {
     "series_id": 1,
+    "genres_id": 12
+  },
+  {
+    "series_id": 2,
     "genres_id": 13
+  },
+  {
+    "series_id": 3,
+    "genres_id": 13
+  },
+  {
+    "series_id": 3,
+    "genres_id": 14
+  },
+  {
+    "series_id": 3,
+    "genres_id": 15
+  },
+  {
+    "series_id": 4,
+    "genres_id": 13
+  },
+  {
+    "series_id": 4,
+    "genres_id": 14
+  },
+  {
+    "series_id": 4,
+    "genres_id": 15
+  },
+  {
+    "series_id": 5,
+    "genres_id": 13
+  },
+  {
+    "series_id": 5,
+    "genres_id": 14
+  },
+  {
+    "series_id": 5,
+    "genres_id": 15
+  },
+  {
+    "series_id": 6,
+    "genres_id": 13
+  },
+  {
+    "series_id": 6,
+    "genres_id": 14
+  },
+  {
+    "series_id": 6,
+    "genres_id": 15
+  },
+  {
+    "series_id": 7,
+    "genres_id": 13
+  },
+  {
+    "series_id": 7,
+    "genres_id": 14
+  },
+  {
+    "series_id": 7,
+    "genres_id": 15
+  },
+  {
+    "series_id": 8,
+    "genres_id": 13
+  },
+  {
+    "series_id": 8,
+    "genres_id": 14
+  },
+  {
+    "series_id": 8,
+    "genres_id": 15
+  },
+  {
+    "series_id": 9,
+    "genres_id": 13
+  },
+  {
+    "series_id": 9,
+    "genres_id": 14
+  },
+  {
+    "series_id": 9,
+    "genres_id": 15
+  },
+  {
+    "series_id": 10,
+    "genres_id": 13
+  },
+  {
+    "series_id": 10,
+    "genres_id": 14
+  },
+  {
+    "series_id": 10,
+    "genres_id": 15
+  },
+  {
+    "series_id": 11,
+    "genres_id": 13
+  },
+  {
+    "series_id": 11,
+    "genres_id": 14
+  },
+  {
+    "series_id": 11,
+    "genres_id": 15
+  },
+  {
+    "series_id": 12,
+    "genres_id": 13
+  },
+  {
+    "series_id": 12,
+    "genres_id": 14
+  },
+  {
+    "series_id": 12,
+    "genres_id": 15
+  },
+  {
+    "series_id": 13,
+    "genres_id": 13
+  },
+  {
+    "series_id": 13,
+    "genres_id": 14
+  },
+  {
+    "series_id": 13,
+    "genres_id": 15
+  },
+  {
+    "series_id": 14,
+    "genres_id": 13
+  },
+  {
+    "series_id": 14,
+    "genres_id": 14
+  },
+  {
+    "series_id": 14,
+    "genres_id": 15
+  },
+  {
+    "series_id": 15,
+    "genres_id": 13
+  },
+  {
+    "series_id": 15,
+    "genres_id": 14
+  },
+  {
+    "series_id": 15,
+    "genres_id": 15
+  },
+  {
+    "series_id": 16,
+    "genres_id": 13
+  },
+  {
+    "series_id": 16,
+    "genres_id": 14
+  },
+  {
+    "series_id": 16,
+    "genres_id": 15
+  },
+  {
+    "series_id": 17,
+    "genres_id": 13
+  },
+  {
+    "series_id": 17,
+    "genres_id": 14
+  },
+  {
+    "series_id": 17,
+    "genres_id": 15
+  },
+  {
+    "series_id": 18,
+    "genres_id": 13
+  },
+  {
+    "series_id": 18,
+    "genres_id": 14
+  },
+  {
+    "series_id": 18,
+    "genres_id": 15
+  },
+  {
+    "series_id": 19,
+    "genres_id": 13
+  },
+  {
+    "series_id": 19,
+    "genres_id": 14
+  },
+  {
+    "series_id": 19,
+    "genres_id": 15
+  },
+  {
+    "series_id": 20,
+    "genres_id": 13
+  },
+  {
+    "series_id": 20,
+    "genres_id": 14
+  },
+  {
+    "series_id": 20,
+    "genres_id": 15
+  },
+  {
+    "series_id": 21,
+    "genres_id": 13
+  },
+  {
+    "series_id": 21,
+    "genres_id": 14
+  },
+  {
+    "series_id": 21,
+    "genres_id": 15
+  },
+  {
+    "series_id": 22,
+    "genres_id": 13
+  },
+  {
+    "series_id": 22,
+    "genres_id": 14
+  },
+  {
+    "series_id": 22,
+    "genres_id": 15
+  },
+  {
+    "series_id": 23,
+    "genres_id": 13
+  },
+  {
+    "series_id": 23,
+    "genres_id": 14
+  },
+  {
+    "series_id": 23,
+    "genres_id": 15
+  },
+  {
+    "series_id": 24,
+    "genres_id": 13
+  },
+  {
+    "series_id": 24,
+    "genres_id": 14
+  },
+  {
+    "series_id": 24,
+    "genres_id": 15
+  },
+  {
+    "series_id": 25,
+    "genres_id": 13
+  },
+  {
+    "series_id": 25,
+    "genres_id": 14
+  },
+  {
+    "series_id": 25,
+    "genres_id": 15
+  },
+  {
+    "series_id": 26,
+    "genres_id": 13
+  },
+  {
+    "series_id": 26,
+    "genres_id": 14
+  },
+  {
+    "series_id": 26,
+    "genres_id": 15
+  },
+  {
+    "series_id": 27,
+    "genres_id": 13
+  },
+  {
+    "series_id": 27,
+    "genres_id": 14
+  },
+  {
+    "series_id": 27,
+    "genres_id": 15
+  },
+  {
+    "series_id": 28,
+    "genres_id": 13
+  },
+  {
+    "series_id": 28,
+    "genres_id": 14
+  },
+  {
+    "series_id": 28,
+    "genres_id": 15
+  },
+  {
+    "series_id": 29,
+    "genres_id": 13
+  },
+  {
+    "series_id": 29,
+    "genres_id": 14
+  },
+  {
+    "series_id": 29,
+    "genres_id": 15
+  },
+  {
+    "series_id": 30,
+    "genres_id": 13
+  },
+  {
+    "series_id": 30,
+    "genres_id": 14
+  },
+  {
+    "series_id": 30,
+    "genres_id": 15
+  },
+  {
+    "series_id": 31,
+    "genres_id": 13
+  },
+  {
+    "series_id": 31,
+    "genres_id": 14
+  },
+  {
+    "series_id": 31,
+    "genres_id": 15
+  },
+  {
+    "series_id": 32,
+    "genres_id": 13
+  },
+  {
+    "series_id": 32,
+    "genres_id": 14
+  },
+  {
+    "series_id": 32,
+    "genres_id": 15
+  },
+  {
+    "series_id": 33,
+    "genres_id": 13
+  },
+  {
+    "series_id": 33,
+    "genres_id": 14
+  },
+  {
+    "series_id": 33,
+    "genres_id": 15
+  },
+  {
+    "series_id": 34,
+    "genres_id": 13
+  },
+  {
+    "series_id": 34,
+    "genres_id": 14
+  },
+  {
+    "series_id": 34,
+    "genres_id": 15
+  },
+  {
+    "series_id": 35,
+    "genres_id": 13
+  },
+  {
+    "series_id": 35,
+    "genres_id": 14
+  },
+  {
+    "series_id": 35,
+    "genres_id": 15
+  },
+  {
+    "series_id": 36,
+    "genres_id": 13
+  },
+  {
+    "series_id": 36,
+    "genres_id": 14
+  },
+  {
+    "series_id": 36,
+    "genres_id": 15
+  },
+  {
+    "series_id": 37,
+    "genres_id": 13
+  },
+  {
+    "series_id": 37,
+    "genres_id": 14
+  },
+  {
+    "series_id": 37,
+    "genres_id": 15
+  },
+  {
+    "series_id": 38,
+    "genres_id": 13
+  },
+  {
+    "series_id": 38,
+    "genres_id": 14
+  },
+  {
+    "series_id": 38,
+    "genres_id": 15
+  },
+  {
+    "series_id": 39,
+    "genres_id": 13
+  },
+  {
+    "series_id": 39,
+    "genres_id": 14
+  },
+  {
+    "series_id": 39,
+    "genres_id": 15
+  },
+  {
+    "series_id": 40,
+    "genres_id": 13
+  },
+  {
+    "series_id": 40,
+    "genres_id": 14
+  },
+  {
+    "series_id": 40,
+    "genres_id": 15
+  },
+  {
+    "series_id": 41,
+    "genres_id": 13
+  },
+  {
+    "series_id": 41,
+    "genres_id": 14
+  },
+  {
+    "series_id": 41,
+    "genres_id": 15
+  },
+  {
+    "series_id": 42,
+    "genres_id": 13
+  },
+  {
+    "series_id": 42,
+    "genres_id": 14
+  },
+  {
+    "series_id": 42,
+    "genres_id": 15
+  },
+  {
+    "series_id": 43,
+    "genres_id": 13
+  },
+  {
+    "series_id": 43,
+    "genres_id": 14
+  },
+  {
+    "series_id": 43,
+    "genres_id": 15
+  },
+  {
+    "series_id": 44,
+    "genres_id": 13
+  },
+  {
+    "series_id": 44,
+    "genres_id": 14
+  },
+  {
+    "series_id": 44,
+    "genres_id": 15
+  },
+  {
+    "series_id": 45,
+    "genres_id": 13
+  },
+  {
+    "series_id": 45,
+    "genres_id": 14
+  },
+  {
+    "series_id": 45,
+    "genres_id": 15
+  },
+  {
+    "series_id": 46,
+    "genres_id": 13
+  },
+  {
+    "series_id": 46,
+    "genres_id": 14
+  },
+  {
+    "series_id": 46,
+    "genres_id": 15
+  },
+  {
+    "series_id": 47,
+    "genres_id": 13
+  },
+  {
+    "series_id": 47,
+    "genres_id": 14
+  },
+  {
+    "series_id": 47,
+    "genres_id": 15
+  },
+  {
+    "series_id": 48,
+    "genres_id": 13
+  },
+  {
+    "series_id": 48,
+    "genres_id": 14
+  },
+  {
+    "series_id": 48,
+    "genres_id": 15
+  },
+  {
+    "series_id": 49,
+    "genres_id": 13
+  },
+  {
+    "series_id": 49,
+    "genres_id": 14
+  },
+  {
+    "series_id": 49,
+    "genres_id": 15
+  },
+  {
+    "series_id": 50,
+    "genres_id": 13
+  },
+  {
+    "series_id": 50,
+    "genres_id": 14
+  },
+  {
+    "series_id": 50,
+    "genres_id": 15
+  },
+  {
+    "series_id": 51,
+    "genres_id": 13
+  },
+  {
+    "series_id": 51,
+    "genres_id": 14
+  },
+  {
+    "series_id": 51,
+    "genres_id": 15
+  },
+  {
+    "series_id": 52,
+    "genres_id": 13
+  },
+  {
+    "series_id": 52,
+    "genres_id": 14
+  },
+  {
+    "series_id": 52,
+    "genres_id": 15
+  },
+  {
+    "series_id": 53,
+    "genres_id": 13
+  },
+  {
+    "series_id": 53,
+    "genres_id": 14
+  },
+  {
+    "series_id": 53,
+    "genres_id": 15
   }
 ]
