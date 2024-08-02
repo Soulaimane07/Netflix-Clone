@@ -17,6 +17,10 @@ function Navbar() {
             "title": "Movies",
             "link": "/movies"
         },
+        {
+            "title": "Anime",
+            "link": "/anime"
+        },
     ]
 
     const [navbar, setNavbar] = useState(false)
