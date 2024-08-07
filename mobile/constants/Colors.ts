@@ -24,3 +24,6 @@ export const Colors = {
     tabIconSelected: tintColorDark,
   },
 };
+
+
+export const BaseUrl = "http://192.168.1.37:8080/api/v1"

@@ -16,6 +16,9 @@ function Home() {
 
   let works = GendresWithMovies
 
+  console.log(works);
+  
+
   // for (let index = 0; index < GendresWithSeries.length; index++) {
   //   if(GendresWithSeries[index].movies?.length > 0){
   //     works[index].movies = [...GendresWithMovies[index].movies, ...GendresWithSeries[index].movies]
