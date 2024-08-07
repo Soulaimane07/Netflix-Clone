@@ -60,6 +60,7 @@ public class SerieController {
     public List<Series> getMoviesByGenre(@PathVariable("id") int genreId) {
         return repo.findByGenresId(genreId);
     }
+    
 
 
 
@@ -86,5 +87,11 @@ public class SerieController {
             profile.getFavoriteSeries().remove(series);
             profileRepo.save(profile);
         }
+    }
+
+
+    @GetMapping("/search/{title}")
+    public List<Series> searchByTitle(@PathVariable("title") String title) {
+        return repo.findByTitleContainingIgnoreCase(title);
     }
 }

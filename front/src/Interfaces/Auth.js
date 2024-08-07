@@ -8,8 +8,6 @@ import Profile from '../Pages/Auth/Register/Profile'
 import Details from '../Pages/Auth/Register/Details/Details'
 
 function Auth() {
-  
-
   return (
     <BrowserRouter>
         <Routes>

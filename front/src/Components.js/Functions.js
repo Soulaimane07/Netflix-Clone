@@ -114,7 +114,6 @@ export const GetSeriesByGendre = () => {
     return data;
 }
 
-
 export const GetGendre = (id) => {
     const [data, setData] = useState({})
 
@@ -290,7 +289,57 @@ export const GetSeriesByGenre = (id) => {
 
 
 
+export const GetSeasons = (serieid) => {
+    const [data, setData] = useState([])
 
+    useEffect(()=> {
+        axios.get(`${BaseUrl}/seasons/serie/${serieid}`)
+            .then(res => {
+                setData(res.data)
+            })    
+            .catch(err => {
+                console.log(err);
+            })
+    }, [serieid])
+
+    return data
+}
+
+export const GetEpisodes = (seasonId) => {
+    const [data, setData] = useState([])
+
+    useEffect(()=> {
+        axios.get(`${BaseUrl}/episodes/season/${seasonId}`)
+            .then(res => {
+                setData(res.data)
+            })    
+            .catch(err => {
+                console.log(err);
+            })
+    }, [seasonId])
+
+    return data
+}
+
+
+
+
+
+export const SearchFun = (term) => {
+    const [data, setData] = useState([])
+
+    useEffect(()=> {
+        axios.get(`${BaseUrl}/search?title=${term}`)
+            .then(res => {
+                setData(res.data)
+            })    
+            .catch(err => {
+                console.log(err);
+            })
+    }, [term])
+
+    return data
+}
 
 
 
@@ -302,8 +351,6 @@ export const GoTop = (title) => {
         title && (document.title = title)
     }, [title])
 }
-
-
 
 export const GenerateNumber = (min, max) => {
     const [num, setNum] = useState(1)

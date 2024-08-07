@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -16,6 +18,10 @@ public class Season {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @ManyToOne
+    @JoinColumn(name="serieId")
+    private Series serie;
+
     @Column(name="episodes")
     private int episodes;
 
@@ -25,9 +31,14 @@ public class Season {
     public Season() {
     }
 
-    public Season(int episodes, int year){
+    public Season(int episodes, int year, Series serie){
         super();
         this.episodes = episodes;
         this.year = year;
+        this.serie = serie;
+    }
+
+    public int getSerieId(){
+        return serie.getId();
     }
 }

@@ -9,4 +9,5 @@ import com.example.demo.model.Movie;
 public interface MovieRepo extends JpaRepository<Movie, Integer> {
     List<Movie> findByGenresId(int genreId);
     List<Movie> findByNetworkId(int networkId);
+    List<Movie> findByTitleContainingIgnoreCase(String title);
 }

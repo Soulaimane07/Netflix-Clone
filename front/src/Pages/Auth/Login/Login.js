@@ -36,7 +36,6 @@ function Login() {
         axios.post(`${BaseUrl}/users/login`, {email, pass})
             .then((res)=>{
                 if(res.status === 200){
-                    console.log(res)
                     navigate('/browse')
                     dispatch(login(res.data))
                     setLoading(false)

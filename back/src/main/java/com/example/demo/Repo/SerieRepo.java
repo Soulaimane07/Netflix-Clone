@@ -9,4 +9,5 @@ import com.example.demo.model.Series;
 public interface SerieRepo extends JpaRepository<Series, Integer> {
     List<Series> findByGenresId(int genreId);
     List<Series> findByNetworkId(int networkId);
+    List<Series> findByTitleContainingIgnoreCase(String title);
 }

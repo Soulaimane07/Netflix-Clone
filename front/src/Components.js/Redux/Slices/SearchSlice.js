@@ -12,6 +12,7 @@ export const searchSlice = createSlice({
     },
     close: (state, action) => {
       state.opened = false
+      state.text = null
     },
     logout: (state) => {
       state.user = null

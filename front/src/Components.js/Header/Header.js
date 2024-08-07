@@ -97,7 +97,7 @@ function Header({item, type}) {
 
 
 
-    console.log(item);
+    // console.log(item);
 
   return (
     <header style={{ backgroundImage: `url(${item?.bgimage})`}} className=' h-screen Header flex items-center'>

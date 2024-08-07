@@ -10,7 +10,7 @@ function SearchWork({item}) {
         elements.forEach((element, index) => {
           setTimeout(() => {
             element.classList.add('visible');
-          }, index * 60); // Stagger by 100ms for each element
+          }, index*2 ); // Stagger by 100ms for each element
         });
     }, []);
 
@@ -25,7 +25,7 @@ function SearchWork({item}) {
                 <h2 className='mt-3 font-medium px-3'> {item.title} </h2>
                 <div className=' opacity-40 text-sm mt-1 px-3 space-x-2 flex items-center'> 
                     <span> {item.year} </span> <i> <FaCircle size={6} className='mt-0.5' /> </i> 
-                    <span> {item.network.name} </span> <i> <FaCircle size={6} className='mt-0.5' /> </i>
+                    <span> {item.network?.name} </span> <i> <FaCircle size={6} className='mt-0.5' /> </i>
                     {item.genres.map((itemm,key)=>(
                         key < 2 && <span key={key} className='flex items-center space-x-2'>  {itemm.title} </span>
                     ))} 

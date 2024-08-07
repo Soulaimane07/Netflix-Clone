@@ -27,7 +27,8 @@ function PreLogged() {
             element.classList.add('visible');
           }, index * 60); // Stagger by 100ms for each element
         });
-      }, []);
+    }, []);
+
 
   return (
     <>

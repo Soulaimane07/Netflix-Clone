@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { IoSearch } from 'react-icons/io5'
-import { search } from '../../../Components.js/Redux/Slices/SearchSlice';
+import { close, search } from '../../../Components.js/Redux/Slices/SearchSlice';
 import { useDispatch } from 'react-redux';
 
 
@@ -8,14 +8,13 @@ function SearchBox() {
     const [hover, setHover] = useState(false)
     
     const [searchTerm, setSearchTerm] = useState("")
-    console.log(searchTerm);
 
     const dispatch = useDispatch()
 
     useEffect(()=> {
       const debounceSearch = setTimeout(() => {
           dispatch(search(searchTerm));
-      }, 200); 
+      }, 0); 
 
       return () => clearTimeout(debounceSearch);
     }, [searchTerm, dispatch])
@@ -25,7 +24,7 @@ function SearchBox() {
         <input onChange={(e)=> setSearchTerm(e.target.value)} placeholder='Series, movies and more' type='search' className={`${hover ? 'inline' : 'hidden'} bg-transparent border-none transition-all outline-none px-2`} />
         <IoSearch 
             size={26} 
-            onClick={()=> setHover(!hover)}
+            onClick={()=> setHover(!hover) & dispatch(close())}
             className=' cursor-pointer hover:scale-110 transition-all opacity-80'
         />
     </div>

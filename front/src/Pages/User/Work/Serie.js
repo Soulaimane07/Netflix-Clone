@@ -23,7 +23,7 @@ function Serie({data}) {
         <Header tab={tab} setTab={setTab} tabs={tabs}  />
       
         <div id='Episodes' className='pt-4'>
-          <Episodes />
+          <Episodes serie={data} />
         </div>
 
         <div id='More%20Like%20This' className='pt-20'>
