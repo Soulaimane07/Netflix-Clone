@@ -16,6 +16,10 @@ function Navbar() {
             "title": "Movies",
             "link": "/movies"
         },
+        {
+            "title": "Anime",
+            "link": "/anime"
+        },
     ]
     
   return (
