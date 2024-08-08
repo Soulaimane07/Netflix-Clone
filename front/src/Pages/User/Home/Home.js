@@ -16,7 +16,7 @@ function Home() {
 
   let works = GendresWithMovies
 
-  console.log(works);
+  // console.log(works);
   
 
   // for (let index = 0; index < GendresWithSeries.length; index++) {

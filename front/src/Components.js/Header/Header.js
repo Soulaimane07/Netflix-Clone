@@ -1,10 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { FaCircle } from "react-icons/fa";
 import { PiLineVertical } from "react-icons/pi";
-import { FaPlay } from "react-icons/fa";
-import { FaPlus } from "react-icons/fa6";
+import { FaPlay, FaPlus, FaCheck } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
-
 import { IoVolumeMuteOutline } from "react-icons/io5";
 import { GoUnmute } from "react-icons/go";
 import { useDispatch, useSelector } from 'react-redux';
@@ -26,7 +24,7 @@ function Header({item, type}) {
                 try {
                     // videoRef?.current?.play()
                 } catch (error) {
-                    console.log(error);
+                    console.error(error);
                 }
             }
         }, 3000);
@@ -97,7 +95,26 @@ function Header({item, type}) {
 
 
 
-    // console.log(item);
+
+    
+    const [hello, setHello] = useState(false); // Use boolean since you're checking a condition
+
+    const profile = useSelector(state => state.profile);
+    console.log(profile);
+    
+
+    const IsAdded = () => {
+        if (item.seasons === undefined) {
+            return !!profile.favMovies.find(obj => obj.id === item.id);
+        } else {
+            return !!profile.favSeries.find(obj => obj.id === item.id);
+        }
+    };
+
+    useEffect(() => {
+        setHello(IsAdded());
+    }, [profile, item]);
+    // console.log(profile);
 
   return (
     <header style={{ backgroundImage: `url(${item?.bgimage})`}} className=' h-screen Header flex items-center'>
@@ -127,8 +144,8 @@ function Header({item, type}) {
                         <FaPlay />
                         <p> Watch Now </p> 
                     </button>
-                    <button onClick={AddToWatchList} className='bg-gray-400 bg-opacity-25 transition-all hover:scale-105 hover:bg-opacity-40 rounded-md px-6'> 
-                        <FaPlus size={18} />
+                    <button onClick={AddToWatchList} className='bg-gray-400 flex items-center space-x-4 bg-opacity-25 transition-all hover:scale-105 hover:bg-opacity-40 rounded-md px-5'> 
+                        {hello ? <FaCheck size={18} /> : <FaPlus size={18} />}
                     </button>
                 </div>
             </div>
