@@ -94,6 +94,17 @@ function Header({item, type}) {
         }
     };
 
+    const RemoveFromWatchList = async () => {
+        if(type === "movie"){
+            await axios.delete(`${BaseUrl}/movies/${userId}/favorites/${item?.id}`);
+            dispatch(getProfile(userId));
+        }
+        if(type === "serie"){
+            await axios.delete(`${BaseUrl}/series/${userId}/favorites/${item?.id}`);
+            dispatch(getProfile(userId));
+        }
+    }
+
 
 
 
@@ -115,7 +126,7 @@ function Header({item, type}) {
     useEffect(() => {
         setHello(IsAdded());
     }, [profile, item]);
-    // console.log(profile);
+
 
   return (
     <header style={{ backgroundImage: `url(${item?.bgimage})`}} className=' h-screen Header flex items-center'>
@@ -145,7 +156,7 @@ function Header({item, type}) {
                         <FaPlay />
                         <p> Watch Now </p> 
                     </button>
-                    <button onClick={AddToWatchList} className='bg-gray-400 flex items-center space-x-4 bg-opacity-25 transition-all hover:scale-105 hover:bg-opacity-40 rounded-md px-5'> 
+                    <button onClick={hello ? RemoveFromWatchList : AddToWatchList} className='bg-gray-400 flex items-center space-x-4 bg-opacity-25 transition-all hover:scale-105 hover:bg-opacity-40 rounded-md px-5'> 
                         {hello ? <FaCheck size={18} /> : <FaPlus size={18} />}
                     </button>
                 </div>

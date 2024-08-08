@@ -3,6 +3,7 @@ import Footer from '../Components.js/Footer'
 import { GetUserProfiles } from '../Components.js/Functions'
 import { useDispatch, useSelector } from 'react-redux'
 import { setProfilee } from '../Components.js/Redux/Slices/UserSlice'
+import { getProfile } from '../Components.js/Redux/Slices/ProfileSlice'
 
 function PreLogged() {
     const dispatch = useDispatch()
@@ -17,6 +18,7 @@ function PreLogged() {
         e.preventDefault()
         console.log(userProfiles[profile]);
         dispatch(setProfilee(userProfiles[profile]))
+        dispatch(getProfile(userProfiles[profile]?.id))
     }
 
 

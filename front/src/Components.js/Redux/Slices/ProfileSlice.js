@@ -20,7 +20,12 @@ export const profileSlice = createSlice({
         favMovies: [],
     },
     reducers: {
-        
+        logProfile: (state, action) => {
+            state.data = action.payload
+            state.favSeries = action.payload.favoriteSeries
+            state.favMovies = action.payload.favoriteMovies
+            localStorage.setItem('Disney-user-profile', JSON.stringify(action.payload))
+        }
     },
     extraReducers(builder) {
         builder
@@ -39,5 +44,5 @@ export const profileSlice = createSlice({
     }
 })
 
-export const { login, setProfilee, logout, updateUser } = profileSlice.actions
+export const { logProfile } = profileSlice.actions
 export default profileSlice.reducer
