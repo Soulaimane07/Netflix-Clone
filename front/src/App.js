@@ -16,7 +16,7 @@ function App() {
     dispatch(login(user))
     if(userProfile) {
       dispatch(setProfilee(userProfile))
-      // dispatch(getProfile(userProfile.id))
+      dispatch(getProfile(userProfile.id))
     }
   } else {
     dispatch(logout())
@@ -26,14 +26,13 @@ function App() {
   const preLogged = useSelector(state => state.user.preLogged)
 
 
-  console.log(userProfile);
+  // console.log(userProfile);
   
 
   return (
     <>
-      {!logged ? 
-        !preLogged ? <Auth /> : <PreLogged />
-        : <User />
+      {!logged  ? !preLogged  ? <Auth /> : <PreLogged />
+                : <User />
       }
       
     </>

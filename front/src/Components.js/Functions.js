@@ -4,6 +4,58 @@ import { useEffect, useState } from "react"
 
 
 
+
+
+
+export const GetAllGenres = () => {
+    const [data, setData] = useState([])
+
+    useEffect(()=> {
+        axios.get(`${BaseUrl}/genres/all`)
+            .then(res => {
+                setData(res.data)
+            })    
+            .catch(err => {
+                console.log(err);
+            })
+    }, [])
+
+    return data
+}
+
+export const GetMoviesGenres = () => {
+    const [data, setData] = useState([])
+
+    useEffect(()=> {
+        axios.get(`${BaseUrl}/genres/movies`)
+            .then(res => {
+                setData(res.data)
+            })    
+            .catch(err => {
+                console.log(err);
+            })
+    }, [])
+
+    return data
+}
+
+export const GetSeriesGenres = () => {
+    const [data, setData] = useState([])
+
+    useEffect(()=> {
+        axios.get(`${BaseUrl}/genres/series`)
+            .then(res => {
+                setData(res.data)
+            })    
+            .catch(err => {
+                console.log(err);
+            })
+    }, [])
+
+    return data
+}
+
+
 export const GetProfiles = () => {
     const [data, setData] = useState([])
 
@@ -25,6 +77,22 @@ export const GetNetwork = (id) => {
 
     useEffect(()=> {
         axios.get(`${BaseUrl}/networks/${id}`)
+            .then(res => {
+                setData(res.data)
+            })    
+            .catch(err => {
+                console.log(err);
+            })
+    }, [id])
+
+    return data
+}
+
+export const GetNetworkWorks = (id) => {
+    const [data, setData] = useState([])
+
+    useEffect(()=> {
+        axios.get(`${BaseUrl}/networkss/${id}`)
             .then(res => {
                 setData(res.data)
             })    
@@ -119,6 +187,22 @@ export const GetGendre = (id) => {
 
     useEffect(()=> {
         axios.get(`${BaseUrl}/gendres/${id}`)
+            .then(res => {
+                setData(res.data)
+            })    
+            .catch(err => {
+                console.log(err);
+            })
+    }, [id])
+
+    return data
+}
+
+export const GetGendreWorks = (id) => {
+    const [data, setData] = useState([])
+
+    useEffect(()=> {
+        axios.get(`${BaseUrl}/genres/${id}`)
             .then(res => {
                 setData(res.data)
             })    

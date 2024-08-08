@@ -82,6 +82,7 @@ function Header({item, type}) {
 
     
     const userId = useSelector(state => state.user.profile.id)
+    
     const AddToWatchList = async () => {
         if(type === "movie"){
           await axios.post(`${BaseUrl}/movies/${userId}/favorites/${item?.id}`);
@@ -100,7 +101,7 @@ function Header({item, type}) {
     const [hello, setHello] = useState(false); // Use boolean since you're checking a condition
 
     const profile = useSelector(state => state.profile);
-    console.log(profile);
+    // console.log(profile);
     
 
     const IsAdded = () => {

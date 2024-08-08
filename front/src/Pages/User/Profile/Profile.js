@@ -1,11 +1,9 @@
-import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Header from './Header'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import Profiles from './Profiles'
 import Footer from '../../../Components.js/Footer'
 import { GoTop } from '../../../Components.js/Functions'
-import { getProfile } from '../../../Components.js/Redux/Slices/ProfileSlice'
 import Watchlist from './Watchlist'
 
 function Profile() {
@@ -13,12 +11,6 @@ function Profile() {
 
     const user = useSelector(state => state.user.user)
     const profile = useSelector(state => state.user.profile)
-    const dispatch = useDispatch()
-
-    useEffect(() => {
-        dispatch(getProfile(profile.id))
-    }, [profile, dispatch]);
-
 
   return (
     <>

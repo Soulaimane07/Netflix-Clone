@@ -31,6 +31,7 @@ export const profileSlice = createSlice({
                 state.data = action.payload
                 state.favSeries = action.payload.favoriteSeries
                 state.favMovies = action.payload.favoriteMovies
+                localStorage.setItem('Disney-user-profile', JSON.stringify(action.payload))
             })
             .addCase(getProfile.rejected, (state, action)=> {
                 state.data = {}

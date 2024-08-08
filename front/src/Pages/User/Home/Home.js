@@ -3,29 +3,14 @@ import Header from '../../../Components.js/Header/Header'
 import Networks from '../../../Components.js/Networks/Networks';
 import Footer from '../../../Components.js/Footer';
 import GendresVer from '../../../Components.js/Gendres/GendresVer';
-import { GetMovie, GetMoviesByGendre, GetSeriesByGendre, GoTop } from '../../../Components.js/Functions';
+import { GetAllGenres, GetMovie, GoTop } from '../../../Components.js/Functions';
 
 function Home() {
   GoTop("Disney+ | More than you'd ever imagine")
 
-  let GendresWithMovies = GetMoviesByGendre()
-  let GendresWithSeries = GetSeriesByGendre()
-
   let work = GetMovie(1)
-
-
-  let works = GendresWithMovies
-
-  // console.log(works);
+  let works = GetAllGenres()
   
-
-  // for (let index = 0; index < GendresWithSeries.length; index++) {
-  //   if(GendresWithSeries[index].movies?.length > 0){
-  //     works[index].movies = [...GendresWithMovies[index].movies, ...GendresWithSeries[index].movies]
-  //   }
-  // }
-
-
 
   return (
     <div className=' bg-primary min-h-screen'>

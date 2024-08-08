@@ -4,13 +4,13 @@ import Gendres from '../../../Components.js/Gendres/Gendres'
 import Header from '../../../Components.js/Header/Header'
 import Footer from '../../../Components.js/Footer'
 import GendresVer from '../../../Components.js/Gendres/GendresVer'
-import { GetMovie, GetMoviesByGendre, GoTop } from '../../../Components.js/Functions'
+import { GetMovie, GetMoviesGenres, GoTop } from '../../../Components.js/Functions'
 
 function Movies() {
   GoTop("Disney+ | Stream Blockbuster Movies")
 
   let movie = GetMovie(9)
-  let GendresWithMovies = GetMoviesByGendre()
+  let movies = GetMoviesGenres()
 
 
   return (
@@ -22,7 +22,7 @@ function Movies() {
         
         <div className='min-h-screen'> 
             <Gendres />
-            <GendresVer data={GendresWithMovies} />
+            <GendresVer data={movies} />
         </div>
       </div>
 

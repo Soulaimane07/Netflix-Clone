@@ -4,15 +4,13 @@ import Header from '../../../Components.js/Header/Header'
 import Gendres from '../../../Components.js/Gendres/Gendres'
 import Footer from '../../../Components.js/Footer'
 import GendresVer from '../../../Components.js/Gendres/GendresVer'
-import { GetSerie, GetSeriesByGendre, GoTop } from '../../../Components.js/Functions'
+import { GetSerie, GetSeriesGenres, GoTop } from '../../../Components.js/Functions'
 
 function Series() {
   GoTop("Disney+ | Watch Hit TV Series")
 
-  let series = GetSerie(3)
-  let GendresWithSeries = GetSeriesByGendre()
-
-  console.log(series);
+  let serie = GetSerie(3)
+  let series = GetSeriesGenres()
 
 
   return (
@@ -20,11 +18,11 @@ function Series() {
       <Navbar />
 
       <div className='text-white pb-32'>
-        <Header item={series} type={"serie"} />
+        <Header item={serie} type={"serie"} />
         
         <div className='min-h-screen'> 
             <Gendres />
-            <GendresVer data={GendresWithSeries} />
+            <GendresVer data={series} />
         </div>
       </div>
 

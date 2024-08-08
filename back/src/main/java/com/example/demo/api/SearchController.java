@@ -18,7 +18,7 @@ import com.example.demo.model.Series;
 @RestController
 @CrossOrigin(origins = {"http://localhost:3000", "http://netflixfront.s3-website.eu-west-3.amazonaws.com"})
 public class SearchController {
-     @Autowired
+    @Autowired
     private SerieRepo serieRepo;
 
     @Autowired
