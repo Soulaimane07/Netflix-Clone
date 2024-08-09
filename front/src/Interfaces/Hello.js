@@ -18,7 +18,6 @@ function Hello() {
 
     const Submit = (e) => {
         e.preventDefault()
-        console.log(userProfiles[profile]);
         dispatch(setProfilee(userProfiles[profile]))
         dispatch(getProfile(userProfiles[profile]?.id))
     }

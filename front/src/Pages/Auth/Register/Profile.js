@@ -47,7 +47,6 @@ function Profile() {
                     localStorage.setItem("Disney-user-profile", JSON.stringify(res.data))
                     navigate("/browse")
                     dispatch(logProfile(res.data))
-                    dispatch(login(res.data))
                     dispatch(setProfilee(res.data))
                 } else {
                     setLoading(false)
