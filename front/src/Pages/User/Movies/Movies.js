@@ -9,18 +9,15 @@ import { GenerateNumber, GetMoviesGenres, GetRanMovie, GoTop } from '../../../Co
 function Movies() {
   GoTop("Disney+ | Stream Blockbuster Movies")
 
-  const [num, setNum] = useState(1);
   const [movie, setMovie] = useState({});
 
   useEffect(() => {
     const fetchMovie = async () => {
         let randomId = GenerateNumber(1, 10);
-        setNum(randomId);
         let movieData = await GetRanMovie(randomId);
 
         while (!movieData) {
             randomId = GenerateNumber(1, 10);
-            setNum(randomId);
             movieData = await GetRanMovie(randomId);
         }
 

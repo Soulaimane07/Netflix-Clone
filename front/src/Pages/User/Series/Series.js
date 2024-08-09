@@ -9,18 +9,15 @@ import { GenerateNumber, GetRanSerie, GetSeriesGenres, GoTop } from '../../../Co
 function Series() {
   GoTop("Disney+ | Watch Hit TV Series")
 
-  const [num, setNum] = useState(1);
   const [serie, setSerie] = useState({});
 
   useEffect(() => {
     const fetchSerie = async () => {
         let randomId = GenerateNumber(1, 10);
-        setNum(randomId);
         let serieData = await GetRanSerie(randomId);
 
         while (!serieData) {
             randomId = GenerateNumber(1, 10);
-            setNum(randomId);
             serieData = await GetRanSerie(randomId);
         }
 

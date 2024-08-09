@@ -9,18 +9,15 @@ import { useEffect, useState } from 'react';
 function Home() {
     GoTop("Disney+ | More than you'd ever imagine")
 
-    const [num, setNum] = useState(1);
     const [work, setMovie] = useState({});
 
     useEffect(() => {
       const fetchMovie = async () => {
           let randomId = GenerateNumber(1, 10);
-          setNum(randomId);
           let movieData = await GetRanMovie(randomId);
 
           while (!movieData) {
               randomId = GenerateNumber(1, 10);
-              setNum(randomId);
               movieData = await GetRanMovie(randomId);
           }
 

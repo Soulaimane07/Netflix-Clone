@@ -6,7 +6,7 @@ import { GetProfiles } from '../../../Components.js/Functions';
 import axios from 'axios';
 import { BaseUrl } from '../../../Components.js/Variables';
 import Error from '../../../Components.js/Alerts/Error';
-import { login, setProfilee } from '../../../Components.js/Redux/Slices/UserSlice';
+import { setProfilee } from '../../../Components.js/Redux/Slices/UserSlice';
 import { useDispatch } from 'react-redux';
 import { logProfile } from '../../../Components.js/Redux/Slices/ProfileSlice';
 import { GoPlus } from 'react-icons/go';
