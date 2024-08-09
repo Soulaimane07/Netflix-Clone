@@ -1,15 +1,35 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../Navbar/Navbar'
 import Gendres from '../../../Components.js/Gendres/Gendres'
 import Header from '../../../Components.js/Header/Header'
 import Footer from '../../../Components.js/Footer'
 import GendresVer from '../../../Components.js/Gendres/GendresVer'
-import { GetMovie, GetMoviesGenres, GoTop } from '../../../Components.js/Functions'
+import { GenerateNumber, GetMoviesGenres, GetRanMovie, GoTop } from '../../../Components.js/Functions'
 
 function Movies() {
   GoTop("Disney+ | Stream Blockbuster Movies")
 
-  let movie = GetMovie(9)
+  const [num, setNum] = useState(1);
+  const [movie, setMovie] = useState({});
+
+  useEffect(() => {
+    const fetchMovie = async () => {
+        let randomId = GenerateNumber(1, 10);
+        setNum(randomId);
+        let movieData = await GetRanMovie(randomId);
+
+        while (!movieData) {
+            randomId = GenerateNumber(1, 10);
+            setNum(randomId);
+            movieData = await GetRanMovie(randomId);
+        }
+
+        setMovie(movieData);
+    };
+
+    fetchMovie();
+  }, []);
+
   let movies = GetMoviesGenres()
 
 

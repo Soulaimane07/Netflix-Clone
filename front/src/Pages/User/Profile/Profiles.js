@@ -20,9 +20,9 @@ function Profiles({user, profilee}) {
     }
 
   return (
-    <div className='mt-20'>
-        <h1 className='text-2xl'> Profiles </h1>
-        <ul className='flex flex-row  overflow-x-scroll Scroll space-x-4 py-4 scroll-smooth'>
+    <div className='mt-20 '>
+        <h1 className='text-2xl px-16'> Profiles </h1>
+        <ul className='flex flex-row px-16 overflow-x-scroll Scroll space-x-4 py-4 scroll-smooth'>
             {userProfiles?.map((item,key)=>(
                 <button onClick={()=> ChangeProfile(item)} key={key} className={"hover:scale-105 transition-all"}> 
                     <img src={item.profile} className={`w-28 mb-2 text-white text-center transition-all border-4 border-transparent cursor-pointer rounded-full   p-0 m-0 ${profilee.id === item.id ? "opacity-100 transition-all bg-white" : "opacity-60 transition-all"}`} alt='profile' /> 

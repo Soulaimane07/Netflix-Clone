@@ -1,15 +1,35 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../Navbar/Navbar'
 import Header from '../../../Components.js/Header/Header'
 import Gendres from '../../../Components.js/Gendres/Gendres'
 import Footer from '../../../Components.js/Footer'
 import GendresVer from '../../../Components.js/Gendres/GendresVer'
-import { GetSerie, GetSeriesGenres, GoTop } from '../../../Components.js/Functions'
+import { GenerateNumber, GetRanSerie, GetSeriesGenres, GoTop } from '../../../Components.js/Functions'
 
 function Series() {
   GoTop("Disney+ | Watch Hit TV Series")
 
-  let serie = GetSerie(3)
+  const [num, setNum] = useState(1);
+  const [serie, setSerie] = useState({});
+
+  useEffect(() => {
+    const fetchSerie = async () => {
+        let randomId = GenerateNumber(1, 10);
+        setNum(randomId);
+        let serieData = await GetRanSerie(randomId);
+
+        while (!serieData) {
+            randomId = GenerateNumber(1, 10);
+            setNum(randomId);
+            serieData = await GetRanSerie(randomId);
+        }
+
+        setSerie(serieData);
+    };
+
+    fetchSerie();
+  }, []);
+
   let series = GetSeriesGenres()
 
 

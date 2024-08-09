@@ -7,9 +7,9 @@ function Watchlist() {
   const favMovies = useSelector(state => state.profile.favMovies)
 
   return (
-    <div className='mt-20'>
-        <h1 className='text-2xl'> Watch List </h1>
-        <ul className='flex flex-row  overflow-x-scroll Scroll space-x-4 py-4 scroll-smooth'>
+    <div className='mt-20 '>
+        <h1 className='text-2xl px-16'> Watch List </h1>
+        <ul className='flex flex-row px-16 overflow-x-scroll Scroll space-x-4 py-4 scroll-smooth'>
             {favSeries?.map((item,key)=>(
                 <Work item={item} key={key} />
             ))}

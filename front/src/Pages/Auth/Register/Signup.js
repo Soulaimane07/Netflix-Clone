@@ -60,7 +60,7 @@ function Signup() {
             </Link>
 
             <div className='w-3/12  mx-auto text-white'>
-                <h2 className=' opacity-70 text-center mb-4'>STEP 2 OF 4</h2>
+                <h2 className=' opacity-70 text-center mb-4'>STEP 2 OF 3</h2>
                 <form onSubmit={SignupFun} className='mb-10'>
                     <h1 className='text-center text-3xl font-medium mb-10'> Create your account </h1>
                     <div className='h-12 flex items-center justify-center'><Error display={error} text="Login or password are wrong !" /></div>

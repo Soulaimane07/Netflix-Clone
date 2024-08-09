@@ -7,7 +7,7 @@ function Header({user}) {
     const dispatch = useDispatch()
 
   return (
-    <div className='text-white flex items-center justify-between'>
+    <div className='text-white px-16 flex items-center justify-between'>
         <div>
             <h1 className='font-bold text-3xl'> {user.fname} {user.lname} </h1>
             <p className=' opacity-60 mt-2 text-xl'> {user.email} </p>

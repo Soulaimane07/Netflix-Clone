@@ -15,11 +15,7 @@ function Navbar() {
         {
             "title": "Movies",
             "link": "/movies"
-        },
-        {
-            "title": "Anime",
-            "link": "/anime"
-        },
+        }
     ]
     
   return (
@@ -30,8 +26,16 @@ function Navbar() {
             </Link>
 
             <ul className='text-white space-x-6'>
-                {links.map((item,key)=> (
-                    <NavLink to={item.link} key={key}>
+                {links.map((item, key) => (
+                    <NavLink
+                        to={item.link}
+                        key={key}
+                        className={({ isActive }) =>
+                            isActive
+                                ? "opacity-100 hover:scale-105 transition-all"
+                                : "opacity-50 hover:scale-105 hover:opacity-90 transition-all"
+                        }
+                    >
                         {item.title}
                     </NavLink>
                 ))}

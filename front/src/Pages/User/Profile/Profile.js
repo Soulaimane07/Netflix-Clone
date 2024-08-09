@@ -21,7 +21,7 @@ function Profile() {
                 </Link>
             </div>
             
-            <div className='px-16 mt-14  mx-auto text-white'>
+            <div className=' mt-14  mx-auto text-white'>
                 <Header user={user} />
                 <Profiles user={user} profilee={profile} />
                 <Watchlist />

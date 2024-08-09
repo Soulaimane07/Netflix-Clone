@@ -6,6 +6,10 @@ import { GetProfiles } from '../../../Components.js/Functions';
 import axios from 'axios';
 import { BaseUrl } from '../../../Components.js/Variables';
 import Error from '../../../Components.js/Alerts/Error';
+import { login, setProfilee } from '../../../Components.js/Redux/Slices/UserSlice';
+import { useDispatch } from 'react-redux';
+import { logProfile } from '../../../Components.js/Redux/Slices/ProfileSlice';
+import { GoPlus } from 'react-icons/go';
 
 function Profile() {
     useEffect(() => {
@@ -15,6 +19,7 @@ function Profile() {
     const profiles = GetProfiles()
 
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
 
     const [profile, setProfile] = useState(null)
@@ -40,7 +45,10 @@ function Profile() {
                 if (res.status === 201) {
                     console.log(res.data);
                     localStorage.setItem("Disney-user-profile", JSON.stringify(res.data))
-                    navigate("/register/details")
+                    navigate("/browse")
+                    dispatch(logProfile(res.data))
+                    dispatch(login(res.data))
+                    dispatch(setProfilee(res.data))
                 } else {
                     setLoading(false)
                     setError(true)
@@ -73,7 +81,7 @@ function Profile() {
             </Link>
 
             <div className='mx-auto text-white bg-opacity-10 overflow-hidden'>
-              <h2 className=' opacity-70 text-center mb-4'>STEP 3 OF 4</h2>
+              <h2 className=' opacity-70 text-center mb-4'>STEP 3 OF 3</h2>
 
               <form onSubmit={Submit} className='mb-10 w-full'>
                     <h1 className='text-center text-3xl font-medium mb-10 '> Create your profile </h1>
@@ -85,6 +93,11 @@ function Profile() {
                                 <img src={item.image} className='w-40' alt='profile' /> 
                             </li>
                         ))}
+                        <Link to={"add-profile"} className={"hover:scale-105 transition-all flex flex-col opacity-70 hover:opacity-90"}> 
+                            <span className='p-8 cursor-pointer rounded-full border-2 '>
+                                <GoPlus size={40} className=' ' />
+                            </span>
+                        </Link>
                     </ul>
                     <div className='flex flex-col w-3/12 mx-auto mt-6 space-y-2 mb-8'>
                         <label> Profile name </label>

@@ -267,6 +267,16 @@ export const GetMovie = (id) => {
     return data
 }
 
+export const GetRanMovie = async (id) => {
+    try {
+        const response = await axios.get(`${BaseUrl}/movies/${id}`);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching movie:', error);
+        return null; // or handle the error appropriately
+    }
+};
+
 export const GetMoviesByNetwork = (id) => {
     const [data, setData] = useState([])
 
@@ -335,6 +345,16 @@ export const GetSerie = (id) => {
 
     return data
 }
+
+export const GetRanSerie = async (id) => {
+    try {
+        const response = await axios.get(`${BaseUrl}/series/${id}`);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching movie:', error);
+        return null; // or handle the error appropriately
+    }
+};
 
 export const GetSeriesByNetwork = (id) => {
     const [data, setData] = useState([])
@@ -437,11 +457,5 @@ export const GoTop = (title) => {
 }
 
 export const GenerateNumber = (min, max) => {
-    const [num, setNum] = useState(1)
-
-    useEffect(()=> {
-        setNum(Math.floor(Math.random() * (max - min + 1)) + min)
-    }, [min, max])
-
-    return num
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 };

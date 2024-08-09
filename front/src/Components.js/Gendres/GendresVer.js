@@ -7,6 +7,7 @@ function GendresVer({data}) {
   return (
     <ul className='items-stretch '>
         {data?.map((item,key)=>(
+          ((item?.movies && item?.movies.length > 0) || (item?.series && item?.series.length > 0)) &&
             <div key={key} className='mt-10'>
               <div className='flex ListTitle relative items-center w-full space-x-4 px-16 pb-1 mb-2'>
                 <Link to={`/gendres/${item?.gendre?.id}`} className='flex space-x-6'>
