@@ -27,6 +27,9 @@ function App() {
   const logged = useSelector(state => state.user.logged)
   const preLogged = useSelector(state => state.user.preLogged)
 
+
+  
+
   return (
     <>
       {!logged  ? !preLogged  ? <Auth /> : <PreLogged />

@@ -21,7 +21,7 @@ import com.example.demo.model.Season;
 
 @RequestMapping("api/v1/episodes")
 @RestController
-@CrossOrigin(origins = {"http://localhost:3000", "http://netflixfront.s3-website.eu-west-3.amazonaws.com"})
+@CrossOrigin(origins = {"http://localhost:3000", "https://d2m89m1u95dfaf.cloudfront.net"})
 public class EpisodeController {
     @Autowired
     EpisodeRepo repo;

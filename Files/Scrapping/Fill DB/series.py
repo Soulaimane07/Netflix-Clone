@@ -1,0 +1,756 @@
+import mysql.connector
+from mysql.connector import Error
+
+# JSON data
+series_data = [
+  {
+    "id": 1,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Money+Heist.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Money+Heist.jpg",
+    "description": "Eight thieves take hostages and lock themselves in the Royal Mint of Spain as a criminal mastermind manipulates the police to carry out his plan.",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Money+Heist.jpg",
+    "rating": "18+",
+    "seasons": 0,
+    "title": "Money Heist",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Money+Heist.mp4",
+    "year": 2017,
+    "networkid": 1
+  },
+  {
+    "id": 2,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Money+Heist.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Money+Heist.jpg",
+    "description": "Eight thieves take hostages and lock themselves in the Royal Mint of Spain as a criminal mastermind manipulates the police to carry out his plan.",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Money+Heist.jpg",
+    "rating": "18+",
+    "seasons": 0,
+    "title": "Money Heist",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Money+Heist.mp4",
+    "year": 2017,
+    "networkid": 1
+  },
+  {
+    "id": 3,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/The+Amazing+World+of+Gumball.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/The+Amazing+World+of+Gumball.jpg",
+    "description": "Gumball’s world is pretty run-of-the-mill. He’s chased around school by a T-Rex. He has a friend named Anton who’s a piece of toast. He’s got a crush on Penny, a peanut with antlers. His dad is a 6’4”",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/The+Amazing+World+of+Gumball.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "The Amazing World of Gumball",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/The+Amazing+World+of+Gumball.mp4",
+    "year": 2011,
+    "networkid": 5
+  },
+  {
+    "id": 4,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Regular+Show.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Regular+Show.jpg",
+    "description": "Mordecai – a sarcastic blue jay, and Rigby – a somewhat responsible raccoon, are best friends. They even work together at a park owned by Pops, a big lollipop-headed guy. Which seems normal enough. Th",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Regular+Show.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "Regular Show",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Regular+Show.mp4",
+    "year": 2010,
+    "networkid": 5
+  },
+  {
+    "id": 5,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Adventure+Time.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Adventure+Time.jpg",
+    "description": "It's one crazy adventure after another for human boy, Finn, and his best friend, Jake, a 28-year old dog with magical powers. They're out to have the most fun possible and they sure do find it explori",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Adventure+Time.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "Adventure Time",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Adventure+Time.mp4",
+    "year": 2010,
+    "networkid": 5
+  },
+  {
+    "id": 6,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Teen+Titans+Go!.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Teen+Titans+Go!.jpg",
+    "description": "From Warner Bros. Animation, these teen titans are on the go! Right after they make a sandwich or play some video games. Wait, there's laundry to do? (\"Not it!\") After that, they'll definitely go figh",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Teen+Titans+Go!.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "Teen Titans Go!",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Teen+Titans+Go!.mp4",
+    "year": 2013,
+    "networkid": 5
+  },
+  {
+    "id": 7,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Steven+Universe.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Steven+Universe.jpg",
+    "description": "Steven Universe is about the misadventures of a boy named Steven, the ultimate \"little brother\" to a team of magical guardians of humanity—the Crystal Gems. Steven may not be as powerful as the Crysta",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Steven+Universe.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "Steven Universe",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Steven+Universe.mp4",
+    "year": 2014,
+    "networkid": 5
+  },
+  {
+    "id": 8,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/We+Bare+Bears.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/We+Bare+Bears.jpg",
+    "description": "We Bare Bears is a comedy about three bear siblings named Grizzly, Panda and Ice Bear. Each episode follows their awkward attempts at integrating with the human world in the San Francisco Bay Area, wh",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/We+Bare+Bears.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "We Bare Bears",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/We+Bare+Bears.mp4",
+    "year": 2015,
+    "networkid": 5
+  },
+  {
+    "id": 9,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Clarence.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Clarence.jpg",
+    "description": "Clarence finds something amazing in just about everything. Discover the best that life has to offer--epic pinecone wars, backyard tree forts and the secret worlds beyond milk cartons--all through the ",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Clarence.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "Clarence",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Clarence.mp4",
+    "year": 2014,
+    "networkid": 5
+  },
+  {
+    "id": 10,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Chowder.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Chowder.jpg",
+    "description": "Chowder follows an aspiring young chef named Chowder and his day-to-day adventures as an apprentice in Mung Daal's catering company. Although he means well, Chowder often finds himself in predicaments",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Chowder.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "Chowder",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Chowder.mp4",
+    "year": 2014,
+    "networkid": 5
+  },
+  {
+    "id": 11,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Craig+of+the+Creek.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Craig+of+the+Creek.jpg",
+    "description": "Craig of the Creek follows a young boy, Craig, and his two friends, Kelsey and JP, as they go on adventures within a world of untamed, kid-dominated wilderness in the creek.",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Craig+of+the+Creek.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "Craig of the Creek",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Craig+of+the+Creek.mp4",
+    "year": 2018,
+    "networkid": 5
+  },
+  {
+    "id": 12,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/The+Powerpuff+Girls+(2016).jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/The+Powerpuff+Girls+(2016).jpg",
+    "description": "The Powerpuff Girls centers on three sugar-coated superheroes, whose missions in life alternate between going to school, fighting crime, winning at hopscotch and saving the world before bedtime. The g",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/The+Powerpuff+Girls+(2016).jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "The Powerpuff Girls (2016)",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/The+Powerpuff+Girls+(2016).mp4",
+    "year": 2016,
+    "networkid": 5
+  },
+  {
+    "id": 13,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Uncle+Grandpa.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Uncle+Grandpa.jpg",
+    "description": "Uncle Grandpa is a show about Uncle Grandpa, everyone in the world's magical uncle and grandpa, who travels around the world in an RV with his right-hand man, Belly Bag, a giant realistic flying tiger",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Uncle+Grandpa.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "Uncle Grandpa",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Uncle+Grandpa.mp4",
+    "year": 2015,
+    "networkid": 5
+  },
+  {
+    "id": 14,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Unikitty.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Unikitty.jpg",
+    "description": "Cartoon Network is transporting viewers to a joyous kingdom full of sparkle matter, happy thoughts and the occasional rage-out in Unikitty!",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Unikitty.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "Unikitty",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Unikitty.mp4",
+    "year": 2017,
+    "networkid": 5
+  },
+  {
+    "id": 15,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/The+Gumball+Chronicles.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/The+Gumball+Chronicles.jpg",
+    "description": "The Gumball Chronicles is a spinoff mini-series based on The Amazing World of Gumball. The series predominantly consists of clips recycled from previous episodes but features some new content.",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/The+Gumball+Chronicles.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "The Gumball Chronicles",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/The+Gumball+Chronicles.mp4",
+    "year": 2020,
+    "networkid": 5
+  },
+  {
+    "id": 16,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/The+Marvelous+Misadventures+of+Flapjack.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/The+Marvelous+Misadventures+of+Flapjack.jpg",
+    "description": "Oh buoy! Set a course for misadventure! Take a trip to the bizarre sea village of Stormalong Harbor with a kooky kid named Flapjack and his very best friends - a crusty old pirate called Captain K'nuc",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/The+Marvelous+Misadventures+of+Flapjack.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "The Marvelous Misadventures of Flapjack",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/The+Marvelous+Misadventures+of+Flapjack.mp4",
+    "year": 2008,
+    "networkid": 5
+  },
+  {
+    "id": 17,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Steven+Universe:+Future.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Steven+Universe:+Future.jpg",
+    "description": "After saving the universe, Steven is still at it, tying up every loose end; as he runs out of other people's problems to solve, he'll finally have to face his own.",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Steven+Universe:+Future.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "Steven Universe: Future",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Steven+Universe:+Future.mp4",
+    "year": 2019,
+    "networkid": 5
+  },
+  {
+    "id": 18,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/The+Amazing+World+of+Gumball:+Darwin's+Yearbook.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/The+Amazing+World+of+Gumball:+Darwin's+Yearbook.jpg",
+    "description": "Principal Brown sets Darwin to the task of making the school yearbook. Featuring hilarious clips from the first six seasons of The Amazing World of Gumball.",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/The+Amazing+World+of+Gumball:+Darwin's+Yearbook.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "The Amazing World of Gumball: Darwin's Yearbook",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/The+Amazing+World+of+Gumball:+Darwin's+Yearbook.mp4",
+    "year": 2019,
+    "networkid": 5
+  },
+  {
+    "id": 19,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/OK+K.O.!+Let's+Be+Heroes.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/OK+K.O.!+Let's+Be+Heroes.jpg",
+    "description": "OK K.O.! Let's Be Heroes is an American animated series created by Ian Jones-Quartey and based on his pilot short Lakewood Plaza Turbo.",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/OK+K.O.!+Let's+Be+Heroes.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "OK K.O.! Let's Be Heroes",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/OK+K.O.!+Let's+Be+Heroes.mp4",
+    "year": 2013,
+    "networkid": 5
+  },
+  {
+    "id": 20,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Over+the+Garden+Wall.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Over+the+Garden+Wall.jpg",
+    "description": "Over the Garden Wall is Cartoon Network’s 1st animated mini-series event that tells the story of two brothers, Wirt and Greg, who find themselves lost in a strange forest. With the help of a bluebird ",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Over+the+Garden+Wall.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "Over the Garden Wall",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Over+the+Garden+Wall.mp4",
+    "year": 2014,
+    "networkid": 5
+  },
+  {
+    "id": 21,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Apple+&+Onion.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Apple+&+Onion.jpg",
+    "description": "In a world populated by anthropomorphic food, Apple and Onion, a pair of childlike newcomers to the big city, attempt to fit into their new surroundings.",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Apple+&+Onion.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "Apple & Onion",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Apple+&+Onion.mp4",
+    "year": 2018,
+    "networkid": 5
+  },
+  {
+    "id": 22,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/ThunderCats+(1985).jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/ThunderCats+(1985).jpg",
+    "description": "From beyond any known galaxy, bringing with them the laws and ideals of their green planet, Thundera, come the ThunderCats!",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/ThunderCats+(1985).jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "ThunderCats (1985)",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/ThunderCats+(1985).mp4",
+    "year": 1985,
+    "networkid": 5
+  },
+  {
+    "id": 23,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/ThunderCats+(2011).jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/ThunderCats+(2011).jpg",
+    "description": "ThunderCats, ho! Warner Bros. Animation (WBA) is reimagining the 1980s animated action classic in an all-new animated series combining swords and science and boasting ferocious battles with the highes",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/ThunderCats+(2011).jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "ThunderCats (2011)",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/ThunderCats+(2011).mp4",
+    "year": 2011,
+    "networkid": 5
+  },
+  {
+    "id": 24,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Teen+Titans+Go!+en+Español.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Teen+Titans+Go!+en+Español.jpg",
+    "description": "De Warner Bros. Animation, estos jóvenes titanes no tienen descanso. Lugo de preparar un emparedado o jugar videojuegos… ¡Un momento! ¿Hay ropa para lavar? (\"¡Eso no!\") Luego, definitivamente lucharán",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Teen+Titans+Go!+en+Español.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "Teen Titans Go! en Español",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Teen+Titans+Go!+en+Español.mp4",
+    "year": 2013,
+    "networkid": 5
+  },
+  {
+    "id": 25,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Unikitty+en+Español.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Unikitty+en+Español.jpg",
+    "description": "Como gobernante del reino, Unikitty está llena de tareas. Ella está muy interesada en asegurarse de que todos sean felices y de liberar al reino de la negatividad, junto con su hermano menor mitad per",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Unikitty+en+Español.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "Unikitty en Español",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Unikitty+en+Español.mp4",
+    "year": 2017,
+    "networkid": 5
+  },
+  {
+    "id": 26,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/The+Amazing+World+of+Gumball.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/The+Amazing+World+of+Gumball.jpg",
+    "description": "The Amazing World of Gumball revolves around the life of Gumball Watterson, a 12-year-old cat who attends middle school in the fictional city of Elmore. Accompanied by his adoptive goldfish brother an",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/The+Amazing+World+of+Gumball.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "The Amazing World of Gumball",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/The+Amazing+World+of+Gumball.mp4",
+    "year": 2011,
+    "networkid": 5
+  },
+  {
+    "id": 27,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Adventure+Time.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Adventure+Time.jpg",
+    "description": "Adventure Time features unlikely heroes Finn and Jake, buddies who traverse the mystical Land of Ooo and encounter its colorful inhabitants. The best of friends, our heroes always find themselves in t",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Adventure+Time.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "Adventure Time",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Adventure+Time.mp4",
+    "year": 2010,
+    "networkid": 5
+  },
+  {
+    "id": 28,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Total+Drama+Island.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Total+Drama+Island.jpg",
+    "description": "The world's most hilarious reality show is BACK. No parents. No phones. No mercy.",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Total+Drama+Island.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "Total Drama Island",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Total+Drama+Island.mp4",
+    "year": 2023,
+    "networkid": 5
+  },
+  {
+    "id": 29,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Adventure+Time.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Adventure+Time.jpg",
+    "description": "Adventure Time features unlikely heroes Finn and Jake, buddies who traverse the mystical Land of Ooo and encounter its colorful inhabitants. The best of friends, our heroes always find themselves in t",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Adventure+Time.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "Adventure Time",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Adventure+Time.mp4",
+    "year": 2010,
+    "networkid": 5
+  },
+  {
+    "id": 30,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Adventure+Time.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Adventure+Time.jpg",
+    "description": "It's one crazy adventure after another for human boy, Finn, and his best friend, Jake, a 28-year old dog with magical powers. They're out to have the most fun possible and they sure do find it explori",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Adventure+Time.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "Adventure Time",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Adventure+Time.mp4",
+    "year": 2010,
+    "networkid": 5
+  },
+  {
+    "id": 31,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/The+Amazing+World+of+Gumball.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/The+Amazing+World+of+Gumball.jpg",
+    "description": "The Amazing World of Gumball revolves around the life of Gumball Watterson, a 12-year-old cat who attends middle school in the fictional city of Elmore. Accompanied by his adoptive goldfish brother an",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/The+Amazing+World+of+Gumball.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "The Amazing World of Gumball",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/The+Amazing+World+of+Gumball.mp4",
+    "year": 2011,
+    "networkid": 5
+  },
+  {
+    "id": 32,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/The+Amazing+World+of+Gumball.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/The+Amazing+World+of+Gumball.jpg",
+    "description": "Gumball’s world is pretty run-of-the-mill. He’s chased around school by a T-Rex. He has a friend named Anton who’s a piece of toast. He’s got a crush on Penny, a peanut with antlers. His dad is a 6’4”",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/The+Amazing+World+of+Gumball.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "The Amazing World of Gumball",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/The+Amazing+World+of+Gumball.mp4",
+    "year": 2011,
+    "networkid": 5
+  },
+  {
+    "id": 33,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/The+Amazing+World+of+Gumball:+Darwin's+Yearbook.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/The+Amazing+World+of+Gumball:+Darwin's+Yearbook.jpg",
+    "description": "Principal Brown sets Darwin to the task of making the school yearbook. Featuring hilarious clips from the first six seasons of The Amazing World of Gumball.",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/The+Amazing+World+of+Gumball:+Darwin's+Yearbook.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "The Amazing World of Gumball: Darwin's Yearbook",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/The+Amazing+World+of+Gumball:+Darwin's+Yearbook.mp4",
+    "year": 2019,
+    "networkid": 5
+  },
+  {
+    "id": 34,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Apple+&+Onion.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Apple+&+Onion.jpg",
+    "description": "In a world populated by anthropomorphic food, Apple and Onion, a pair of childlike newcomers to the big city, attempt to fit into their new surroundings.",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Apple+&+Onion.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "Apple & Onion",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Apple+&+Onion.mp4",
+    "year": 2018,
+    "networkid": 5
+  },
+  {
+    "id": 35,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Chowder.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Chowder.jpg",
+    "description": "Chowder follows an aspiring young chef named Chowder and his day-to-day adventures as an apprentice in Mung Daal's catering company. Although he means well, Chowder often finds himself in predicaments",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Chowder.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "Chowder",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Chowder.mp4",
+    "year": 2014,
+    "networkid": 5
+  },
+  {
+    "id": 36,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Clarence.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Clarence.jpg",
+    "description": "Clarence finds something amazing in just about everything. Discover the best that life has to offer--epic pinecone wars, backyard tree forts and the secret worlds beyond milk cartons--all through the ",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Clarence.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "Clarence",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Clarence.mp4",
+    "year": 2014,
+    "networkid": 5
+  },
+  {
+    "id": 37,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Craig+of+the+Creek.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Craig+of+the+Creek.jpg",
+    "description": "Craig of the Creek follows a young boy, Craig, and his two friends, Kelsey and JP, as they go on adventures within a world of untamed, kid-dominated wilderness in the creek.",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Craig+of+the+Creek.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "Craig of the Creek",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Craig+of+the+Creek.mp4",
+    "year": 2018,
+    "networkid": 5
+  },
+  {
+    "id": 38,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/The+Gumball+Chronicles.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/The+Gumball+Chronicles.jpg",
+    "description": "The Gumball Chronicles is a spinoff mini-series based on The Amazing World of Gumball. The series predominantly consists of clips recycled from previous episodes but features some new content.",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/The+Gumball+Chronicles.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "The Gumball Chronicles",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/The+Gumball+Chronicles.mp4",
+    "year": 2020,
+    "networkid": 5
+  },
+  {
+    "id": 39,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/The+Marvelous+Misadventures+of+Flapjack.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/The+Marvelous+Misadventures+of+Flapjack.jpg",
+    "description": "Oh buoy! Set a course for misadventure! Take a trip to the bizarre sea village of Stormalong Harbor with a kooky kid named Flapjack and his very best friends - a crusty old pirate called Captain K'nuc",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/The+Marvelous+Misadventures+of+Flapjack.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "The Marvelous Misadventures of Flapjack",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/The+Marvelous+Misadventures+of+Flapjack.mp4",
+    "year": 2008,
+    "networkid": 5
+  },
+  {
+    "id": 40,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/OK+K.O.!+Let's+Be+Heroes.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/OK+K.O.!+Let's+Be+Heroes.jpg",
+    "description": "OK K.O.! Let's Be Heroes is an American animated series created by Ian Jones-Quartey and based on his pilot short Lakewood Plaza Turbo.",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/OK+K.O.!+Let's+Be+Heroes.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "OK K.O.! Let's Be Heroes",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/OK+K.O.!+Let's+Be+Heroes.mp4",
+    "year": 2013,
+    "networkid": 5
+  },
+  {
+    "id": 41,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Over+the+Garden+Wall.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Over+the+Garden+Wall.jpg",
+    "description": "Over the Garden Wall is Cartoon Network’s 1st animated mini-series event that tells the story of two brothers, Wirt and Greg, who find themselves lost in a strange forest. With the help of a bluebird ",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Over+the+Garden+Wall.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "Over the Garden Wall",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Over+the+Garden+Wall.mp4",
+    "year": 2014,
+    "networkid": 5
+  },
+  {
+    "id": 42,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/The+Powerpuff+Girls+(2016).jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/The+Powerpuff+Girls+(2016).jpg",
+    "description": "The Powerpuff Girls centers on three sugar-coated superheroes, whose missions in life alternate between going to school, fighting crime, winning at hopscotch and saving the world before bedtime. The g",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/The+Powerpuff+Girls+(2016).jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "The Powerpuff Girls (2016)",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/The+Powerpuff+Girls+(2016).mp4",
+    "year": 2016,
+    "networkid": 5
+  },
+  {
+    "id": 43,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Regular+Show.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Regular+Show.jpg",
+    "description": "Mordecai – a sarcastic blue jay, and Rigby – a somewhat responsible raccoon, are best friends. They even work together at a park owned by Pops, a big lollipop-headed guy. Which seems normal enough. Th",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Regular+Show.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "Regular Show",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Regular+Show.mp4",
+    "year": 2010,
+    "networkid": 5
+  },
+  {
+    "id": 44,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Steven+Universe.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Steven+Universe.jpg",
+    "description": "Steven Universe is about the misadventures of a boy named Steven, the ultimate \"little brother\" to a team of magical guardians of humanity—the Crystal Gems. Steven may not be as powerful as the Crysta",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Steven+Universe.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "Steven Universe",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Steven+Universe.mp4",
+    "year": 2014,
+    "networkid": 5
+  },
+  {
+    "id": 45,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Steven+Universe:+Future.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Steven+Universe:+Future.jpg",
+    "description": "After saving the universe, Steven is still at it, tying up every loose end; as he runs out of other people's problems to solve, he'll finally have to face his own.",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Steven+Universe:+Future.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "Steven Universe: Future",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Steven+Universe:+Future.mp4",
+    "year": 2019,
+    "networkid": 5
+  },
+  {
+    "id": 46,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Teen+Titans+Go!.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Teen+Titans+Go!.jpg",
+    "description": "From Warner Bros. Animation, these teen titans are on the go! Right after they make a sandwich or play some video games. Wait, there's laundry to do? (\"Not it!\") After that, they'll definitely go figh",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Teen+Titans+Go!.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "Teen Titans Go!",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Teen+Titans+Go!.mp4",
+    "year": 2013,
+    "networkid": 5
+  },
+  {
+    "id": 47,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Teen+Titans+Go!+en+Español.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Teen+Titans+Go!+en+Español.jpg",
+    "description": "De Warner Bros. Animation, estos jóvenes titanes no tienen descanso. Lugo de preparar un emparedado o jugar videojuegos… ¡Un momento! ¿Hay ropa para lavar? (\"¡Eso no!\") Luego, definitivamente lucharán",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Teen+Titans+Go!+en+Español.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "Teen Titans Go! en Español",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Teen+Titans+Go!+en+Español.mp4",
+    "year": 2013,
+    "networkid": 5
+  },
+  {
+    "id": 48,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/ThunderCats+(1985).jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/ThunderCats+(1985).jpg",
+    "description": "From beyond any known galaxy, bringing with them the laws and ideals of their green planet, Thundera, come the ThunderCats!",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/ThunderCats+(1985).jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "ThunderCats (1985)",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/ThunderCats+(1985).mp4",
+    "year": 1985,
+    "networkid": 5
+  },
+  {
+    "id": 49,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/ThunderCats+(2011).jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/ThunderCats+(2011).jpg",
+    "description": "ThunderCats, ho! Warner Bros. Animation (WBA) is reimagining the 1980s animated action classic in an all-new animated series combining swords and science and boasting ferocious battles with the highes",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/ThunderCats+(2011).jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "ThunderCats (2011)",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/ThunderCats+(2011).mp4",
+    "year": 2011,
+    "networkid": 5
+  },
+  {
+    "id": 50,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Total+Drama+Island.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Total+Drama+Island.jpg",
+    "description": "The world's most hilarious reality show is BACK. No parents. No phones. No mercy.",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Total+Drama+Island.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "Total Drama Island",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Total+Drama+Island.mp4",
+    "year": 2023,
+    "networkid": 5
+  },
+  {
+    "id": 51,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Uncle+Grandpa.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Uncle+Grandpa.jpg",
+    "description": "Uncle Grandpa is a show about Uncle Grandpa, everyone in the world's magical uncle and grandpa, who travels around the world in an RV with his right-hand man, Belly Bag, a giant realistic flying tiger",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Uncle+Grandpa.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "Uncle Grandpa",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Uncle+Grandpa.mp4",
+    "year": 2015,
+    "networkid": 5
+  },
+  {
+    "id": 52,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Unikitty.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Unikitty.jpg",
+    "description": "Cartoon Network is transporting viewers to a joyous kingdom full of sparkle matter, happy thoughts and the occasional rage-out in Unikitty!",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Unikitty.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "Unikitty",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Unikitty.mp4",
+    "year": 2017,
+    "networkid": 5
+  },
+  {
+    "id": 53,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/Unikitty+en+Español.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/Unikitty+en+Español.jpg",
+    "description": "Como gobernante del reino, Unikitty está llena de tareas. Ella está muy interesada en asegurarse de que todos sean felices y de liberar al reino de la negatividad, junto con su hermano menor mitad per",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/Unikitty+en+Español.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "Unikitty en Español",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/Unikitty+en+Español.mp4",
+    "year": 2017,
+    "networkid": 5
+  },
+  {
+    "id": 54,
+    "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/We+Bare+Bears.jpg",
+    "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/We+Bare+Bears.jpg",
+    "description": "We Bare Bears is a comedy about three bear siblings named Grizzly, Panda and Ice Bear. Each episode follows their awkward attempts at integrating with the human world in the San Francisco Bay Area, wh",
+    "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/logo/We+Bare+Bears.jpg",
+    "rating": "5+",
+    "seasons": 0,
+    "title": "We Bare Bears",
+    "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/trailer/We+Bare+Bears.mp4",
+    "year": 2015,
+    "networkid": 5
+  }
+]
+
+# Database connection parameters
+config = {
+    'host': 'netflix-relational.cjqo6ywc0hfl.eu-west-3.rds.amazonaws.com',
+    'user': 'admin',
+    'password': 'password1234',
+    'database': 'netflix'
+}
+
+try:
+    # Connect to the database
+    connection = mysql.connector.connect(**config)
+    cursor = connection.cursor()
+
+    # Insert data
+    insert_query = """
+    INSERT INTO series (id, bgimage, cardimage, description, logoimage, rating, seasons, title, trailer, year, networkid)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+    ON DUPLICATE KEY UPDATE
+    bgimage = VALUES(bgimage),
+    cardimage = VALUES(cardimage),
+    description = VALUES(description),
+    logoimage = VALUES(logoimage),
+    rating = VALUES(rating),
+    seasons = VALUES(seasons),
+    title = VALUES(title),
+    trailer = VALUES(trailer),
+    year = VALUES(year),
+    networkid = VALUES(networkid);
+    """
+
+    # Iterate through data and insert
+    for series in series_data:
+        cursor.execute(insert_query, (
+            series['id'], series['bgimage'], series['cardimage'], series['description'], series['logoimage'],
+            series['rating'], series['seasons'], series['title'], series['trailer'], series['year'], series['networkid']
+        ))
+
+    # Commit the transaction
+    connection.commit()
+
+except Error as e:
+    print(f"Error: {e}")
+
+finally:
+    if connection.is_connected():
+        cursor.close()
+        connection.close()
