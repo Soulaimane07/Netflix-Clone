@@ -7,6 +7,7 @@ import { FaAngleRight } from "react-icons/fa6";
 import axios from 'axios';
 import Spinner from '../../../Components.js/Spinner';
 import { GoTop } from '../../../Components.js/Functions';
+import { BaseUrl } from '../../../Components.js/Variables';
 
 
 function Subscribe() {
@@ -61,7 +62,7 @@ function Subscribe() {
         setLoading(true)
         
         try {
-          const response = await axios.post('http://localhost:8080/api/v1/payments/', {
+          const response = await axios.post(`${BaseUrl}/payments/`, {
             productId: Products[key].productId,
             priceId: Products[key].priceId
           }, {
