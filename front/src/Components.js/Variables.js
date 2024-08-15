@@ -1,1 +1,1 @@
-export const BaseUrl = "https://netflix-loadbalancer-1411425398.eu-west-3.elb.amazonaws.com/api/v1"
+export const BaseUrl = "http://localhost:8080/api/v1"

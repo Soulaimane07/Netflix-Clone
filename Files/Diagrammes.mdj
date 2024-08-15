@@ -10974,7 +10974,7 @@
 									"font": "Arial;13;0",
 									"left": 1026.5,
 									"top": 541,
-									"width": 88.03173828125,
+									"width": 87,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGQ2yE8R2bI2nI="
@@ -15297,6 +15297,47 @@
 					"ownedViews": [
 						{
 							"_type": "AWSGroupView",
+							"_id": "AAAAAAGRTHeIEAxp/18=",
+							"_parent": {
+								"$ref": "AAAAAAGQ2yxp9J9VWM4="
+							},
+							"model": {
+								"$ref": "AAAAAAGRTHeIEAxnLVQ="
+							},
+							"subViews": [
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAGRTHeIEAxqwjM=",
+									"_parent": {
+										"$ref": "AAAAAAGRTHeIEAxp/18="
+									},
+									"lineColor": "#01A88D",
+									"font": "Arial;13;0",
+									"left": 378,
+									"top": 144,
+									"width": 908,
+									"height": 32,
+									"text": "Paris",
+									"horizontalAlignment": 0,
+									"wordWrap": true
+								}
+							],
+							"containerView": {
+								"$ref": "AAAAAAGQ2yyz95+rSW8="
+							},
+							"lineColor": "#01A88D",
+							"font": "Arial;13;0",
+							"containerChangeable": true,
+							"left": 336,
+							"top": 144,
+							"width": 960,
+							"height": 816,
+							"nameLabel": {
+								"$ref": "AAAAAAGRTHeIEAxqwjM="
+							}
+						},
+						{
+							"_type": "AWSGroupView",
 							"_id": "AAAAAAGQ2yyz95+rSW8=",
 							"_parent": {
 								"$ref": "AAAAAAGQ2yxp9J9VWM4="
@@ -15313,8 +15354,8 @@
 									},
 									"font": "Arial;13;0",
 									"left": 346,
-									"top": 104,
-									"width": 940,
+									"top": 112,
+									"width": 972,
 									"height": 32,
 									"text": "AWS Cloud",
 									"horizontalAlignment": 0,
@@ -15342,14 +15383,17 @@
 								},
 								{
 									"$ref": "AAAAAAGRDsgSupNy+jk="
+								},
+								{
+									"$ref": "AAAAAAGRTHeIEAxp/18="
 								}
 							],
 							"font": "Arial;13;0",
 							"containerChangeable": true,
 							"left": 304,
-							"top": 104,
-							"width": 992,
-							"height": 848,
+							"top": 112,
+							"width": 1024,
+							"height": 880,
 							"nameLabel": {
 								"$ref": "AAAAAAGQ2yyz95+sunk="
 							}
@@ -15373,7 +15417,7 @@
 									"lineColor": "#8C4FFF",
 									"font": "Arial;13;0",
 									"left": 522,
-									"top": 136,
+									"top": 176,
 									"width": 732,
 									"height": 32,
 									"text": "Virtual private cloud (VPC)",
@@ -15406,9 +15450,9 @@
 							"showShadow": false,
 							"containerChangeable": true,
 							"left": 480,
-							"top": 136,
+							"top": 176,
 							"width": 784,
-							"height": 784,
+							"height": 752,
 							"nameLabel": {
 								"$ref": "AAAAAAGRDseej5NokPI="
 							}
@@ -16735,385 +16779,361 @@
 					"name": "AWS Cloud",
 					"ownedElements": [
 						{
-							"_type": "AWSService",
-							"_id": "AAAAAAGQ20JFR6IuZrE=",
-							"_parent": {
-								"$ref": "AAAAAAGQ2yyz9p+pR3Q="
-							},
-							"name": "Amazon Route 53",
-							"ownedElements": [
-								{
-									"_type": "AWSArrow",
-									"_id": "AAAAAAGRDsQ0R5MAWY0=",
-									"_parent": {
-										"$ref": "AAAAAAGQ20JFR6IuZrE="
-									},
-									"source": {
-										"$ref": "AAAAAAGQ20JFR6IuZrE="
-									},
-									"target": {
-										"$ref": "AAAAAAGRDsMTgpLWdeU="
-									}
-								}
-							],
-							"icon": "Amazon-Route-53.svg"
-						},
-						{
-							"_type": "AWSService",
-							"_id": "AAAAAAGQ20RjHqJ4s2I=",
-							"_parent": {
-								"$ref": "AAAAAAGQ2yyz9p+pR3Q="
-							},
-							"name": "Amazon Simple Storage Service",
-							"icon": "Amazon-Simple-Storage-Service.svg"
-						},
-						{
-							"_type": "AWSService",
-							"_id": "AAAAAAGRDsMTgpLWdeU=",
-							"_parent": {
-								"$ref": "AAAAAAGQ2yyz9p+pR3Q="
-							},
-							"name": "Amazon CloudFront",
-							"ownedElements": [
-								{
-									"_type": "AWSArrow",
-									"_id": "AAAAAAGRDsQ+t5MJAUY=",
-									"_parent": {
-										"$ref": "AAAAAAGRDsMTgpLWdeU="
-									},
-									"source": {
-										"$ref": "AAAAAAGRDsMTgpLWdeU="
-									},
-									"target": {
-										"$ref": "AAAAAAGQ20RjHqJ4s2I="
-									}
-								},
-								{
-									"_type": "AWSArrow",
-									"_id": "AAAAAAGRDsVbh5MwS5E=",
-									"_parent": {
-										"$ref": "AAAAAAGRDsMTgpLWdeU="
-									},
-									"source": {
-										"$ref": "AAAAAAGRDsMTgpLWdeU="
-									},
-									"target": {
-										"$ref": "AAAAAAGQ20w5rqNFX6s="
-									}
-								}
-							],
-							"icon": "Amazon-CloudFront.svg"
-						},
-						{
-							"_type": "AWSService",
-							"_id": "AAAAAAGRDsbO95NWItY=",
-							"_parent": {
-								"$ref": "AAAAAAGQ2yyz9p+pR3Q="
-							},
-							"name": "Amazon ElastiCache",
-							"icon": "Amazon-ElastiCache.svg"
-						},
-						{
-							"_type": "AWSService",
-							"_id": "AAAAAAGRDsaLwJNMJD4=",
-							"_parent": {
-								"$ref": "AAAAAAGQ2yyz9p+pR3Q="
-							},
-							"name": "Amazon Keyspaces",
-							"icon": "Amazon-Keyspaces.svg"
-						},
-						{
 							"_type": "AWSGroup",
-							"_id": "AAAAAAGRDseej5NlJ3k=",
+							"_id": "AAAAAAGRTHeIEAxnLVQ=",
 							"_parent": {
 								"$ref": "AAAAAAGQ2yyz9p+pR3Q="
 							},
-							"name": "Virtual private cloud (VPC)",
+							"name": "Paris",
 							"ownedElements": [
 								{
-									"_type": "AWSService",
-									"_id": "AAAAAAGRDsihmJN72Jw=",
+									"_type": "AWSGroup",
+									"_id": "AAAAAAGRDseej5NlJ3k=",
 									"_parent": {
-										"$ref": "AAAAAAGRDseej5NlJ3k="
+										"$ref": "AAAAAAGRTHeIEAxnLVQ="
 									},
-									"name": "Amazon CloudWatch",
+									"name": "Virtual private cloud (VPC)",
 									"ownedElements": [
 										{
-											"_type": "AWSArrow",
-											"_id": "AAAAAAGRDs+lAJPtIvY=",
+											"_type": "AWSService",
+											"_id": "AAAAAAGRDsihmJN72Jw=",
 											"_parent": {
-												"$ref": "AAAAAAGRDsihmJN72Jw="
+												"$ref": "AAAAAAGRDseej5NlJ3k="
 											},
-											"source": {
-												"$ref": "AAAAAAGRDsihmJN72Jw="
-											},
-											"target": {
-												"$ref": "AAAAAAGQ20RjHqJ4s2I="
-											}
+											"name": "Amazon CloudWatch",
+											"ownedElements": [
+												{
+													"_type": "AWSArrow",
+													"_id": "AAAAAAGRDs+lAJPtIvY=",
+													"_parent": {
+														"$ref": "AAAAAAGRDsihmJN72Jw="
+													},
+													"source": {
+														"$ref": "AAAAAAGRDsihmJN72Jw="
+													},
+													"target": {
+														"$ref": "AAAAAAGQ20RjHqJ4s2I="
+													}
+												},
+												{
+													"_type": "AWSArrow",
+													"_id": "AAAAAAGRDs+02JP2HqU=",
+													"_parent": {
+														"$ref": "AAAAAAGRDsihmJN72Jw="
+													},
+													"source": {
+														"$ref": "AAAAAAGRDsihmJN72Jw="
+													},
+													"target": {
+														"$ref": "AAAAAAGQ20vYlqM6Rps="
+													}
+												},
+												{
+													"_type": "AWSArrow",
+													"_id": "AAAAAAGRDtfDUJSJseo=",
+													"_parent": {
+														"$ref": "AAAAAAGRDsihmJN72Jw="
+													},
+													"source": {
+														"$ref": "AAAAAAGRDsihmJN72Jw="
+													},
+													"target": {
+														"$ref": "AAAAAAGRDsbO95NWItY="
+													}
+												},
+												{
+													"_type": "AWSArrow",
+													"_id": "AAAAAAGRDtf8D5SUZlI=",
+													"_parent": {
+														"$ref": "AAAAAAGRDsihmJN72Jw="
+													},
+													"source": {
+														"$ref": "AAAAAAGRDsihmJN72Jw="
+													},
+													"target": {
+														"$ref": "AAAAAAGRDsaLwJNMJD4="
+													}
+												},
+												{
+													"_type": "AWSArrow",
+													"_id": "AAAAAAGRDtgLB5Sde9c=",
+													"_parent": {
+														"$ref": "AAAAAAGRDsihmJN72Jw="
+													},
+													"source": {
+														"$ref": "AAAAAAGRDsihmJN72Jw="
+													},
+													"target": {
+														"$ref": "AAAAAAGRDsYtMpNB9HU="
+													}
+												},
+												{
+													"_type": "AWSArrow",
+													"_id": "AAAAAAGRDtiEl5Sts2Q=",
+													"_parent": {
+														"$ref": "AAAAAAGRDsihmJN72Jw="
+													},
+													"source": {
+														"$ref": "AAAAAAGRDsihmJN72Jw="
+													},
+													"target": {
+														"$ref": "AAAAAAGQ20uRpqMwpTc="
+													}
+												}
+											],
+											"icon": "Amazon-CloudWatch.svg"
 										},
 										{
-											"_type": "AWSArrow",
-											"_id": "AAAAAAGRDs+02JP2HqU=",
+											"_type": "AWSService",
+											"_id": "AAAAAAGQ20w5rqNFX6s=",
 											"_parent": {
-												"$ref": "AAAAAAGRDsihmJN72Jw="
+												"$ref": "AAAAAAGRDseej5NlJ3k="
 											},
-											"source": {
-												"$ref": "AAAAAAGRDsihmJN72Jw="
-											},
-											"target": {
-												"$ref": "AAAAAAGQ20vYlqM6Rps="
-											}
+											"name": "Elastic Load Balancing",
+											"ownedElements": [
+												{
+													"_type": "AWSArrow",
+													"_id": "AAAAAAGRDsU7QpMehf0=",
+													"_parent": {
+														"$ref": "AAAAAAGQ20w5rqNFX6s="
+													},
+													"source": {
+														"$ref": "AAAAAAGQ20w5rqNFX6s="
+													},
+													"target": {
+														"$ref": "AAAAAAGQ20uRpqMwpTc="
+													}
+												},
+												{
+													"_type": "AWSArrow",
+													"_id": "AAAAAAGRDsVMf5Mn9zg=",
+													"_parent": {
+														"$ref": "AAAAAAGQ20w5rqNFX6s="
+													},
+													"source": {
+														"$ref": "AAAAAAGQ20w5rqNFX6s="
+													},
+													"target": {
+														"$ref": "AAAAAAGQ20vYlqM6Rps="
+													}
+												}
+											],
+											"icon": "Elastic-Load-Balancing.svg"
 										},
 										{
-											"_type": "AWSArrow",
-											"_id": "AAAAAAGRDtfDUJSJseo=",
+											"_type": "AWSService",
+											"_id": "AAAAAAGQ20uRpqMwpTc=",
 											"_parent": {
-												"$ref": "AAAAAAGRDsihmJN72Jw="
+												"$ref": "AAAAAAGRDseej5NlJ3k="
 											},
-											"source": {
-												"$ref": "AAAAAAGRDsihmJN72Jw="
-											},
-											"target": {
-												"$ref": "AAAAAAGRDsbO95NWItY="
-											}
+											"name": "Amazon EC2",
+											"ownedElements": [
+												{
+													"_type": "AWSArrow",
+													"_id": "AAAAAAGRDsxTvpOGAeo=",
+													"_parent": {
+														"$ref": "AAAAAAGQ20uRpqMwpTc="
+													},
+													"source": {
+														"$ref": "AAAAAAGQ20uRpqMwpTc="
+													},
+													"target": {
+														"$ref": "AAAAAAGRDsYtMpNB9HU="
+													}
+												},
+												{
+													"_type": "AWSArrow",
+													"_id": "AAAAAAGRDsxe0pOPnaM=",
+													"_parent": {
+														"$ref": "AAAAAAGQ20uRpqMwpTc="
+													},
+													"source": {
+														"$ref": "AAAAAAGQ20uRpqMwpTc="
+													},
+													"target": {
+														"$ref": "AAAAAAGRDsaLwJNMJD4="
+													}
+												},
+												{
+													"_type": "AWSArrow",
+													"_id": "AAAAAAGRDsxp55OYcDs=",
+													"_parent": {
+														"$ref": "AAAAAAGQ20uRpqMwpTc="
+													},
+													"source": {
+														"$ref": "AAAAAAGQ20uRpqMwpTc="
+													},
+													"target": {
+														"$ref": "AAAAAAGRDsbO95NWItY="
+													}
+												}
+											],
+											"icon": "Amazon-EC2.svg"
 										},
 										{
-											"_type": "AWSArrow",
-											"_id": "AAAAAAGRDtf8D5SUZlI=",
+											"_type": "AWSService",
+											"_id": "AAAAAAGQ20vYlqM6Rps=",
 											"_parent": {
-												"$ref": "AAAAAAGRDsihmJN72Jw="
+												"$ref": "AAAAAAGRDseej5NlJ3k="
 											},
-											"source": {
-												"$ref": "AAAAAAGRDsihmJN72Jw="
-											},
-											"target": {
-												"$ref": "AAAAAAGRDsaLwJNMJD4="
-											}
+											"name": "Amazon EC2",
+											"ownedElements": [
+												{
+													"_type": "AWSArrow",
+													"_id": "AAAAAAGRDsx4f5OhbPs=",
+													"_parent": {
+														"$ref": "AAAAAAGQ20vYlqM6Rps="
+													},
+													"source": {
+														"$ref": "AAAAAAGQ20vYlqM6Rps="
+													},
+													"target": {
+														"$ref": "AAAAAAGRDsYtMpNB9HU="
+													}
+												},
+												{
+													"_type": "AWSArrow",
+													"_id": "AAAAAAGRDsyC35OqxCM=",
+													"_parent": {
+														"$ref": "AAAAAAGQ20vYlqM6Rps="
+													},
+													"source": {
+														"$ref": "AAAAAAGQ20vYlqM6Rps="
+													},
+													"target": {
+														"$ref": "AAAAAAGRDsaLwJNMJD4="
+													}
+												},
+												{
+													"_type": "AWSArrow",
+													"_id": "AAAAAAGRDsyM55OzBaA=",
+													"_parent": {
+														"$ref": "AAAAAAGQ20vYlqM6Rps="
+													},
+													"source": {
+														"$ref": "AAAAAAGQ20vYlqM6Rps="
+													},
+													"target": {
+														"$ref": "AAAAAAGRDsbO95NWItY="
+													}
+												}
+											],
+											"icon": "Amazon-EC2.svg"
 										},
 										{
-											"_type": "AWSArrow",
-											"_id": "AAAAAAGRDtgLB5Sde9c=",
+											"_type": "AWSService",
+											"_id": "AAAAAAGRDsYtMpNB9HU=",
 											"_parent": {
-												"$ref": "AAAAAAGRDsihmJN72Jw="
+												"$ref": "AAAAAAGRDseej5NlJ3k="
 											},
-											"source": {
-												"$ref": "AAAAAAGRDsihmJN72Jw="
-											},
-											"target": {
-												"$ref": "AAAAAAGRDsYtMpNB9HU="
-											}
+											"name": "Amazon RDS",
+											"icon": "Amazon-RDS.svg"
 										},
 										{
-											"_type": "AWSArrow",
-											"_id": "AAAAAAGRDtiEl5Sts2Q=",
+											"_type": "AWSService",
+											"_id": "AAAAAAGQ20JFR6IuZrE=",
 											"_parent": {
-												"$ref": "AAAAAAGRDsihmJN72Jw="
+												"$ref": "AAAAAAGRDseej5NlJ3k="
 											},
-											"source": {
-												"$ref": "AAAAAAGRDsihmJN72Jw="
+											"name": "Amazon Route 53",
+											"ownedElements": [
+												{
+													"_type": "AWSArrow",
+													"_id": "AAAAAAGRDsQ0R5MAWY0=",
+													"_parent": {
+														"$ref": "AAAAAAGQ20JFR6IuZrE="
+													},
+													"source": {
+														"$ref": "AAAAAAGQ20JFR6IuZrE="
+													},
+													"target": {
+														"$ref": "AAAAAAGRDsMTgpLWdeU="
+													}
+												}
+											],
+											"icon": "Amazon-Route-53.svg"
+										},
+										{
+											"_type": "AWSService",
+											"_id": "AAAAAAGQ20RjHqJ4s2I=",
+											"_parent": {
+												"$ref": "AAAAAAGRDseej5NlJ3k="
 											},
-											"target": {
-												"$ref": "AAAAAAGQ20uRpqMwpTc="
-											}
+											"name": "Amazon Simple Storage Service",
+											"icon": "Amazon-Simple-Storage-Service.svg"
+										},
+										{
+											"_type": "AWSService",
+											"_id": "AAAAAAGRDsMTgpLWdeU=",
+											"_parent": {
+												"$ref": "AAAAAAGRDseej5NlJ3k="
+											},
+											"name": "Amazon CloudFront",
+											"ownedElements": [
+												{
+													"_type": "AWSArrow",
+													"_id": "AAAAAAGRDsQ+t5MJAUY=",
+													"_parent": {
+														"$ref": "AAAAAAGRDsMTgpLWdeU="
+													},
+													"source": {
+														"$ref": "AAAAAAGRDsMTgpLWdeU="
+													},
+													"target": {
+														"$ref": "AAAAAAGQ20RjHqJ4s2I="
+													}
+												},
+												{
+													"_type": "AWSArrow",
+													"_id": "AAAAAAGRDsVbh5MwS5E=",
+													"_parent": {
+														"$ref": "AAAAAAGRDsMTgpLWdeU="
+													},
+													"source": {
+														"$ref": "AAAAAAGRDsMTgpLWdeU="
+													},
+													"target": {
+														"$ref": "AAAAAAGQ20w5rqNFX6s="
+													}
+												}
+											],
+											"icon": "Amazon-CloudFront.svg"
+										},
+										{
+											"_type": "AWSService",
+											"_id": "AAAAAAGRDsbO95NWItY=",
+											"_parent": {
+												"$ref": "AAAAAAGRDseej5NlJ3k="
+											},
+											"name": "Amazon ElastiCache",
+											"icon": "Amazon-ElastiCache.svg"
+										},
+										{
+											"_type": "AWSService",
+											"_id": "AAAAAAGRDsaLwJNMJD4=",
+											"_parent": {
+												"$ref": "AAAAAAGRDseej5NlJ3k="
+											},
+											"name": "Amazon Keyspaces",
+											"icon": "Amazon-Keyspaces.svg"
+										},
+										{
+											"_type": "AWSService",
+											"_id": "AAAAAAGRDsgSupNwLSg=",
+											"_parent": {
+												"$ref": "AAAAAAGRDseej5NlJ3k="
+											},
+											"name": "AWS IAM Identity Center",
+											"icon": "AWS-IAM-Identity-Center.svg"
 										}
 									],
-									"icon": "Amazon-CloudWatch.svg"
-								},
-								{
-									"_type": "AWSService",
-									"_id": "AAAAAAGQ20w5rqNFX6s=",
-									"_parent": {
-										"$ref": "AAAAAAGRDseej5NlJ3k="
-									},
-									"name": "Elastic Load Balancing",
-									"ownedElements": [
-										{
-											"_type": "AWSArrow",
-											"_id": "AAAAAAGRDsU7QpMehf0=",
-											"_parent": {
-												"$ref": "AAAAAAGQ20w5rqNFX6s="
-											},
-											"source": {
-												"$ref": "AAAAAAGQ20w5rqNFX6s="
-											},
-											"target": {
-												"$ref": "AAAAAAGQ20uRpqMwpTc="
-											}
-										},
-										{
-											"_type": "AWSArrow",
-											"_id": "AAAAAAGRDsVMf5Mn9zg=",
-											"_parent": {
-												"$ref": "AAAAAAGQ20w5rqNFX6s="
-											},
-											"source": {
-												"$ref": "AAAAAAGQ20w5rqNFX6s="
-											},
-											"target": {
-												"$ref": "AAAAAAGQ20vYlqM6Rps="
-											}
-										}
-									],
-									"icon": "Elastic-Load-Balancing.svg"
-								},
-								{
-									"_type": "AWSService",
-									"_id": "AAAAAAGQ20uRpqMwpTc=",
-									"_parent": {
-										"$ref": "AAAAAAGRDseej5NlJ3k="
-									},
-									"name": "Amazon EC2",
-									"ownedElements": [
-										{
-											"_type": "AWSArrow",
-											"_id": "AAAAAAGRDsxTvpOGAeo=",
-											"_parent": {
-												"$ref": "AAAAAAGQ20uRpqMwpTc="
-											},
-											"source": {
-												"$ref": "AAAAAAGQ20uRpqMwpTc="
-											},
-											"target": {
-												"$ref": "AAAAAAGRDsYtMpNB9HU="
-											}
-										},
-										{
-											"_type": "AWSArrow",
-											"_id": "AAAAAAGRDsxe0pOPnaM=",
-											"_parent": {
-												"$ref": "AAAAAAGQ20uRpqMwpTc="
-											},
-											"source": {
-												"$ref": "AAAAAAGQ20uRpqMwpTc="
-											},
-											"target": {
-												"$ref": "AAAAAAGRDsaLwJNMJD4="
-											}
-										},
-										{
-											"_type": "AWSArrow",
-											"_id": "AAAAAAGRDsxp55OYcDs=",
-											"_parent": {
-												"$ref": "AAAAAAGQ20uRpqMwpTc="
-											},
-											"source": {
-												"$ref": "AAAAAAGQ20uRpqMwpTc="
-											},
-											"target": {
-												"$ref": "AAAAAAGRDsbO95NWItY="
-											}
-										}
-									],
-									"icon": "Amazon-EC2.svg"
-								},
-								{
-									"_type": "AWSService",
-									"_id": "AAAAAAGQ20vYlqM6Rps=",
-									"_parent": {
-										"$ref": "AAAAAAGRDseej5NlJ3k="
-									},
-									"name": "Amazon EC2",
-									"ownedElements": [
-										{
-											"_type": "AWSArrow",
-											"_id": "AAAAAAGRDsx4f5OhbPs=",
-											"_parent": {
-												"$ref": "AAAAAAGQ20vYlqM6Rps="
-											},
-											"source": {
-												"$ref": "AAAAAAGQ20vYlqM6Rps="
-											},
-											"target": {
-												"$ref": "AAAAAAGRDsYtMpNB9HU="
-											}
-										},
-										{
-											"_type": "AWSArrow",
-											"_id": "AAAAAAGRDsyC35OqxCM=",
-											"_parent": {
-												"$ref": "AAAAAAGQ20vYlqM6Rps="
-											},
-											"source": {
-												"$ref": "AAAAAAGQ20vYlqM6Rps="
-											},
-											"target": {
-												"$ref": "AAAAAAGRDsaLwJNMJD4="
-											}
-										},
-										{
-											"_type": "AWSArrow",
-											"_id": "AAAAAAGRDsyM55OzBaA=",
-											"_parent": {
-												"$ref": "AAAAAAGQ20vYlqM6Rps="
-											},
-											"source": {
-												"$ref": "AAAAAAGQ20vYlqM6Rps="
-											},
-											"target": {
-												"$ref": "AAAAAAGRDsbO95NWItY="
-											}
-										}
-									],
-									"icon": "Amazon-EC2.svg"
-								},
-								{
-									"_type": "AWSService",
-									"_id": "AAAAAAGRDsYtMpNB9HU=",
-									"_parent": {
-										"$ref": "AAAAAAGRDseej5NlJ3k="
-									},
-									"name": "Amazon RDS",
-									"icon": "Amazon-RDS.svg"
+									"icon": "Virtual-private-cloud-(VPC).svg"
 								}
 							],
-							"icon": "Virtual-private-cloud-(VPC).svg"
-						},
-						{
-							"_type": "AWSService",
-							"_id": "AAAAAAGRDsgSupNwLSg=",
-							"_parent": {
-								"$ref": "AAAAAAGQ2yyz9p+pR3Q="
-							},
-							"name": "AWS IAM Identity Center",
-							"icon": "AWS-IAM-Identity-Center.svg"
+							"icon": "Region.svg"
 						}
 					],
 					"icon": "AWS-Cloud.svg"
-				},
-				{
-					"_type": "AWSService",
-					"_id": "AAAAAAGQ2zuaxqGY1yM=",
-					"_parent": {
-						"$ref": "AAAAAAGQ2yxp9J9UoAg="
-					},
-					"name": "AWSService1",
-					"icon": "Amazon-EC2.svg"
-				},
-				{
-					"_type": "AWSService",
-					"_id": "AAAAAAGQ2zuwVqGl4t0=",
-					"_parent": {
-						"$ref": "AAAAAAGQ2yxp9J9UoAg="
-					},
-					"name": "AWSService2",
-					"icon": "Amazon-EC2.svg"
-				},
-				{
-					"_type": "AWSResource",
-					"_id": "AAAAAAGQ2zwZ7qHAhIk=",
-					"_parent": {
-						"$ref": "AAAAAAGQ2yxp9J9UoAg="
-					},
-					"name": "AWSResource1",
-					"icon": "Amazon-EC2_Instance.svg"
-				},
-				{
-					"_type": "AWSService",
-					"_id": "AAAAAAGQ20VJFqKCw6I=",
-					"_parent": {
-						"$ref": "AAAAAAGQ2yxp9J9UoAg="
-					},
-					"icon": "Amazon-EC2.svg"
 				},
 				{
 					"_type": "AWSGeneralResource",
@@ -21688,7 +21708,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGRDaerbqjXdZQ="
 					},
-					"name": "Role1"
+					"name": "Role1",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -21696,7 +21717,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGRDaerbqjXdZQ="
 					},
-					"name": "Role2"
+					"name": "Role2",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -21704,7 +21726,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGRDaerbqjXdZQ="
 					},
-					"name": "Role3"
+					"name": "Role3",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -21712,7 +21735,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGRDaerbqjXdZQ="
 					},
-					"name": "Role4"
+					"name": "Role4",
+					"type": ""
 				}
 			]
 		},
@@ -23706,7 +23730,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGRDetJnbIwfsA="
 					},
-					"name": "Role1"
+					"name": "Role1",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -23714,7 +23739,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGRDetJnbIwfsA="
 					},
-					"name": "Role2"
+					"name": "Role2",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -23722,7 +23748,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGRDetJnbIwfsA="
 					},
-					"name": "Role3"
+					"name": "Role3",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -23730,7 +23757,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGRDetJnbIwfsA="
 					},
-					"name": "Role4"
+					"name": "Role4",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -23738,7 +23766,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGRDetJnbIwfsA="
 					},
-					"name": "Role5"
+					"name": "Role5",
+					"type": ""
 				}
 			]
 		},
@@ -26235,7 +26264,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGRDfWRXLROHXs="
 					},
-					"name": "Role1"
+					"name": "Role1",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -26243,7 +26273,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGRDfWRXLROHXs="
 					},
-					"name": "Role2"
+					"name": "Role2",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -26251,7 +26282,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGRDfWRXLROHXs="
 					},
-					"name": "Role3"
+					"name": "Role3",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -26259,7 +26291,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGRDfWRXLROHXs="
 					},
-					"name": "Role4"
+					"name": "Role4",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -26267,7 +26300,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGRDfWRXLROHXs="
 					},
-					"name": "Role5"
+					"name": "Role5",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
