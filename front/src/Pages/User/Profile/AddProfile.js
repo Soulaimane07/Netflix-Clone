@@ -11,7 +11,7 @@ import { signout } from '../../../Components.js/Redux/Slices/UserSlice';
 
 function AddProfile() {
     useEffect(() => {
-        document.title = 'Disney+ | Register';
+        document.title = 'Movify | Register';
     }, []);
     
     const profiles = GetProfiles()

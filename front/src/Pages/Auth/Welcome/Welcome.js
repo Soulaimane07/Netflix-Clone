@@ -5,7 +5,7 @@ import Footer from '../../../Components.js/Footer'
 
 function Welcome() {
   useEffect(() => {
-    document.title = 'Disney+ | The greatest stories, all in one place';
+    document.title = 'Movify | The greatest stories, all in one place';
   }, []);
 
   return (
@@ -15,7 +15,7 @@ function Welcome() {
       <article className='min-h-screen text-center py-28 text-white'>
         <h1 className='text-4xl font-medium mb-3'> Watch the way you want </h1>
         <p className='text-xl font-medium opacity-80 mb-16'> Discover the world's greatest stories, all in one place. </p>
-        <img src='../assets/images/welcome_1.webp' alt="welcome-1"  className='w-2/3 mx-auto' />
+        <img src={'../assets/images/welcome_1.webp'} alt="welcome-1"  className='w-2/3 mx-auto' />
       </article>
       
       <article className='min-h-screen text-center py-28 text-white'>

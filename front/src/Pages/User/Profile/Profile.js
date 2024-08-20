@@ -5,19 +5,20 @@ import Profiles from './Profiles'
 import Footer from '../../../Components.js/Footer'
 import { GoTop } from '../../../Components.js/Functions'
 import Watchlist from './Watchlist'
+import { logo } from '../../../Components.js/Variables'
 
 function Profile() {
-    GoTop("Disney+ | The greatest stories, all in one place")
+    GoTop("Movify | The greatest stories, all in one place")
 
     const user = useSelector(state => state.user.user)
     const profile = useSelector(state => state.user.profile)
 
   return (
     <>
-        <div className='Header min-h-screen bg-primary pb-32 ' style={{ backgroundImage: `url(../assets/images/stars_bg.webp)`}}>
+        <div className='Header min-h-screen bg-primary pb-32 pt-1.5' style={{ backgroundImage: `url(../assets/images/stars_bg.webp)`}}>
             <div className=' bg-transparent transition-all  px-14 py-6 w-fit'>
                 <Link to="/" className=''>
-                    <img src='../assets/images/disney-plus-logo.webp' className='w-20 ' alt="logo" />
+                    <img src={logo} className='w-40' alt="logo" />
                 </Link>
             </div>
             

@@ -15342,6 +15342,9 @@
 								},
 								{
 									"$ref": "AAAAAAGRDsgSupNy+jk="
+								},
+								{
+									"$ref": "AAAAAAGRYf2/jO/AaYQ="
 								}
 							],
 							"font": "Arial;13;0",
@@ -16723,6 +16726,48 @@
 							"nameLabel": {
 								"$ref": "AAAAAAGRDtiEl5SwTu4="
 							}
+						},
+						{
+							"_type": "AWSServiceView",
+							"_id": "AAAAAAGRYf2/jO/AaYQ=",
+							"_parent": {
+								"$ref": "AAAAAAGQ2yxp9J9VWM4="
+							},
+							"model": {
+								"$ref": "AAAAAAGRYf2/i+++3yo="
+							},
+							"subViews": [
+								{
+									"_type": "NodeLabelView",
+									"_id": "AAAAAAGRYf2/jO/Bwpw=",
+									"_parent": {
+										"$ref": "AAAAAAGRYf2/jO/AaYQ="
+									},
+									"model": {
+										"$ref": "AAAAAAGRYf2/i+++3yo="
+									},
+									"font": "Arial;13;0",
+									"left": 318.909912109375,
+									"top": 707.5,
+									"width": 146.18017578125,
+									"height": 13,
+									"alpha": -1.5707963267948966,
+									"distance": 42,
+									"text": "AWS Certificate Manager"
+								}
+							],
+							"containerView": {
+								"$ref": "AAAAAAGQ2yyz95+rSW8="
+							},
+							"font": "Arial;13;0",
+							"containerChangeable": true,
+							"left": 368,
+							"top": 648,
+							"width": 48,
+							"height": 48,
+							"nameLabel": {
+								"$ref": "AAAAAAGRYf2/jO/Bwpw="
+							}
 						}
 					]
 				},
@@ -17076,6 +17121,15 @@
 							},
 							"name": "AWS IAM Identity Center",
 							"icon": "AWS-IAM-Identity-Center.svg"
+						},
+						{
+							"_type": "AWSService",
+							"_id": "AAAAAAGRYf2/i+++3yo=",
+							"_parent": {
+								"$ref": "AAAAAAGQ2yyz9p+pR3Q="
+							},
+							"name": "AWS Certificate Manager",
+							"icon": "AWS-Certificate-Manager.svg"
 						}
 					],
 					"icon": "AWS-Cloud.svg"
@@ -17138,6 +17192,15 @@
 						}
 					],
 					"icon": "Users.svg"
+				},
+				{
+					"_type": "AWSService",
+					"_id": "AAAAAAGRYf5cg+/I2nA=",
+					"_parent": {
+						"$ref": "AAAAAAGQ2yxp9J9UoAg="
+					},
+					"name": "AWSService3",
+					"icon": "Amazon-EC2.svg"
 				}
 			]
 		},
@@ -21688,7 +21751,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGRDaerbqjXdZQ="
 					},
-					"name": "Role1"
+					"name": "Role1",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -21696,7 +21760,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGRDaerbqjXdZQ="
 					},
-					"name": "Role2"
+					"name": "Role2",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -21704,7 +21769,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGRDaerbqjXdZQ="
 					},
-					"name": "Role3"
+					"name": "Role3",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -21712,7 +21778,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGRDaerbqjXdZQ="
 					},
-					"name": "Role4"
+					"name": "Role4",
+					"type": ""
 				}
 			]
 		},
@@ -23706,7 +23773,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGRDetJnbIwfsA="
 					},
-					"name": "Role1"
+					"name": "Role1",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -23714,7 +23782,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGRDetJnbIwfsA="
 					},
-					"name": "Role2"
+					"name": "Role2",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -23722,7 +23791,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGRDetJnbIwfsA="
 					},
-					"name": "Role3"
+					"name": "Role3",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -23730,7 +23800,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGRDetJnbIwfsA="
 					},
-					"name": "Role4"
+					"name": "Role4",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -23738,7 +23809,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGRDetJnbIwfsA="
 					},
-					"name": "Role5"
+					"name": "Role5",
+					"type": ""
 				}
 			]
 		},
@@ -26235,7 +26307,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGRDfWRXLROHXs="
 					},
-					"name": "Role1"
+					"name": "Role1",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -26243,7 +26316,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGRDfWRXLROHXs="
 					},
-					"name": "Role2"
+					"name": "Role2",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -26251,7 +26325,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGRDfWRXLROHXs="
 					},
-					"name": "Role3"
+					"name": "Role3",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -26259,7 +26334,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGRDfWRXLROHXs="
 					},
-					"name": "Role4"
+					"name": "Role4",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -26267,7 +26343,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGRDfWRXLROHXs="
 					},
-					"name": "Role5"
+					"name": "Role5",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",

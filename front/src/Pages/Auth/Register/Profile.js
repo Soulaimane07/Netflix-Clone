@@ -4,7 +4,7 @@ import Spinner from '../../../Components.js/Spinner';
 import { Link, useNavigate } from 'react-router-dom';
 import { GetProfiles } from '../../../Components.js/Functions';
 import axios from 'axios';
-import { BaseUrl } from '../../../Components.js/Variables';
+import { BaseUrl, logo } from '../../../Components.js/Variables';
 import Error from '../../../Components.js/Alerts/Error';
 import { setProfilee } from '../../../Components.js/Redux/Slices/UserSlice';
 import { useDispatch } from 'react-redux';
@@ -13,7 +13,7 @@ import { GoPlus } from 'react-icons/go';
 
 function Profile() {
     useEffect(() => {
-        document.title = 'Disney+ | Register';
+        document.title = 'Movify | Register';
     }, []);
     
     const profiles = GetProfiles()
@@ -76,7 +76,7 @@ function Profile() {
     <>
         <div className='Header min-h-screen bg-primary  items-center flex' style={{ backgroundImage: `url(../assets/images/stars_bg.webp)`}}>
             <Link to="/" className=' absolute top-10 px-10'>
-                <img src='../assets/images/disney-plus-logo.webp' className='w-20' alt="logo" />
+                <img src={logo} className='w-32' alt="logo" />
             </Link>
 
             <div className='mx-auto text-white bg-opacity-10 overflow-hidden'>

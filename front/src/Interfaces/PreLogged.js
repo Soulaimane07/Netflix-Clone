@@ -3,9 +3,6 @@ import AddProfile from '../Pages/User/Profile/AddProfile'
 import Hello from './Hello'
 
 function PreLogged() {
-    
-
-
   return (
     <BrowserRouter>
         <Routes>

@@ -5,7 +5,7 @@ import Network from '../../../Components.js/Networks/Network'
 import Footer from '../../../Components.js/Footer'
 
 function Networks() {
-   GoTop("Disney+ | The greatest stories, all in one place")
+   GoTop("Movify | The greatest stories, all in one place")
 
     const networks = GetNetworks()
     const [play, setPlay] = useState(false)

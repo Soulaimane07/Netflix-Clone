@@ -51,7 +51,7 @@ function Work() {
     }, [id, type]);
     
     GoTop()
-    document.title = `${content?.title}  - Disney+` 
+    document.title = `${content?.title}  - Movify` 
 
 
   return (

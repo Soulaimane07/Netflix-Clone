@@ -7,7 +7,7 @@ import { GenerateNumber, GetAllGenres, GetRanMovie, GoTop } from '../../../Compo
 import { useEffect, useState } from 'react';
 
 function Home() {
-    GoTop("Disney+ | More than you'd ever imagine")
+    GoTop("Movify | More than you'd ever imagine")
 
     const [work, setMovie] = useState({});
 

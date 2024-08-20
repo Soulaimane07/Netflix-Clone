@@ -4,12 +4,12 @@ import Footer from '../../../Components.js/Footer'
 import Spinner from '../../../Components.js/Spinner';
 import Error from '../../../Components.js/Alerts/Error';
 import axios from 'axios';
-import { BaseUrl } from '../../../Components.js/Variables';
+import { BaseUrl, logo } from '../../../Components.js/Variables';
 import Policies from '../Policies';
 
 function Signup() {
   useEffect(() => {
-    document.title = 'Disney+ | Register';
+    document.title = 'Movify | Register';
   }, []);
 
     const navigate = useNavigate()
@@ -56,7 +56,7 @@ function Signup() {
     <>
         <div className='Header min-h-screen bg-primary p-10 items-center' style={{ backgroundImage: `url(../assets/images/stars_bg.webp)`}}>
             <Link to="/">
-                <img src='../assets/images/disney-plus-logo.webp' className='w-20' alt="logo" />
+                <img src={logo} className='w-32' alt="logo" />
             </Link>
 
             <div className='w-3/12  mx-auto text-white'>

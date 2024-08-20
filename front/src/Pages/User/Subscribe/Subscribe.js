@@ -7,11 +7,11 @@ import { FaAngleRight } from "react-icons/fa6";
 import axios from 'axios';
 import Spinner from '../../../Components.js/Spinner';
 import { GoTop } from '../../../Components.js/Functions';
-import { BaseUrl } from '../../../Components.js/Variables';
+import { BaseUrl, logo } from '../../../Components.js/Variables';
 
 
 function Subscribe() {
-   GoTop("Disney+ | The greatest stories, all in one place")
+   GoTop("Movify | The greatest stories, all in one place")
 
     const Products = [
         {
@@ -95,7 +95,7 @@ function Subscribe() {
                     <IoCloseOutline size={50} />
                 </Link>
                 <Link to="/">
-                    <img src='../assets/images/disney-plus-logo.webp' className='w-20' alt="logo" />
+                    <img src={logo} className='w-32' alt="logo" />
                 </Link>
             </div>
 

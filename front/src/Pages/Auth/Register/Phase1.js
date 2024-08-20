@@ -1,17 +1,18 @@
 import React, { useEffect } from 'react'
 import Footer from '../../../Components.js/Footer';
 import { Link } from 'react-router-dom';
+import { logo } from '../../../Components.js/Variables';
 
 function Phase1() {
   useEffect(() => {
-    document.title = 'Disney+ | Subscribe Now';
+    document.title = 'Movify | Subscribe Now';
   }, []);
 
   return (
     <>
         <div className='Header min-h-screen bg-primary p-10 flex items-center' style={{ backgroundImage: `url(../assets/images/stars_bg.webp)`}}>
             <Link to="/" className=' absolute top-10'>
-                <img src='../assets/images/disney-plus-logo.webp' className='w-20' alt="logo" />
+                <img src={logo} className='w-32' alt="logo" />
             </Link>
             <div className='w-3/12  mx-auto text-white text-center'>
               <h2 className=' opacity-70'>STEP 1 OF 3</h2>

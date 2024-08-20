@@ -1,6 +1,7 @@
 import { Link, NavLink } from 'react-router-dom'
 import SearchBox from './SearchBox'
 import Profile from './Profile'
+import { logo } from '../../../Components.js/Variables'
 
 function Navbar() {
     const links = [
@@ -22,7 +23,7 @@ function Navbar() {
     <nav className={`top-0 GradientBottm transition-all z-50 flex items-center px-14 py-5 fixed w-full justify-between`}>
         <div className='flex items-center space-x-10'>
             <Link to="/browse">
-                <img src="../assets/images/disney-plus-logo.webp" alt='logo' className='w-20' />
+                <img src={logo} alt='logo' className='w-40' />
             </Link>
 
             <ul className='text-white space-x-6'>

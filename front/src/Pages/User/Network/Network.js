@@ -7,7 +7,7 @@ import Footer from '../../../Components.js/Footer'
 import Work from '../../../Components.js/Work/Work'
 
 function Network() {
-   GoTop("Disney+ | The greatest stories, all in one place")
+   GoTop("Movify | The greatest stories, all in one place")
 
     let {id} = useParams()
     let network = GetNetworkWorks(id)

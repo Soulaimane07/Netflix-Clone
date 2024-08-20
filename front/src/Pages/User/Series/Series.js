@@ -7,7 +7,7 @@ import GendresVer from '../../../Components.js/Gendres/GendresVer'
 import { GenerateNumber, GetRanSerie, GetSeriesGenres, GoTop } from '../../../Components.js/Functions'
 
 function Series() {
-  GoTop("Disney+ | Watch Hit TV Series")
+  GoTop("Movify | Watch Hit TV Series")
 
   const [serie, setSerie] = useState({});
 

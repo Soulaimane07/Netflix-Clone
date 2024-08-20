@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Footer from '../../../Components.js/Footer'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import { BaseUrl } from '../../../Components.js/Variables'
+import { BaseUrl, logo } from '../../../Components.js/Variables'
 import { useDispatch } from 'react-redux'
 import { login } from '../../../Components.js/Redux/Slices/UserSlice'
 import Spinner from '../../../Components.js/Spinner'
@@ -11,7 +11,7 @@ import Policies from '../Policies'
 
 function Login() {
     useEffect(() => {
-        document.title = 'Disney+ | Login';
+        document.title = 'Movify | Login';
     }, []);
 
     const dispatch = useDispatch()
@@ -56,7 +56,7 @@ function Login() {
     <>
         <div className='Header min-h-screen bg-primary p-10' style={{ backgroundImage: `url(../assets/images/stars_bg.webp)`}}>
             <Link to="/">
-                <img src='../assets/images/disney-plus-logo.webp' className='w-20' alt="logo" />
+                <img src={logo} className='w-32' alt="logo" />
             </Link>
             
             <div className='w-3/12 mt-20  mx-auto text-white'>

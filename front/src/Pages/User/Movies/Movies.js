@@ -7,7 +7,7 @@ import GendresVer from '../../../Components.js/Gendres/GendresVer'
 import { GenerateNumber, GetMoviesGenres, GetRanMovie, GoTop } from '../../../Components.js/Functions'
 
 function Movies() {
-  GoTop("Disney+ | Stream Blockbuster Movies")
+  GoTop("Movify | Stream Blockbuster Movies")
 
   const [movie, setMovie] = useState({});
 

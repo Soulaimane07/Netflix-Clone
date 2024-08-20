@@ -5,7 +5,7 @@ import Footer from '../../../Components.js/Footer'
 import { useState } from 'react'
 
 function Gendres() {
-  GoTop("Disney+ | More than you'd ever imagine")
+  GoTop("Movify | More than you'd ever imagine")
 
     const gendres = GetGendres()
     const [hover, setHover] = useState(false)
