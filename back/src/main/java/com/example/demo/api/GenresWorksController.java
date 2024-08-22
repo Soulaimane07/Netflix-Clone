@@ -19,7 +19,7 @@ import com.example.demo.model.Series;
 
 @RequestMapping("api/v1/genres")
 @RestController
-@CrossOrigin(origins = {"http://localhost:3000", "https://d2m89m1u95dfaf.cloudfront.net", "https://d2egxremnzf4q5.cloudfront.net"})
+@CrossOrigin(origins = {"http://localhost:3000", "https://d2m89m1u95dfaf.cloudfront.net", "https://d4aycj34v9pph.cloudfront.net"})
 public class GenresWorksController {
     @Autowired
     private SerieRepo serieRepo;

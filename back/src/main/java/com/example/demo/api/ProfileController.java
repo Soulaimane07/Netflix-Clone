@@ -22,7 +22,7 @@ import com.example.demo.model.Profile;
 
 @RequestMapping("api/v1/profiles")
 @RestController
-@CrossOrigin(origins = {"http://localhost:3000", "https://d2m89m1u95dfaf.cloudfront.net", "https://d2egxremnzf4q5.cloudfront.net"})
+@CrossOrigin(origins = {"http://localhost:3000", "https://d2m89m1u95dfaf.cloudfront.net", "https://d4aycj34v9pph.cloudfront.net"})
 public class ProfileController {
     @Autowired
     ProfileRepo repo;
