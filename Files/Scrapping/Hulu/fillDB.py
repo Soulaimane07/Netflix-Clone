@@ -5,7 +5,17 @@ import mysql.connector
 
 
 
-
+def download_image(url, save_path):
+    try:
+        response = requests.get(url)
+        if response.status_code == 200:
+            with open(save_path, 'wb') as f:
+                f.write(response.content)
+            print(f"Image downloaded successfully and saved at: {save_path}")
+        else:
+            print(f"Failed to download image. Status code: {response.status_code}")
+    except Exception as e:
+        print(f"An error occurred: {e}")
 
 
 
@@ -87,7 +97,9 @@ def ScrappingData(url):
             details_url = details_element.get('href') if details_element else None
 
             if True: 
-                newName = title.replace(' ', '+')
+                newName = title.replace(' ', ' ')
+                
+                # download_image(cardimage_src, f"./Hulu/cards/{newName}.jpg")
                 
                 ScrappingDetails({
                     'name': title,
@@ -118,6 +130,25 @@ def ScrappingDetails(data, url, newName):
         year_element = moviedetails.find('span', class_="DetailEntityMetadata__tags css-10pktn0")
         year = year_element.get_text(strip=True) if year_element else None
 
+
+
+        bgimage_element = moviedetails.find('picture', class_="DetailEntityBackground__picture")
+        bgimage_element = bgimage_element.find('source')
+        bgimage_url = bgimage_element.get('srcset') if bgimage_element else None
+
+        parts = bgimage_url.split(',')
+        first_part = parts[0].strip().split(' ')[0]
+        download_image(first_part, f"./Hulu/bg/{data["name"]}.jpg")
+        
+        logoimage_element = moviedetails.find('picture', class_="DetailEntityMasthead__title-art__image")
+        if logoimage_element : 
+            logoimage_element = logoimage_element.find('img')
+            logoimage_url = logoimage_element.get('src') if logoimage_element else None
+            download_image(logoimage_url, f"./Hulu/logo/{data["name"]}.jpg")
+            print()
+
+
+
         work = {
             "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/bg/" + newName + ".jpg",
             "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/series/card/" + newName + ".jpg",
@@ -134,9 +165,13 @@ def ScrappingDetails(data, url, newName):
             ]
         }
 
+        # download_image(cardimage_src, './bg/')
+        # download_image(cardimage_src, './logo/')
+
+
         # print()
         # print(work)
-        insert_Data(work)
+        # insert_Data(work)
     else:
         print(f'Failed to retrieve the webpage: {response.status_code}')
 
