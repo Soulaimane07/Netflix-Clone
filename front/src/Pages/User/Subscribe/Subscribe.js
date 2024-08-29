@@ -89,9 +89,9 @@ function Subscribe() {
 
   return (
     <>
-        <div className='bg-primary min-h-screen pb-32'>
+        <div className=' text-mywhite bg-primary min-h-screen pb-32'>
             <div className='flex items-center space-x-10 px-20 py-10'>
-                <Link to={"/profile"} className=' opacity-80 hover:scale-110 hover:opacity-100 transition-all text-white flex items-center'>
+                <Link to={"/profile"} className=' opacity-80 hover:scale-110 hover:opacity-100 transition-all  flex items-center'>
                     <IoCloseOutline size={50} />
                 </Link>
                 <Link to="/">
@@ -99,7 +99,7 @@ function Subscribe() {
                 </Link>
             </div>
 
-            <div  className='text-white  flex '>
+            <div  className='  flex '>
                 <div className='flex w-full   Sub' style={{ backgroundImage: `url(../assets/images/login-bg.png)`}}>
                     <div className='w-full SubscribeGrad pt-10'>
                         <h1 className=' bg-primary px-20 text-4xl font-medium'> Subscribe now and start streaming </h1>
@@ -126,7 +126,7 @@ function Subscribe() {
                             </button>
                         ))}
                     </div>
-                    <button onClick={()=> handlePayment(product)} className='bg-blue-600 mt-10 hover:scale-105 hover:bg-blue-500 w-full rounded-md py-4 text-lg font-medium flex justify-center space-x-4 items-center transition-all'>
+                    <button onClick={()=> handlePayment(product)} className='bg-myorange mt-10 hover:scale-105 w-full rounded-md py-4 text-lg font-medium flex justify-center space-x-4 items-center transition-all'>
                         {!loading ? <>Continue <FaAngleRight className='ml-4' /></> : <Spinner />}
                     </button>
                     

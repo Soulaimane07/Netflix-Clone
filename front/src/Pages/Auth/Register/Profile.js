@@ -11,7 +11,7 @@ import { useDispatch } from 'react-redux';
 import { logProfile } from '../../../Components.js/Redux/Slices/ProfileSlice';
 import { GoPlus } from 'react-icons/go';
 
-function Profile() {
+function Profile({auth}) {
     useEffect(() => {
         document.title = 'Movify | Register';
     }, []);
@@ -74,12 +74,12 @@ function Profile() {
 
   return (
     <>
-        <div className='Header min-h-screen bg-primary  items-center flex' style={{ backgroundImage: `url(../assets/images/stars_bg.webp)`}}>
+        <div className='Header min-h-screen text-mywhite bg-primary  items-center flex' style={{ backgroundImage: `url(../assets/images/stars_bg.webp)`}}>
             <Link to="/" className=' absolute top-10 px-10'>
                 <img src={logo} className='w-32' alt="logo" />
             </Link>
 
-            <div className='mx-auto text-white bg-opacity-10 overflow-hidden'>
+            <div className='mx-auto bg-opacity-10 overflow-hidden'>
               <h2 className=' opacity-70 text-center mb-4'>STEP 3 OF 3</h2>
 
               <form onSubmit={Submit} className='mb-10 w-full'>
@@ -92,18 +92,20 @@ function Profile() {
                                 <img src={item.image} className='w-40' alt='profile' /> 
                             </li>
                         ))}
-                        <Link to={"add-profile"} className={"hover:scale-105 transition-all flex flex-col opacity-70 hover:opacity-90"}> 
-                            <span className='p-8 cursor-pointer rounded-full border-2 '>
-                                <GoPlus size={40} className=' ' />
-                            </span>
-                        </Link>
+                        {!auth && 
+                            <Link to={"add-profile"} className={"hover:scale-105 transition-all flex flex-col opacity-70 hover:opacity-90"}> 
+                                <span className='p-8 cursor-pointer rounded-full border-2 '>
+                                    <GoPlus size={40} className=' ' />
+                                </span>
+                            </Link>
+                        }
                     </ul>
                     <div className='flex flex-col w-3/12 mx-auto mt-6 space-y-2 mb-8'>
                         <label> Profile name </label>
                         <input onChange={(e)=> setName(e.target.value)} placeholder='' type='text' className={`${error ? 'ring-red-500 ring-2 border-transparent' : 'ring-0'}  ring transition-all outline-none text-md bg-transparent border border-white border-opacity-40 rounded-md py-2 px-4`} />
                     </div> 
 
-                    <button disabled={cond || error} className={`${cond || error ? 'opacity-60' : 'opacity-100 hover:scale-105'} w-3/12 mx-auto flex justify-center items-center transition-all bg-blue-600 text-white px-12 py-3 rounded-md`}> 
+                    <button disabled={cond || error} className={`${cond || error ? 'opacity-60' : 'opacity-100 hover:scale-105'} w-3/12 mx-auto flex justify-center items-center transition-all bg-myorange px-12 py-3 rounded-md`}> 
                         {loading 
                             ?   <Spinner />
                             :   <span> Create </span>

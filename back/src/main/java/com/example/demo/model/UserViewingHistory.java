@@ -27,7 +27,11 @@ public class UserViewingHistory {
     @Column("duration_watched")
     private Duration durationWatched;
 
-    // Getters and Setters
+
+
+
+
+
     public Integer getId() {
         return id;
     }

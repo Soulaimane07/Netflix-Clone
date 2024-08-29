@@ -55,10 +55,10 @@ function Work() {
 
 
   return (
-    <div className=' bg-primary min-h-screen'>
+    <div className='text-mywhite bg-primary min-h-screen'>
       <Navbar />
 
-      <div className='text-white pb-32'>
+      <div className=' pb-32'>
         <Header item={content} type={type} />
 
         <> 

@@ -15,10 +15,10 @@ function Networks() {
     
 
   return (
-    <div className=' bg-primary min-h-screen'>
+    <div className=' text-mywhite bg-primary min-h-screen'>
         <Navbar />
 
-        <div className='text-white pt-14 min-h-screen pb-32'>
+        <div className='pt-14 min-h-screen pb-32'>
             <h1 className='GradHeder text-center font-bold text-5xl sticky pt-20 pb-10 top-0 z-10 '> Networks </h1>
 
             <div className='grid grid-cols-4 px-40 justify-center items-center gap-4 mt-10'>

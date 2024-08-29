@@ -5,7 +5,10 @@ module.exports = {
     extend: {
       colors: {
         primary: '#0f1014',
-        button: '#0F1014',
+        mywhite: '#F8EDED',
+        myorange: '#FF8225',
+        myred: '#B43F3F', 
+        myblue: '#173B45',
       },
     },
   },

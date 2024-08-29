@@ -7,13 +7,11 @@ function Networks() {
     const [play, setPlay] = useState(false)
 
   return (
-    <div>
-        <ul className='flex items-stretch space-x-3 px-16 mt-4'>
-            {networks?.map((item,key)=>(
-                <Network play={play} setPlay={setPlay} item={item} id={key} key={key} />
-            ))}    
-        </ul>
-    </div>
+      <ul className='SCROLL mt-1 px-16 flex space-x-3 overflow-hidden overflow-x-scroll py-6 pt-2 scroll-smooth'>
+          {networks?.map((item,key)=>(
+              <Network play={play} setPlay={setPlay} item={item} id={key} key={key} />
+          ))}    
+      </ul>
   )
 }
 

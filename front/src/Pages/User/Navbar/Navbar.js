@@ -26,7 +26,7 @@ function Navbar() {
                 <img src={logo} alt='logo' className='w-40' />
             </Link>
 
-            <ul className='text-white space-x-6'>
+            <ul className='space-x-6'>
                 {links.map((item, key) => (
                     <NavLink
                         to={item.link}

@@ -15,7 +15,7 @@ function Auth() {
             <Route path='/register'>
               <Route index element={<Phase1 />} />
               <Route path='signup' element={<Signup />} />
-              <Route path='profile' element={<Profile />} />
+              <Route path='profile' element={<Profile auth={true} />} />
             </Route>
             <Route path='/*' element={<Navigate to="/" replace={true} />} />
         </Routes>

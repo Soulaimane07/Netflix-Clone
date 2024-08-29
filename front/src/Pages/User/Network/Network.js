@@ -13,10 +13,10 @@ function Network() {
     let network = GetNetworkWorks(id)
 
   return (
-    <div className=' bg-primary min-h-screen'>
+    <div className=' text-mywhite bg-primary min-h-screen'>
         <Navbar />
 
-        <div className='text-white min-h-screen pb-32'>
+        <div className='min-h-screen pb-32'>
             <Header network={network.network} />
 
             <div className=' grid grid-cols-4 px-40 gap-4 mt-14'>

@@ -7,7 +7,7 @@ function Header({user}) {
     const dispatch = useDispatch()
 
   return (
-    <div className='text-white px-16 flex items-center justify-between'>
+    <div className='text-mywhite px-16 flex items-center justify-between'>
         <div>
             <h1 className='font-bold text-3xl'> {user.fname} {user.lname} </h1>
             <p className=' opacity-60 mt-2 text-xl'> {user.email} </p>
@@ -17,7 +17,7 @@ function Header({user}) {
             <button className='hover:scale-110 transition-all'>
                 <Link 
                     to="/subscribe"
-                    className='bg-blue-600 hover:bg-blue-500 transition-all px-20 py-3 font-medium rounded-md'
+                    className='bg-myorange hover:bg-myorange transition-all px-20 py-3 font-medium rounded-md'
                     > 
                     Subscribe
                 </Link>

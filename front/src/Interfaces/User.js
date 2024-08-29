@@ -39,7 +39,7 @@ function User() {
               <Route index element={<Movies />} />
             </Route>
             <Route path='/profile' element={<Profile />} />
-            <Route path='/profile/add-profile' element={<AddProfile />} />
+            <Route path='/profile/add-profile' element={<AddProfile auth={false} />} />
             <Route path='/subscribe' element={<Subscribe />} />
             <Route path='/*' element={<Navigate to="/browse" replace={true} />} />
         </Routes>

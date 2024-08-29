@@ -30,10 +30,10 @@ function Home() {
     let works = GetAllGenres()
 
   return (
-    <div className=' bg-primary min-h-screen'>
+    <div className='text-mywhite bg-primary min-h-screen'>
       <Navbar />
 
-      <div className='text-white pb-32'>
+      <div className='pb-32'>
         <Header item={work} type={work?.video ? 'movie' : 'serie'} />
         
         <div className='min-h-screen'> 

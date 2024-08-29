@@ -137,9 +137,9 @@ function Header({item, type}) {
                 <img src={item?.logoimage} alt='logo' className='w-full slide-up-element' />
                 <div className='flex space-x-2 items-center mt-14 slide-up-element '>
                     <p className='opacity-80'> {item?.year} </p> <FaCircle size={6} className='opacity-80' />
-                    <p className=' bg-white bg-opacity-30 text-opacity-80 rounded-sm px-1 text-white'> {item?.rating} </p> <FaCircle size={6} className='opacity-80' />
+                    <p className=' bg-white bg-opacity-30 text-opacity-80 rounded-sm px-1'> {item?.rating} </p> <FaCircle size={6} className='opacity-80' />
                     <p className='opacity-80'> {type === "movie" ? duration : item?.seasons + " Seasons"} </p> <FaCircle size={6} className='opacity-80' />
-                    <Link to={`/networks/${item?.network?.id}`} className='hover:text-blue-400 opacity-80 hover:opacity-100 hover:scale-105 transition-all'> {item?.network?.name} </Link> 
+                    <Link to={`/networks/${item?.network?.id}`} className='hover:text-myorange opacity-80 hover:opacity-100 hover:scale-105 transition-all'> {item?.network?.name} </Link> 
                 </div>
                 <p className='mt-6 opacity-80 slide-up-element'>
                     {item?.description}
@@ -147,7 +147,7 @@ function Header({item, type}) {
                 <div className='flex space-x-2 slide-up-element items-center mt-6'>
                     {item?.genres?.map((genre, key) => (
                         <div key={key} className='flex items-center transition-all'>
-                            <Link to={`/gendres/${genre?.id}`} className='hover:opacity-100 transition-all opacity-80 hover:text-blue-400 hover:scale-105'>
+                            <Link to={`/gendres/${genre?.id}`} className='hover:opacity-100 transition-all opacity-80 hover:text-myorange hover:scale-105'>
                                 {genre?.title}
                             </Link>
                             {key !== item?.genres?.length - 1 && <PiLineVertical size={22} />}

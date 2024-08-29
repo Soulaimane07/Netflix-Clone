@@ -7,7 +7,7 @@ function PreLogged() {
     <BrowserRouter>
         <Routes>
             <Route path='/' element={<Hello />} />
-            <Route path='/add-profile' element={<AddProfile />} />
+            <Route path='/add-profile' element={<AddProfile auth={false} />} />
             <Route path='/*' element={<Navigate to="/" replace={true} />} />
         </Routes>
     </BrowserRouter>
