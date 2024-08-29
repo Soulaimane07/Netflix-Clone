@@ -55,11 +55,14 @@ public class Series {
     @JoinColumn(name="networkid")
     private Network network;
 
+    @ManyToMany
+    private List<Actor> actors;
+
 
     public Series() {
     }
 
-    public Series(String title, String logoimage, String cardimage, String bgimage, String rating, String desc, int year, int seasons, String trailer, List<Gendre> genre, Network network){
+    public Series(String title, String logoimage, String cardimage, String bgimage, String rating, String desc, int year, int seasons, String trailer, List<Gendre> genre, List<Actor> actors, Network network){
         super();
         this.title = title;
         this.logoimage = logoimage;
@@ -72,5 +75,6 @@ public class Series {
         this.year = year;
         this.description = desc;
         this.seasons = seasons;
+        this.actors = actors;
     }
 }

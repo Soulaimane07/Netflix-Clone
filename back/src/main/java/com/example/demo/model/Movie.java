@@ -55,10 +55,14 @@ public class Movie {
     @JoinColumn(name="networkid")
     private Network network;
 
+    @ManyToMany
+    private List<Actor> actors;
+
+
     public Movie() {
     }
 
-    public Movie(String title, String logoimage, String cardimage, String bgimage, String rating, String desc, int year, String trailer, String video, List<Gendre> genre, Network network){
+    public Movie(String title, String logoimage, String cardimage, String bgimage, String rating, String desc, int year, String trailer, String video, List<Gendre> genre, List<Actor> actors, Network network){
         super();
         this.title = title;
         this.logoimage = logoimage;
@@ -70,11 +74,16 @@ public class Movie {
         this.genres = genre;
         this.network = network;
         this.year = year;
+        this.actors = actors;
         this.description = desc;
     }
 
     public void setGenres(List<Gendre> genres){
         this.genres = genres;
+    }
+
+    public void setActors(List<Actor> actors){
+        this.actors = actors;
     }
     
 }
