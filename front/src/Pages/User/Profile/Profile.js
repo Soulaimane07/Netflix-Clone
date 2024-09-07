@@ -6,6 +6,7 @@ import Footer from '../../../Components.js/Footer'
 import { GoTop } from '../../../Components.js/Functions'
 import Watchlist from './Watchlist'
 import { logo } from '../../../Components.js/Variables'
+import ViewingHistory from './ViewingHistory'
 
 function Profile() {
     GoTop("Movify | The greatest stories, all in one place")
@@ -26,6 +27,7 @@ function Profile() {
                 <Header user={user} />
                 <Profiles user={user} profilee={profile} />
                 <Watchlist />
+                <ViewingHistory profile={profile?.id} />
             </div>
         </div>
         <Footer />

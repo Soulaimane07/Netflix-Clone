@@ -7,7 +7,6 @@ function GendresVer({data}) {
   return (
     <ul className='items-stretch '>
         {data?.map((item,key)=>(
-          ((item?.movies && item?.movies.length > 0) || (item?.series && item?.series.length > 0)) &&
             <div key={key} className='mt-10'>
               <div className='flex ListTitle relative items-center w-full space-x-4 px-16 pb-1 mb-2'>
                 <Link to={`/gendres/${item?.gendre?.id}`} className='flex space-x-6'>
@@ -15,14 +14,11 @@ function GendresVer({data}) {
                   <span className=' transition-all mt-2 text-md text-gray-400 flex items-end'> See more <FaAngleRight className='mb-0.5 ml-1 icon' /> </span>
                 </Link>
               </div>
-                <ul className='SCROLL mt-1 px-16 flex space-x-3 overflow-hidden overflow-x-scroll py-6 pt-2 scroll-smooth '>
-                    {item.movies?.map((item,key)=>(
-                      key < 10 && <Work item={item} key={key} />
-                    ))}
-                    {item.series?.map((item,key)=>(
-                      key < 10 && <Work item={item} key={key} />
-                    ))}
-                </ul>
+              <ul className='SCROLL mt-1 px-16 flex space-x-3 overflow-hidden overflow-x-scroll py-6 pt-2 scroll-smooth '>
+                  {item?.works?.map((item,key)=>(
+                    <Work item={item} key={key} />
+                  ))}
+              </ul>
             </div>
         ))}    
     </ul>

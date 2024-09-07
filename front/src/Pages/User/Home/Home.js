@@ -5,6 +5,7 @@ import Footer from '../../../Components.js/Footer';
 import GendresVer from '../../../Components.js/Gendres/GendresVer';
 import { GenerateNumber, GetAllGenres, GetRanMovie, GoTop } from '../../../Components.js/Functions';
 import { useEffect, useState } from 'react';
+import List from '../../../Components.js/Gendres/List';
 
 function Home() {
     GoTop("Movify | More than you'd ever imagine")
@@ -38,6 +39,7 @@ function Home() {
         
         <div className='min-h-screen'> 
           <Networks />
+          <List />
           <GendresVer data={works} />
         </div>
       </div>

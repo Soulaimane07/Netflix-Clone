@@ -6,9 +6,9 @@ import { GetProfiles } from '../../../Components.js/Functions';
 import axios from 'axios';
 import { BaseUrl, logo } from '../../../Components.js/Variables';
 import Error from '../../../Components.js/Alerts/Error';
-import { setProfilee } from '../../../Components.js/Redux/Slices/UserSlice';
+import { login, prelog, setProfilee } from '../../../Components.js/Redux/Slices/UserSlice';
 import { useDispatch } from 'react-redux';
-import { logProfile } from '../../../Components.js/Redux/Slices/ProfileSlice';
+import { logProfile, setProfiles } from '../../../Components.js/Redux/Slices/ProfileSlice';
 import { GoPlus } from 'react-icons/go';
 
 function Profile({auth}) {
@@ -33,21 +33,21 @@ function Profile({auth}) {
         setError(false)
     }, [profile, name])
 
+
     const Submit = (e) => {
         e.preventDefault()
         setLoading(true)
         setError(false)
         
-        let user = JSON.parse(localStorage.getItem("Disney-user"))
+        let user = JSON.parse(localStorage.getItem("movify-user"))
 
         axios.post(`${BaseUrl}/userprofiles`, {user, profile, name})
             .then(res => {
                 if (res.status === 201) {
-                    console.log(res.data);
-                    localStorage.setItem("Disney-user-profile", JSON.stringify(res.data))
-                    navigate("/browse")
+                    dispatch(prelog(user))
+                    dispatch(login(res.data))
                     dispatch(logProfile(res.data))
-                    dispatch(setProfilee(res.data))
+                    navigate("/browse")
                 } else {
                     setLoading(false)
                     setError(true)

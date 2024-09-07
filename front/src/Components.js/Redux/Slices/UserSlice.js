@@ -9,29 +9,32 @@ export const userSlice = createSlice({
     logged: false
   },
   reducers: {
-    login: (state, action) => {
-      state.user = action.payload.person || action.payload
-      localStorage.setItem('Disney-user', JSON.stringify(state.user))
+    prelog: (state, action) => {
+      state.user = action.payload
+      localStorage.setItem('movify-user', JSON.stringify(state.user))
       state.preLogged = true
     },
-    setProfilee: (state, action) => {
+    login: (state, action) => {
       state.profile = action.payload
-      localStorage.setItem('Disney-user-profile', JSON.stringify(state.profile))
+      localStorage.setItem('movify-user-profile', JSON.stringify(state.profile))
       state.logged = true
     },
     logout: (state) => {
       state.user = null
-      localStorage.removeItem('Disney-user')
-      localStorage.removeItem('Disney-user-profile')
+      localStorage.removeItem('movify-user')
+      localStorage.removeItem('movify-user-profile')
       state.logged = false
       state.preLogged = false
     },
     signout: (state) => {
-      localStorage.removeItem('Disney-user-profile')
+      localStorage.removeItem('movify-user-profile')
       state.logged = false
+    },
+    createAccount: (state, action) => {
+      localStorage.setItem('movify-user', JSON.stringify(action.payload))
     },
   },
 })
 
-export const { login, setProfilee, logout, updateUser, signout } = userSlice.actions
+export const { prelog, login, logout, signout, createAccount } = userSlice.actions
 export default userSlice.reducer

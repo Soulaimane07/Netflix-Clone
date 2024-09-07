@@ -1,22 +1,21 @@
-import { GetUserProfiles } from '../../../Components.js/Functions'
-import { useDispatch } from 'react-redux'
-import { setProfilee } from '../../../Components.js/Redux/Slices/UserSlice'
+import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { GoPlus } from "react-icons/go";
 import { Link } from 'react-router-dom';
 import { getProfile } from '../../../Components.js/Redux/Slices/ProfileSlice';
+import { login } from '../../../Components.js/Redux/Slices/UserSlice';
 
 function Profiles({user, profilee}) {
     const dispatch = useDispatch()
-    const userProfiles = GetUserProfiles(user?.id)
+    const userProfiles = useSelector(state => state.profile.profiles)
 
     useEffect(() => {
         document.title = 'Disney+ | Profile';
     }, []);
 
     const ChangeProfile = (item) => {
-        dispatch(setProfilee(item))
         dispatch(getProfile(item.id))
+        dispatch(login(item))
     }
 
   return (

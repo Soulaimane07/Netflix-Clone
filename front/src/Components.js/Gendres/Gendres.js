@@ -1,20 +1,17 @@
 import React, { useState } from 'react'
-import { GetGendres } from '../Functions'
 import Gendre from './Gendre'
+import { useSelector } from 'react-redux'
 
 function Gendres() {
-    let gendres = GetGendres()
+    let gendres = useSelector(state => state.genres.data)
     const [hover, setHover] = useState(false)
 
   return (
-    <div>
-        <ul className='flex items-stretch space-x-3 px-16 mt-4'>
-            {gendres?.map((item,key)=>(
-              key < 5 &&
-                <Gendre item={item} key={key} id={key} hover={hover} setHover={setHover} />
-            ))}   
-        </ul>
-    </div>
+      <ul className='SCROLL mt-1 px-16 flex space-x-3 overflow-hidden overflow-x-scroll py-6 pt-2 scroll-smooth '>
+          {gendres.map(item => (
+              <Gendre item={item} hover={hover} setHover={setHover} />
+          ))}   
+      </ul>
   )
 }
 

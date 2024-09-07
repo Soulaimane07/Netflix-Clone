@@ -6,6 +6,8 @@ import Error from '../../../Components.js/Alerts/Error';
 import axios from 'axios';
 import { BaseUrl, logo } from '../../../Components.js/Variables';
 import Policies from '../Policies';
+import { useDispatch } from 'react-redux';
+import { createAccount } from '../../../Components.js/Redux/Slices/UserSlice';
 
 function Signup() {
   useEffect(() => {
@@ -27,6 +29,9 @@ function Signup() {
         setError(false)
     }, [email, pass, fname, lname])
 
+
+    let dispatch = useDispatch()
+
     const SignupFun = (e) => {
         e.preventDefault()
         setLoading(true)
@@ -35,8 +40,7 @@ function Signup() {
         axios.post(`${BaseUrl}/users`, {email, pass, fname, lname})
             .then((res)=>{
                 if(res.status === 201){
-                    console.log(res)
-                    localStorage.setItem("Disney-user", JSON.stringify(res.data))
+                    dispatch(createAccount(res.data))
                     navigate('/register/profile')
                     setLoading(false)
                 } else {

@@ -36,7 +36,7 @@ function AddProfile() {
         setLoading(true)
         setError(false)
         
-        let user = JSON.parse(localStorage.getItem("Disney-user"))
+        let user = JSON.parse(localStorage.getItem("movify-user"))
 
         axios.post(`${BaseUrl}/userprofiles`, {user, profile, name})
             .then(res => {
@@ -62,7 +62,7 @@ function AddProfile() {
         elements.forEach((element, index) => {
           setTimeout(() => {
             element.classList.add('visible');
-          }, index * 60); // Stagger by 100ms for each element
+          }, index * 60);
         });
     }, []);
     

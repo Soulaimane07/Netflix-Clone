@@ -9,7 +9,7 @@ function Watchlist() {
   return (
     <div className='mt-20 '>
         <h1 className='text-2xl px-16'> Watch List </h1>
-        <ul className='flex flex-row px-16 overflow-x-scroll Scroll space-x-4 py-4 scroll-smooth'>
+        <ul className=' flex flex-wrap gap-4 px-16 overflow-hidden py-4'>
             {favSeries?.map((item,key)=>(
                 <Work item={item} key={key} />
             ))}

@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { GetNetworks } from '../Functions'
 import Network from './Network'
+import { useSelector } from 'react-redux'
 
 function Networks() {
-    const networks = GetNetworks()
+    const networks = useSelector(state => state.networks.data)
     const [play, setPlay] = useState(false)
 
   return (

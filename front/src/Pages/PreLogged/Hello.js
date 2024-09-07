@@ -1,37 +1,39 @@
 import React, { useEffect, useState } from 'react'
-import Footer from '../Components.js/Footer'
-import { GetUserProfiles } from '../Components.js/Functions'
+import Footer from '../../Components.js/Footer'
 import { useDispatch, useSelector } from 'react-redux'
-import { setProfilee } from '../Components.js/Redux/Slices/UserSlice'
-import { getProfile } from '../Components.js/Redux/Slices/ProfileSlice'
+import { getProfile, getProfiles, logProfile } from '../../Components.js/Redux/Slices/ProfileSlice'
 import { GoPlus } from 'react-icons/go'
 import { Link } from 'react-router-dom'
-import { logo } from '../Components.js/Variables'
+import { logo } from '../../Components.js/Variables'
+import { login } from '../../Components.js/Redux/Slices/UserSlice'
 
 function Hello() {
     const dispatch = useDispatch()
 
     const userId = useSelector(state => state.user?.user?.id)
-    const userProfiles = GetUserProfiles(userId)
+
+    useEffect(()=> {
+        dispatch(getProfiles(userId))
+
+        const elements = document.querySelectorAll('.slide-up-element');
+        elements.forEach((element, index) => {
+          setTimeout(() => {
+            element.classList.add('visible');
+          }, index * 60);
+        });
+    }, [userId])
+
+    const userProfiles = useSelector(state => state.profile.profiles)
+    
 
     const error = false
     const [profile, setProfile] = useState(null)
 
     const Submit = (e) => {
         e.preventDefault()
-        dispatch(setProfilee(userProfiles[profile]))
-        dispatch(getProfile(userProfiles[profile]?.id))
+        dispatch(login(userProfiles[profile]))
+        dispatch(logProfile(userProfiles[profile]))
     }
-
-
-    useEffect(() => {
-        const elements = document.querySelectorAll('.slide-up-element');
-        elements.forEach((element, index) => {
-          setTimeout(() => {
-            element.classList.add('visible');
-          }, index * 60); // Stagger by 100ms for each element
-        });
-    }, []);
 
   return (
     <>

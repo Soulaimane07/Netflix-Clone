@@ -1,13 +1,14 @@
 import Navbar from '../Navbar/Navbar'
-import { GetGendres, GoTop } from '../../../Components.js/Functions'
+import { GoTop } from '../../../Components.js/Functions'
 import { Link } from 'react-router-dom'
 import Footer from '../../../Components.js/Footer'
 import { useState } from 'react'
+import { useSelector } from 'react-redux'
 
 function Gendres() {
   GoTop("Movify | More than you'd ever imagine")
 
-    const gendres = GetGendres()
+    const gendres = useSelector(state => state.genres.data)
     const [hover, setHover] = useState(false)
 
   return (

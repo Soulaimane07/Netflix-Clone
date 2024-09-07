@@ -4,10 +4,11 @@ import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { BaseUrl, logo } from '../../../Components.js/Variables'
 import { useDispatch } from 'react-redux'
-import { login } from '../../../Components.js/Redux/Slices/UserSlice'
+import { prelog } from '../../../Components.js/Redux/Slices/UserSlice'
 import Spinner from '../../../Components.js/Spinner'
 import Error from '../../../Components.js/Alerts/Error'
 import Policies from '../Policies'
+import { setProfiles } from '../../../Components.js/Redux/Slices/ProfileSlice'
 
 function Login() {
     useEffect(() => {
@@ -36,8 +37,9 @@ function Login() {
         axios.post(`${BaseUrl}/users/login`, {email, pass})
             .then((res)=>{
                 if(res.status === 200){
-                    navigate('/browse')
-                    dispatch(login(res.data))
+                    navigate('/')
+                    dispatch(prelog(res.data.person))
+                    dispatch(setProfiles(res.data.profiles))
                     setLoading(false)
                 } else {
                     console.log(res)

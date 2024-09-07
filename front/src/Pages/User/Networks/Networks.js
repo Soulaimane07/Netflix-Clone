@@ -1,18 +1,15 @@
 import React, { useState } from 'react'
 import Navbar from '../Navbar/Navbar'
-import { GetNetworks, GoTop } from '../../../Components.js/Functions'
+import { GoTop } from '../../../Components.js/Functions'
 import Network from '../../../Components.js/Networks/Network'
 import Footer from '../../../Components.js/Footer'
+import { useSelector } from 'react-redux'
 
 function Networks() {
    GoTop("Movify | The greatest stories, all in one place")
 
-    const networks = GetNetworks()
+    const networks = useSelector((state) => state.networks.data)
     const [play, setPlay] = useState(false)
-
-
-
-    
 
   return (
     <div className=' text-mywhite bg-primary min-h-screen'>

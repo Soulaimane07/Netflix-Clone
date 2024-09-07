@@ -30,6 +30,8 @@ public class GenresWorksController {
     @Autowired
     private GendreRepo gendreRepo;
 
+    private static final int LIMIT = 15;
+
     @GetMapping("/all")
     public List<Genreswithworks> getAllGenresWithWorks() {
         List<Genreswithworks> result = new ArrayList<>();
@@ -42,8 +44,18 @@ public class GenresWorksController {
             List<Series> series = serieRepo.findByGenresId(genre.getId());
             List<Movie> movies = movieRepo.findByGenresId(genre.getId());
 
-            // Add to result list
-            result.add(new Genreswithworks(genre, series, movies));
+            // Filter out empty genres (no movies or series)
+            if (!series.isEmpty() || !movies.isEmpty()) {
+                // Limit the number of series and movies to 15
+                List<Series> limitedSeries = series.size() > LIMIT ? series.subList(0, LIMIT) : series;
+                List<Movie> limitedMovies = movies.size() > LIMIT ? movies.subList(0, LIMIT) : movies;
+
+                // Merge movies and series into a single list
+                List<Object> mergedWorks = mergeMoviesAndSeries(limitedMovies, limitedSeries);
+
+                // Add to result list
+                result.add(new Genreswithworks(genre, mergedWorks));
+            }
         }
 
         return result;
@@ -56,13 +68,18 @@ public class GenresWorksController {
         // Fetch all genres
         List<Gendre> genres = gendreRepo.findAll();
 
-        // For each genre, fetch the movies and series associated with it
+        // For each genre, fetch the movies associated with it
         for (Gendre genre : genres) {
-            List<Series> series = null;
             List<Movie> movies = movieRepo.findByGenresId(genre.getId());
 
-            // Add to result list
-            result.add(new Genreswithworks(genre, series, movies));
+            // Filter out empty genres (no movies)
+            if (!movies.isEmpty()) {
+                // Limit the number of movies to 15
+                List<Movie> limitedMovies = movies.size() > LIMIT ? movies.subList(0, LIMIT) : movies;
+
+                // Since there are no series, just add movies
+                result.add(new Genreswithworks(genre, new ArrayList<>(limitedMovies)));
+            }
         }
 
         return result;
@@ -75,13 +92,18 @@ public class GenresWorksController {
         // Fetch all genres
         List<Gendre> genres = gendreRepo.findAll();
 
-        // For each genre, fetch the movies and series associated with it
+        // For each genre, fetch the series associated with it
         for (Gendre genre : genres) {
             List<Series> series = serieRepo.findByGenresId(genre.getId());
-            List<Movie> movies = null;
 
-            // Add to result list
-            result.add(new Genreswithworks(genre, series, movies));
+            // Filter out empty genres (no series)
+            if (!series.isEmpty()) {
+                // Limit the number of series to 15
+                List<Series> limitedSeries = series.size() > LIMIT ? series.subList(0, LIMIT) : series;
+
+                // Since there are no movies, just add series
+                result.add(new Genreswithworks(genre, new ArrayList<>(limitedSeries)));
+            }
         }
 
         return result;
@@ -96,28 +118,52 @@ public class GenresWorksController {
         }
     
         // Fetch movies and series associated with the genre
-        List<Series> series = serieRepo.findByGenresId(genreId); // Assuming findByGenresId is the correct method
-        List<Movie> movies = movieRepo.findByGenresId(genreId); // Assuming findByGenresId is the correct method
+        List<Series> series = serieRepo.findByGenresId(genreId);
+        List<Movie> movies = movieRepo.findByGenresId(genreId);
+
+        // Filter out if both series and movies are empty
+        if (series.isEmpty() && movies.isEmpty()) {
+            return null; // No works for this genre
+        }
+    
+        // Limit the number of series and movies to 15
+        List<Series> limitedSeries = series.size() > LIMIT ? series.subList(0, LIMIT) : series;
+        List<Movie> limitedMovies = movies.size() > LIMIT ? movies.subList(0, LIMIT) : movies;
+
+        // Merge movies and series into a single list
+        List<Object> mergedWorks = mergeMoviesAndSeries(limitedMovies, limitedSeries);
     
         // Return the result as a Genreswithworks object
-        return new Genreswithworks(gendre, series, movies);
+        return new Genreswithworks(gendre, mergedWorks);
     }
 
+    // Helper method to merge movies and series into a single list
+    private List<Object> mergeMoviesAndSeries(List<Movie> movies, List<Series> series) {
+        List<Object> mergedWorks = new ArrayList<>();
+        int size = Math.max(movies.size(), series.size());
 
+        for (int i = 0; i < size; i++) {
+            if (i < movies.size()) {
+                mergedWorks.add(movies.get(i));
+            }
+            if (i < series.size()) {
+                mergedWorks.add(series.get(i));
+            }
+        }
 
+        return mergedWorks;
+    }
 
     public static class Genreswithworks {
         private Gendre genre;
-        private List<Series> series;
-        private List<Movie> movies;
+        private List<Object> works; // List containing both movies and series
 
-        public Genreswithworks(Gendre gendre, List<Series> series, List<Movie> movies) {
+        public Genreswithworks(Gendre gendre, List<Object> works) {
             this.genre = gendre;
-            this.series = series;
-            this.movies = movies;
+            this.works = works;
         }
 
-        // Getters and setters (if needed)
+        // Getters and setters
         public Gendre getGendre() {
             return genre;
         }
@@ -126,20 +172,12 @@ public class GenresWorksController {
             this.genre = gendre;
         }
 
-        public List<Series> getSeries() {
-            return series;
+        public List<Object> getWorks() {
+            return works;
         }
 
-        public void setSeries(List<Series> series) {
-            this.series = series;
-        }
-
-        public List<Movie> getMovies() {
-            return movies;
-        }
-
-        public void setMovies(List<Movie> movies) {
-            this.movies = movies;
+        public void setWorks(List<Object> works) {
+            this.works = works;
         }
     }
 }

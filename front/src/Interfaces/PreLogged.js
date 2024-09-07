@@ -1,6 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import AddProfile from '../Pages/User/Profile/AddProfile'
-import Hello from './Hello'
+import Hello from '../Pages/PreLogged/Hello'
 
 function PreLogged() {
   return (
@@ -11,9 +11,6 @@ function PreLogged() {
             <Route path='/*' element={<Navigate to="/" replace={true} />} />
         </Routes>
     </BrowserRouter>
-    
-
-
   )
 }
 
