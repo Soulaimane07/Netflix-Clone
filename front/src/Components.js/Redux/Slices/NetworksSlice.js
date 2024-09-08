@@ -16,6 +16,7 @@ export const networksSlice = createSlice({
     name: 'Networks',
     initialState: {
         data: [],
+        loading: false
     },
     reducers: {
         emptyNetworks: (state, action) => {
@@ -25,11 +26,14 @@ export const networksSlice = createSlice({
     extraReducers(builder) {
         builder
             .addCase(getNetworks.pending, (state, action) => {
+                state.loading = true
             })
             .addCase(getNetworks.fulfilled, (state, action)=> {
+                state.loading = false
                 state.data = action.payload
             })
             .addCase(getNetworks.rejected, (state, action)=> {
+                state.loading = false
                 state.data = []
             })
     }

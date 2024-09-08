@@ -9,6 +9,9 @@ import { getNetworks } from './Components.js/Redux/Slices/NetworksSlice';
 import { getGenres } from './Components.js/Redux/Slices/GenresSlice';
 import { useEffect } from 'react';
 import { getViewinghistory } from './Components.js/Redux/Slices/ViewingHistorySlice';
+import { getMovies } from './Components.js/Redux/Slices/MoviesSlice';
+import { getSeries } from './Components.js/Redux/Slices/SeriesSlice';
+import { getShow } from './Components.js/Redux/Slices/ShowsSlice';
 
 function App() {
   let dispatch = useDispatch()
@@ -23,17 +26,22 @@ function App() {
         dispatch(login(userprofile))
         dispatch(logProfile(userprofile))
 
+        dispatch(getShow())
+        dispatch(getNetworks())
+        dispatch(getMovies())
+        dispatch(getSeries())
+        dispatch(getGenres())
+
         dispatch(getProfiles(user?.id))
         dispatch(getViewinghistory(userprofile?.id))
-        dispatch(getNetworks())
-        dispatch(getGenres())
       } else {
         dispatch(signout())
       }
     } else {
       dispatch(logout())
     }
-  }, [ dispatch])
+  }, [user, userprofile, dispatch])
+
   
   const logged = useSelector(state => state.user.logged)
   const preLogged = useSelector(state => state.user.preLogged)

@@ -1,33 +1,26 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import Navbar from '../Navbar/Navbar'
 import Header from '../../../Components.js/Header/Header'
 import Gendres from '../../../Components.js/Gendres/Gendres'
 import Footer from '../../../Components.js/Footer'
 import GendresVer from '../../../Components.js/Gendres/GendresVer'
-import { GenerateNumber, GetRanSerie, GetSeriesGenres, GoTop } from '../../../Components.js/Functions'
+import { GoTop } from '../../../Components.js/Functions'
+import { useDispatch, useSelector } from 'react-redux'
+import { getSerie } from '../../../Components.js/Redux/Slices/SeriesSlice'
 
 function Series() {
   GoTop("Movify | Watch Hit TV Series")
 
-  const [serie, setSerie] = useState({});
+
+  let dispatch = useDispatch()
 
   useEffect(() => {
-    const fetchSerie = async () => {
-        let randomId = GenerateNumber(1, 10);
-        let serieData = await GetRanSerie(randomId);
+    dispatch(getSerie())
+  }, [dispatch]);
 
-        while (!serieData) {
-            randomId = GenerateNumber(1, 10);
-            serieData = await GetRanSerie(randomId);
-        }
-
-        setSerie(serieData);
-    };
-
-    fetchSerie();
-  }, []);
-
-  let series = GetSeriesGenres()
+  let series = useSelector(state => state.series.data)
+  let serie = useSelector(state => state.series.serie)
+  let loadingSerie = useSelector(state => state.series.loadingSerie)
 
 
   return (
@@ -35,7 +28,7 @@ function Series() {
       <Navbar />
 
       <div className='pb-32'>
-        <Header item={serie} type={"serie"} />
+        <Header item={serie} type={"serie"} loading={loadingSerie} />
         
         <div className='min-h-screen'> 
             <Gendres />

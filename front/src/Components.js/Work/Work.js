@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 function Work({item}) {
-
   useEffect(() => {
     const elements = document.querySelectorAll('.slide-up-element');
     elements.forEach((element, index) => {
@@ -14,11 +13,11 @@ function Work({item}) {
 
   return (
     <li className='slide-up-element'>
-        <Link to={`/work/${item?.video ? 'movie' : 'serie'}/${item?.id}`}>
-        <div className=' overflow-hidden rounded-md w-72 hover:scale-105 transition-all'>
-            <img src={item?.cardimage} className='w-full h-full object-cover' alt={item?.title} />
-        </div>
-        </Link>
+      <Link to={`/work/${item?.video ? 'movie' : 'serie'}/${item?.id}`}>
+      <div className=' overflow-hidden rounded-md w-72 hover:scale-105 transition-all'>
+          <img src={item?.cardimage} className='w-full h-full object-cover' alt={item?.title} />
+      </div>
+      </Link>
     </li>
   )
 }

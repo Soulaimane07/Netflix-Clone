@@ -2,11 +2,15 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Work from '../Work/Work'
 import { FaAngleRight } from "react-icons/fa6";
+import GendresVerSkeleton from './GendresVerSkeleton';
 
-function GendresVer({data}) {
+function GendresVer({data, loading}) {
   return (
     <ul className='items-stretch '>
-        {data?.map((item,key)=>(
+      {loading ?
+        <GendresVerSkeleton />
+      :
+        data?.map((item,key)=>(
             <div key={key} className='mt-10'>
               <div className='flex ListTitle relative items-center w-full space-x-4 px-16 pb-1 mb-2'>
                 <Link to={`/gendres/${item?.gendre?.id}`} className='flex space-x-6'>
@@ -20,7 +24,8 @@ function GendresVer({data}) {
                   ))}
               </ul>
             </div>
-        ))}    
+        ))
+      } 
     </ul>
   )
 }

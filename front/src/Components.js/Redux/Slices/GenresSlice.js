@@ -16,6 +16,7 @@ export const genresSlice = createSlice({
     name: 'Genres',
     initialState: {
         data: [],
+        loading: false
     },
     reducers: {
         emptyGenres: (state, action) => {
@@ -25,11 +26,14 @@ export const genresSlice = createSlice({
     extraReducers(builder) {
         builder
             .addCase(getGenres.pending, (state, action) => {
+                state.loading = true
             })
             .addCase(getGenres.fulfilled, (state, action)=> {
+                state.loading = false
                 state.data = action.payload
             })
             .addCase(getGenres.rejected, (state, action)=> {
+                state.loading = false
                 state.data = []
             })
     }

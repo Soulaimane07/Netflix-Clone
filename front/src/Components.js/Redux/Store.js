@@ -8,6 +8,7 @@ import seriesReducer from './Slices/SeriesSlice'
 import moviesReducer from './Slices/MoviesSlice'
 import networksReducer from './Slices/NetworksSlice'
 import genresReducer from './Slices/GenresSlice'
+import showsReducer from './Slices/ShowsSlice'
 
 export const store = configureStore({
   reducer: {
@@ -20,5 +21,6 @@ export const store = configureStore({
     "movies": moviesReducer,
     "networks": networksReducer,
     "genres": genresReducer,
+    "shows": showsReducer,
   },
 })
