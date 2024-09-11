@@ -8,8 +8,9 @@ import { BaseUrl, logo } from '../../../Components.js/Variables';
 import Error from '../../../Components.js/Alerts/Error';
 import { login, prelog, setProfilee } from '../../../Components.js/Redux/Slices/UserSlice';
 import { useDispatch } from 'react-redux';
-import { logProfile, setProfiles } from '../../../Components.js/Redux/Slices/ProfileSlice';
+import { getProfiles, logProfile, setProfiles } from '../../../Components.js/Redux/Slices/ProfileSlice';
 import { GoPlus } from 'react-icons/go';
+import { getShow } from '../../../Components.js/Redux/Slices/ShowsSlice';
 
 function Profile({auth}) {
     useEffect(() => {
@@ -44,9 +45,11 @@ function Profile({auth}) {
         axios.post(`${BaseUrl}/userprofiles`, {user, profile, name})
             .then(res => {
                 if (res.status === 201) {
+                    dispatch(getProfiles(user?.id))
                     dispatch(prelog(user))
                     dispatch(login(res.data))
                     dispatch(logProfile(res.data))
+                    dispatch(getShow())
                     navigate("/browse")
                 } else {
                     setLoading(false)

@@ -7,53 +7,9 @@ import { useEffect, useState } from "react"
 
 
 
-export const GetAllGenres = () => {
-    const [data, setData] = useState([])
 
-    useEffect(()=> {
-        axios.get(`${BaseUrl}/genres/all`)
-            .then(res => {
-                setData(res.data)
-            })    
-            .catch(err => {
-                console.log(err);
-            })
-    }, [])
 
-    return data
-}
 
-export const GetMoviesGenres = () => {
-    const [data, setData] = useState([])
-
-    useEffect(()=> {
-        axios.get(`${BaseUrl}/genres/movies`)
-            .then(res => {
-                setData(res.data)
-            })    
-            .catch(err => {
-                console.log(err);
-            })
-    }, [])
-
-    return data
-}
-
-export const GetSeriesGenres = () => {
-    const [data, setData] = useState([])
-
-    useEffect(()=> {
-        axios.get(`${BaseUrl}/genres/series`)
-            .then(res => {
-                setData(res.data)
-            })    
-            .catch(err => {
-                console.log(err);
-            })
-    }, [])
-
-    return data
-}
 
 
 export const GetProfiles = () => {
@@ -72,43 +28,11 @@ export const GetProfiles = () => {
     return data
 }
 
-export const GetNetwork = (id) => {
-    const [data, setData] = useState({})
-
-    useEffect(()=> {
-        axios.get(`${BaseUrl}/networks/${id}`)
-            .then(res => {
-                setData(res.data)
-            })    
-            .catch(err => {
-                console.log(err);
-            })
-    }, [id])
-
-    return data
-}
-
-export const GetNetworkWorks = (id) => {
+export const GetUserProfile = (id) => {
     const [data, setData] = useState([])
 
     useEffect(()=> {
-        axios.get(`${BaseUrl}/networkss/${id}`)
-            .then(res => {
-                setData(res.data)
-            })    
-            .catch(err => {
-                console.log(err);
-            })
-    }, [id])
-
-    return data
-}
-
-export const GetNetworks = () => {
-    const [data, setData] = useState([])
-
-    useEffect(()=> {
-        axios.get(`${BaseUrl}/networks`)
+        axios.get(`${BaseUrl}/userprofiles/${id}`)
             .then(res => {
                 setData(res.data)
             })    
@@ -119,6 +43,18 @@ export const GetNetworks = () => {
 
     return data
 }
+
+export const GetNetworkWorks = async (id, page) => {
+    try {
+        const res = await axios.get(`${BaseUrl}/networkss/${id}?page=${page}&size=8`)
+        return res.data
+    } catch (err) {
+        console.log(err)
+        throw err
+    }
+}
+
+
 
 export const GetGendres = () => {
     const [data, setData] = useState([])
@@ -136,96 +72,18 @@ export const GetGendres = () => {
     return data
 }
 
-export const GetMoviesByGendre = () => {
-    const [data, setData] = useState([]);
-    let genres = GetGendres();
-
-    useEffect(() => {
-        const fetchMovies = async () => {
-            try {
-                const moviesData = await Promise.all(genres.map(async genre => {
-                    const res = await axios.get(`${BaseUrl}/movies/gendre/${genre.id}`);
-                    return { movies: res.data, genre };
-                }));
-                setData(moviesData);
-            } catch (error) {
-                console.error(error);
-            }
-        };
-
-        fetchMovies();
-    }, [genres]); 
-
-    return data;
-}
-
-export const GetSeriesByGendre = () => {
-    const [data, setData] = useState([]);
-    let genres = GetGendres();
-
-    useEffect(() => {
-        const fetchMovies = async () => {
-            try {
-                const moviesData = await Promise.all(genres.map(async genre => {
-                    const res = await axios.get(`${BaseUrl}/series/gendre/${genre.id}`);
-                    return { movies: res.data, genre };
-                }));
-                setData(moviesData);
-            } catch (error) {
-                console.error(error);
-            }
-        };
-
-        fetchMovies();
-    }, [genres]); 
-
-    return data;
-}
-
-export const GetGendre = (id) => {
-    const [data, setData] = useState({})
-
-    useEffect(()=> {
-        axios.get(`${BaseUrl}/gendres/${id}`)
-            .then(res => {
-                setData(res.data)
-            })    
-            .catch(err => {
-                console.log(err);
-            })
-    }, [id])
-
-    return data
-}
-
-export const GetGendreWorks = (id) => {
+export const GetGendreWorks = (id, page) => {
     const [data, setData] = useState([])
 
     useEffect(()=> {
-        axios.get(`${BaseUrl}/genres/${id}`)
+        axios.get(`${BaseUrl}/genres/${id}?page=${page}&size=8`)
             .then(res => {
                 setData(res.data)
             })    
             .catch(err => {
                 console.log(err);
             })
-    }, [id])
-
-    return data
-}
-
-export const GetUserProfiles = (userId) => {
-    const [data, setData] = useState([])
-
-    useEffect(()=> {
-        axios.get(`${BaseUrl}/users/getProfiles/${userId}`)
-            .then(res => {
-                setData(res.data)
-            })    
-            .catch(err => {
-                console.log(err);
-            })
-    }, [userId])
+    }, [id, page])
 
     return data
 }
@@ -251,142 +109,13 @@ export const GetMovies = () => {
     return data
 }
 
-export const GetMovie = (id) => {
-    const [data, setData] = useState({})
-
-    useEffect(()=> {
-        axios.get(`${BaseUrl}/movies/${id}`)
-            .then(res => {
-                setData(res.data)
-            })    
-            .catch(err => {
-                console.log(err);
-            })
-    }, [id])
-
-    return data
-}
-
-export const GetRanMovie = async (id) => {
-    try {
-        const response = await axios.get(`${BaseUrl}/movies/${id}`);
-        return response.data;
-    } catch (error) {
-        console.error('Error fetching movie:', error);
-        return null; // or handle the error appropriately
-    }
-};
-
-export const GetMoviesByNetwork = (id) => {
-    const [data, setData] = useState([])
-
-    useEffect(()=> {
-        axios.get(`${BaseUrl}/movies/network/${id}`)
-            .then(res => {
-                setData(res.data)
-            })    
-            .catch(err => {
-                console.log(err);
-            })
-    }, [id])
-
-    return data
-}
-
-export const GetMoviesByGenre = (id) => {
-    const [data, setData] = useState([])
-
-    useEffect(()=> {
-        axios.get(`${BaseUrl}/movies/gendre/${id}`)
-            .then(res => {
-                setData(res.data)
-            })    
-            .catch(err => {
-                console.log(err);
-            })
-    }, [id])
-
-    return data
-}
 
 
 
 
 
 
-export const GetSeries = () => {
-    const [data, setData] = useState([])
 
-    useEffect(()=> {
-        axios.get(`${BaseUrl}/series`)
-            .then(res => {
-                setData(res.data)
-            })    
-            .catch(err => {
-                console.log(err);
-            })
-    }, [])
-
-    return data
-}
-
-export const GetSerie = (id) => {
-    const [data, setData] = useState({})
-
-    useEffect(()=> {
-        axios.get(`${BaseUrl}/series/${id}`)
-            .then(res => {
-                setData(res.data)
-            })    
-            .catch(err => {
-                console.log(err);
-            })
-    }, [id])
-
-    return data
-}
-
-export const GetRanSerie = async (id) => {
-    try {
-        const response = await axios.get(`${BaseUrl}/series/${id}`);
-        return response.data;
-    } catch (error) {
-        console.error('Error fetching movie:', error);
-        return null; // or handle the error appropriately
-    }
-};
-
-export const GetSeriesByNetwork = (id) => {
-    const [data, setData] = useState([])
-
-    useEffect(()=> {
-        axios.get(`${BaseUrl}/series/network/${id}`)
-            .then(res => {
-                setData(res.data)
-            })    
-            .catch(err => {
-                console.log(err);
-            })
-    }, [id])
-
-    return data
-}
-
-export const GetSeriesByGenre = (id) => {
-    const [data, setData] = useState([])
-
-    useEffect(()=> {
-        axios.get(`${BaseUrl}/series/gendre/${id}`)
-            .then(res => {
-                setData(res.data)
-            })    
-            .catch(err => {
-                console.log(err);
-            })
-    }, [id])
-
-    return data
-}
 
 
 
@@ -455,7 +184,3 @@ export const GoTop = (title) => {
         title && (document.title = title)
     }, [title])
 }
-
-export const GenerateNumber = (min, max) => {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-};

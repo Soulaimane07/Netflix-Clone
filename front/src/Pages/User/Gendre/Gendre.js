@@ -8,7 +8,7 @@ function Gendre() {
   GoTop("Movify | More than you'd ever imagine")
 
     let {id} = useParams()
-    let gendre = GetGendreWorks(id)
+    let gendre = GetGendreWorks(id, 0)
 
   return (
     <div className=' text-mywhite bg-primary min-h-screen'>
@@ -18,10 +18,7 @@ function Gendre() {
             <h1 className='GradHeder text-center font-bold text-5xl sticky pt-20 pb-10 top-0 z-10 '> {gendre?.gendre?.title} </h1>
 
             <div className=' grid grid-cols-4  px-40 gap-4 '>
-              {gendre?.series?.map((item,key)=>(
-                <Work item={item} key={key} />
-              ))} 
-              {gendre?.movies?.map((item,key)=>(
+              {gendre?.works?.map((item,key)=>(
                 <Work item={item} key={key} />
               ))} 
             </div>

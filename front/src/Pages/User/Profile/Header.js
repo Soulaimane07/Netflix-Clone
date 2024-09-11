@@ -2,9 +2,15 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { logout } from '../../../Components.js/Redux/Slices/UserSlice'
 import { Link } from 'react-router-dom'
+import { logoutProfile } from '../../../Components.js/Redux/Slices/ProfileSlice'
 
 function Header({user}) {
     const dispatch = useDispatch()
+
+    const Logout = () => {
+        dispatch(logoutProfile())
+        dispatch(logout())
+    }
 
   return (
     <div className='text-mywhite px-16 flex items-center justify-between'>
@@ -23,7 +29,7 @@ function Header({user}) {
                 </Link>
             </button>
             <button 
-                onClick={()=> dispatch(logout())}
+                onClick={Logout}
                 className='bg-gray-500 bg-opacity-50 hover:bg-opacity-40 hover:scale-110 transition-all px-20 py-3 font-medium rounded-md'
                 > 
                 Log out 

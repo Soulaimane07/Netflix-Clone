@@ -2,10 +2,12 @@ import React from 'react'
 import WorkSkeleton from '../Work/WorkSkeleton';
 
 function GendresVerSkeleton() {
+    let lists = [1,2]
     let items = [1,2,3,4,5,6,7,8,9,10]
 
   return (
-        items?.map((key)=>(
+    <ul className='items-stretch '>
+      {lists?.map((key)=>(
             <div key={key} className='mt-10'>
                 <div className='flex ListTitle relative items-center w-full space-x-4 px-16 pb-1 mb-2'>
                 <div className='flex space-x-6 animate-pulse'>
@@ -19,7 +21,8 @@ function GendresVerSkeleton() {
                     ))}
                 </ul>
           </div>
-        ))  
+        ))}
+      </ul>
   )
 }
 

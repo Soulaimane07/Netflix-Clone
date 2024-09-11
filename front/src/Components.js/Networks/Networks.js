@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux'
 import WorkSkeleton from '../Work/WorkSkeleton'
 
 function Networks() {
-    const networks = useSelector(state => state.networks.data)
-    const loading = useSelector(state => state.networks.loading)
+    const networks = useSelector(state => state.networks?.data)
+    const loading = useSelector(state => state.networks?.loading)
     
     const [play, setPlay] = useState(false)
 

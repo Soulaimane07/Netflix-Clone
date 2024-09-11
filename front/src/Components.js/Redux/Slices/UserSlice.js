@@ -21,6 +21,7 @@ export const userSlice = createSlice({
     },
     logout: (state) => {
       state.user = null
+      state.profile = null
       localStorage.removeItem('movify-user')
       localStorage.removeItem('movify-user-profile')
       state.logged = false
@@ -28,6 +29,7 @@ export const userSlice = createSlice({
     },
     signout: (state) => {
       localStorage.removeItem('movify-user-profile')
+      state.profile = null
       state.logged = false
     },
     createAccount: (state, action) => {

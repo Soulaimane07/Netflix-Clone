@@ -22,22 +22,35 @@ export const getProfiles = createAsyncThunk('profiles/getProfiles', async (userI
     }
 })
 
+export const getWatchlist = createAsyncThunk('watchlist', async (userId, { rejectWithValue }) => {
+    try {
+        const response = await axios.get(`${BaseUrl}/userprofiles/${userId}/watchlist`)
+        return response.data
+    } catch (error) {
+        console.error(error);
+        return rejectWithValue(error.message)
+    }
+})
+
 export const profileSlice = createSlice({
     name: 'Profile',
     initialState: {
         profiles: null,     
         profile: null,        
-        favSeries: [],
-        favMovies: [],
+        watchlist: [],
         error: null,       
         loading: false     
     },
     reducers: {
         logProfile: (state, action) => {
             state.profile = action.payload
-            state.favSeries = action.payload.favoriteSeries
-            state.favMovies = action.payload.favoriteMovies
             localStorage.setItem('movify-user-profile', JSON.stringify(action.payload))
+        },
+        logoutProfile: (state, action) => {
+            state.profiles = null
+            state.profile = null
+            state.watchlist = []
+            localStorage.removeItem('movify-user-profile')
         },
         setProfiles: (state, action) => {
             state.profiles = action.payload
@@ -52,8 +65,6 @@ export const profileSlice = createSlice({
             .addCase(getProfile.fulfilled, (state, action) => {
                 state.loading = false
                 state.profile = action.payload
-                state.favSeries = action.payload.favoriteSeries
-                state.favMovies = action.payload.favoriteMovies
                 localStorage.setItem('movify-user-profile', JSON.stringify(action.payload))
             })
             .addCase(getProfile.rejected, (state, action) => {
@@ -75,8 +86,19 @@ export const profileSlice = createSlice({
                 state.loading = false
                 state.error = action.payload
             })
+
+
+
+            .addCase(getWatchlist.pending, (state) => {
+            })
+            .addCase(getWatchlist.fulfilled, (state, action) => {
+                state.watchlist = action.payload
+            })
+            .addCase(getWatchlist.rejected, (state, action) => {
+                state.watchlist = []
+            })
     }
 })
 
-export const { logProfile, setProfiles } = profileSlice.actions
+export const { logProfile, setProfiles, logoutProfile } = profileSlice.actions
 export default profileSlice.reducer

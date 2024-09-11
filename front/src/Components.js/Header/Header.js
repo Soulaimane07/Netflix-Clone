@@ -8,9 +8,10 @@ import { GoUnmute } from "react-icons/go";
 import { useDispatch, useSelector } from 'react-redux';
 import { open } from '../Redux/Slices/WatchSlice';
 import axios from 'axios';
-import { getProfile } from '../Redux/Slices/ProfileSlice';
+import { getProfile, getWatchlist } from '../Redux/Slices/ProfileSlice';
 import { BaseUrl } from '../Variables';
 import HeaderSkeleton from './HeaderSkeleton';
+import Spinner from '../Spinner';
 
 function Header({item, type, loading}) {
     const [showVideo, setShowVideo] = useState(false)
@@ -82,26 +83,60 @@ function Header({item, type, loading}) {
 
     
     const userId = useSelector(state => state.user.profile.id)
+
+    const [addedLoading, setAddedLoading] = useState(false)
     
     const AddToWatchList = async () => {
+        setAddedLoading(true)
+
         if(type === "movie"){
-          await axios.post(`${BaseUrl}/movies/${userId}/favorites/${item?.id}`);
-          dispatch(getProfile(userId));
+            await axios.post(`${BaseUrl}/movies/${userId}/favorites/${item?.id}`)
+                .then(()=>{
+                    dispatch(getWatchlist(userId)).then(()=>{
+                        setAddedLoading(false)
+                    })
+                })
+                .catch(()=> {
+                    setAddedLoading(false)
+                })
         }
         if(type === "serie"){
-          await axios.post(`${BaseUrl}/series/${userId}/favorites/${item?.id}`);
-          dispatch(getProfile(userId));
+            await axios.post(`${BaseUrl}/series/${userId}/favorites/${item?.id}`)
+                .then(()=>{
+                    dispatch(getWatchlist(userId)).then(()=>{
+                        setAddedLoading(false)
+                    })
+                })
+                .catch(()=> {
+                    setAddedLoading(false)
+                })
         }
     };
 
     const RemoveFromWatchList = async () => {
+        setAddedLoading(true)
+
         if(type === "movie"){
-            await axios.delete(`${BaseUrl}/movies/${userId}/favorites/${item?.id}`);
-            dispatch(getProfile(userId));
+            await axios.delete(`${BaseUrl}/movies/${userId}/favorites/${item?.id}`)
+                .then(()=>{
+                    dispatch(getWatchlist(userId)).then(()=>{
+                        setAddedLoading(false)
+                    })
+                })
+                .catch(()=> {
+                    setAddedLoading(false)
+                })
         }
         if(type === "serie"){
-            await axios.delete(`${BaseUrl}/series/${userId}/favorites/${item?.id}`);
-            dispatch(getProfile(userId));
+            await axios.delete(`${BaseUrl}/series/${userId}/favorites/${item?.id}`)
+                .then(()=>{
+                    dispatch(getWatchlist(userId)).then(()=>{
+                        setAddedLoading(false)
+                    })
+                })
+                .catch(()=> {
+                    setAddedLoading(false)
+                })
         }
     }
 
@@ -115,11 +150,7 @@ function Header({item, type, loading}) {
     
 
     const IsAdded = () => {
-        if (item.seasons === undefined) {
-            return !!profile.favMovies?.find(obj => obj.id === item.id);
-        } else {
-            return !!profile.favSeries?.find(obj => obj.id === item.id);
-        }
+        return !!profile.watchlist?.find(obj => obj.id === item.id);
     };
 
     useEffect(() => {
@@ -165,7 +196,7 @@ function Header({item, type, loading}) {
                                         <p> {hello ? type === "movie" ? 'Start Watching' : 'Start Watching | S1 - E1'  : 'Watch Now'}  </p> 
                                     </button>
                                     <button onClick={hello ? RemoveFromWatchList : AddToWatchList} className='bg-gray-400 flex items-center space-x-4 bg-opacity-25 transition-all hover:scale-105 hover:bg-opacity-40 rounded-md px-5'> 
-                                        {hello ? <FaCheck size={18} /> : <FaPlus size={18} />}
+                                        {addedLoading ? <Spinner />  : hello ? <FaCheck size={18} /> : <FaPlus size={18} />}
                                     </button>
                                 </div>
                             </div>

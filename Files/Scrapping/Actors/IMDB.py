@@ -21,13 +21,9 @@ def ScrappingData(url):
             profile = work.find('img')
             profile_src = profile.get('src') if profile else None
 
-            details_element = work.find('a')
+            details_element = work.find('a', class_="result")
             details_url = details_element.get('href') if details_element else None
 
-            # if "data:" in cardimage_src:
-            #     continue 
-            
-            # print({name, profile_src, details_url})
             ScrappingDetails(name, profile_src, 'https://www.themoviedb.org' + details_url)
     else:
         print(f'Failed to retrieve the webpage: {response.status_code}')
@@ -37,39 +33,54 @@ def ScrappingData(url):
 def ScrappingDetails(name, profile, details):
     response = requests.get(details)
     if response.status_code == 200:
-        soup = BeautifulSoup(response.content, 'html.parser')
-        actordetails = soup.find('div', class_='content_wrapper')
-        facts = actordetails.find('section', class_="facts")
-        factss = facts.find('p', class_="full")
-        description = factss.get_text(strip=True) if factss else None
-        
-        # gendre = actordetails.find('div', class_="title-info-synopsis")
-        # description = description_element.get_text(strip=True) if description_element else None
-
-        # rating = rating_element.get_text(strip=True) if rating_element else None
-
-        # year_element = actordetails.find('span', class_="item-year")
-        # year = year_element.get_text(strip=True) if year_element else None
-        
-        # birth = actordetails.find('span', class_="test_dur_str")
-        # season = season_element.get_text(strip=True) if season_element else None
-
-        # download_image(profile, f"./Actors/profiles/{name}.jpg")
-        # print(facts)
-        print(description)
-        
-
-        # actor = {
-        #     "image": "https://netflix-datafiles.s3.eu-west-3.amazonaws.com/actors/" + name + ".jpg",
-        #     "name": name,
-        #     "birthdate": year,
-        #     "biography": season,
-        #     "genre": gendre
-        # }
-
-        # insert_Data(work)
+        insert_Data(name, profile)
     else:
         print(f'Failed to retrieve the webpage: {response.status_code}')
+
+
+
+
+
+
+def insert_Data(name, profile):
+    def connect_to_mysqlDB():
+        config = {
+            'user': 'admin',
+            'password': 'password1234',
+            'host': 'netflix-relational.cjqo6ywc0hfl.eu-west-3.rds.amazonaws.com',
+            'database': 'netflix'
+        }
+        try:
+            cnx = mysql.connector.connect(**config)
+            cursor = cnx.cursor()
+            return cursor, cnx
+        except mysql.connector.Error as err:
+            print(f"Error: {err}")
+            return None, None
+    
+
+    cursor, cnx = connect_to_mysqlDB()
+    if cursor is None or cnx is None:
+        return
+
+    insert_stmt = """
+        INSERT INTO actors (name, image)
+        VALUES (%s, %s)
+    """
+
+    try:
+        cursor.execute(insert_stmt, (
+            name, f'https://netflix-datafiles.s3.eu-west-3.amazonaws.com/actors/{name.replace(' ', '+')}.jpg'
+        ))
+        cnx.commit()
+        print(name, profile)
+        download_image(profile, f"./Actors/profiles/{name}.jpg")
+        print()
+    except mysql.connector.Error as err:
+        print(f"Error: {err}")
+    finally:
+        cursor.close()
+        cnx.close()
 
 
 

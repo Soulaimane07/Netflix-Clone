@@ -40,27 +40,13 @@ public class UserProfileController {
 
     @GetMapping(path = "{id}")
     public UserProfile getUserById(@PathVariable("id") Integer id){
-        return repo.findById(id).get();
+        UserProfile profile = repo.findById(id).get();
+
+        profile.setFavoriteMovies(null);
+        profile.setFavoriteSeries(null);
+
+        return profile;
     }
-
-    // @PostMapping
-    // public ResponseEntity<UserProfile> addUser(@RequestBody UserProfile userProfile) {
-    //     int userId = userProfile.getUser().getId();
-    //     Optional<Person> optionalUser = repoUser.findById(userId);
-
-    //     Person user = optionalUser.get();
-
-    //     if (user.getProfiles() < 5) {
-    //         user.setProfiles(user.getProfiles() + 1);
-    //         repoUser.save(user);
-
-    //         userProfile.setUser(user);
-    //         return ResponseEntity.status(HttpStatus.CREATED).body(repo.save(userProfile));
-    //     } else {
-    //         userProfile.setUser(user);
-    //         return ResponseEntity.status(HttpStatus.ACCEPTED).body(userProfile);
-    //     }
-    // }
 
     @PostMapping
     public ResponseEntity<UserProfile> addUser(@RequestBody UserProfile userProfile) {
@@ -84,4 +70,18 @@ public class UserProfileController {
         }
     }
 
+
+
+
+    @GetMapping(path = "/{id}/watchlist")
+    public List<Object> getUserByIdd(@PathVariable("id") Integer id) {
+        UserProfile profile = repo.findById(id)
+            .orElseThrow(() -> new RuntimeException("Profile not found"));
+    
+        // Get combined watchlist
+        List<Object> combinedWatchlist = profile.getCombinedWatchlist();
+    
+        return combinedWatchlist;  // Return both in the response
+    }
+    
 }

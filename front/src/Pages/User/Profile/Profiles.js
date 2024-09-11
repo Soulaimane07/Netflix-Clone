@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { GoPlus } from "react-icons/go";
-import { Link } from 'react-router-dom';
-import { getProfile } from '../../../Components.js/Redux/Slices/ProfileSlice';
+import { Link, useNavigate } from 'react-router-dom';
+import { getProfile, getWatchlist } from '../../../Components.js/Redux/Slices/ProfileSlice';
 import { login } from '../../../Components.js/Redux/Slices/UserSlice';
+import { getShow } from '../../../Components.js/Redux/Slices/ShowsSlice';
 
 function Profiles({user, profilee}) {
     const dispatch = useDispatch()
@@ -13,9 +14,15 @@ function Profiles({user, profilee}) {
         document.title = 'Disney+ | Profile';
     }, []);
 
+
+    const navigate = useNavigate()
+
     const ChangeProfile = (item) => {
         dispatch(getProfile(item.id))
+        dispatch(getWatchlist(item.id))
         dispatch(login(item))
+        navigate('/browse')
+        dispatch(getShow())
     }
 
   return (

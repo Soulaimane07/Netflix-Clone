@@ -6,6 +6,7 @@ import { GoPlus } from 'react-icons/go'
 import { Link } from 'react-router-dom'
 import { logo } from '../../Components.js/Variables'
 import { login } from '../../Components.js/Redux/Slices/UserSlice'
+import { getShow } from '../../Components.js/Redux/Slices/ShowsSlice'
 
 function Hello() {
     const dispatch = useDispatch()
@@ -33,6 +34,7 @@ function Hello() {
         e.preventDefault()
         dispatch(login(userProfiles[profile]))
         dispatch(logProfile(userProfiles[profile]))
+        dispatch(getShow())
     }
 
   return (

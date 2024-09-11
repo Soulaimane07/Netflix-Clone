@@ -15,7 +15,7 @@ function Work({item}) {
     <li className='slide-up-element'>
       <Link to={`/work/${item?.video ? 'movie' : 'serie'}/${item?.id}`}>
       <div className=' overflow-hidden rounded-md w-72 hover:scale-105 transition-all'>
-          <img src={item?.cardimage} className='w-full h-full object-cover' alt={item?.title} />
+          <img srcSet={item?.cardimage} className='w-full h-full object-cover' alt={item?.title} />
       </div>
       </Link>
     </li>

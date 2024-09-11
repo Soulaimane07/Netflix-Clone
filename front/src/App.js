@@ -4,7 +4,7 @@ import Auth from './Interfaces/Auth';
 import User from './Interfaces/User';
 import { login, logout, prelog, signout } from './Components.js/Redux/Slices/UserSlice';
 import PreLogged from './Interfaces/PreLogged';
-import { getProfiles, logProfile } from './Components.js/Redux/Slices/ProfileSlice';
+import { getProfiles, getWatchlist, logoutProfile, logProfile } from './Components.js/Redux/Slices/ProfileSlice';
 import { getNetworks } from './Components.js/Redux/Slices/NetworksSlice';
 import { getGenres } from './Components.js/Redux/Slices/GenresSlice';
 import { useEffect } from 'react';
@@ -12,6 +12,7 @@ import { getViewinghistory } from './Components.js/Redux/Slices/ViewingHistorySl
 import { getMovies } from './Components.js/Redux/Slices/MoviesSlice';
 import { getSeries } from './Components.js/Redux/Slices/SeriesSlice';
 import { getShow } from './Components.js/Redux/Slices/ShowsSlice';
+import { GetUserProfile } from './Components.js/Functions';
 
 function App() {
   let dispatch = useDispatch()
@@ -33,18 +34,22 @@ function App() {
         dispatch(getGenres())
 
         dispatch(getProfiles(user?.id))
+        dispatch(getWatchlist(userprofile?.id))
         dispatch(getViewinghistory(userprofile?.id))
       } else {
         dispatch(signout())
+        // dispatch(logoutProfile())
       }
     } else {
       dispatch(logout())
+      dispatch(logoutProfile())
     }
-  }, [user, userprofile, dispatch])
+  }, [user, dispatch])
 
   
   const logged = useSelector(state => state.user.logged)
   const preLogged = useSelector(state => state.user.preLogged)
+
 
   return ( logged ? <User /> : preLogged ? <PreLogged /> : <Auth /> )
 }

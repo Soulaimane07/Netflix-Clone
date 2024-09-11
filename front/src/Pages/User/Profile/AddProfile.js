@@ -41,7 +41,6 @@ function AddProfile() {
         axios.post(`${BaseUrl}/userprofiles`, {user, profile, name})
             .then(res => {
                 if (res.status === 201) {
-                    console.log(res.data);
                     navigate("/")
                     dispatch(signout())
                 } else {

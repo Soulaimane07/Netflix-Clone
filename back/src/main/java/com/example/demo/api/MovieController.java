@@ -67,10 +67,10 @@ public class MovieController {
         repo.deleteById(id);
     }
 
-    @GetMapping(path = "/network/{id}")
-    public List<Movie> getMoviesByNetwork(@PathVariable("id") int networkId) {
-        return repo.findByNetworkId(networkId);
-    }
+    // @GetMapping(path = "/network/{id}")
+    // public List<Movie> getMoviesByNetwork(@PathVariable("id") int networkId) {
+    //     return repo.findByNetworkId(networkId);
+    // }
 
     @GetMapping(path = "/gendre/{id}")
     public List<Movie> getMoviesByGenre(@PathVariable("id") int genreId) {
@@ -102,4 +102,22 @@ public class MovieController {
             profileRepo.save(profile);
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 }

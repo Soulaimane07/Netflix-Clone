@@ -22,27 +22,25 @@ function User() {
   return (
     <BrowserRouter>
         <Routes>
-            <Route path='/browse' element={<Home />} />
-            <Route path='/work/:type/:id' element={<Work />} />
-            <Route path='/networks'>
-              <Route index element={<Networks />} />
-              <Route path=":id" element={<Network />} />
-            </Route>
-            <Route path='/gendres'>
-              <Route index element={<Gendres />} />
-              <Route path=":id" element={<Gendre />} />
-            </Route>
-            <Route path='/series'>
-              <Route index element={<Series />} />
-            </Route>
-            <Route path='/movies'>
-              <Route index element={<Movies />} />
-            </Route>
-            <Route path='/profile' element={<Profile />} />
-            <Route path='/profile/add-profile' element={<AddProfile auth={false} />} />
-            <Route path='/subscribe' element={<Subscribe />} />
-            <Route path='/*' element={<Navigate to="/browse" replace={true} />} />
+          <Route path='/browse' element={<Home />} />
+          <Route path='/work/:type/:id' element={<Work />} />
+          <Route path='/networks'>
+            <Route index element={<Networks />} />
+            <Route path=":id" element={<Network />} />
+          </Route>
+          <Route path='/gendres'>
+            <Route index element={<Gendres />} />
+            <Route path=":id" element={<Gendre />} />
+          </Route>
+          <Route path='/series' element={<Series />} />
+          <Route path='/movies' element={<Movies />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/profile/add-profile' element={<AddProfile auth={false} />} />
+          <Route path='/subscribe' element={<Subscribe />} />
+          
+          <Route path='/' element={<Navigate to="/browse" replace={true} />} />
         </Routes>
+
 
         {openedWatch && <Watch />}
         {openedSearch && <Search />}

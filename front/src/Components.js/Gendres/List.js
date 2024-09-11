@@ -6,14 +6,13 @@ import { useSelector } from 'react-redux'
 import WorkSkeleton from '../Work/WorkSkeleton'
 
 function List() {
-    const favSeries = useSelector(state => state.profile.favSeries)
-    const favMovies = useSelector(state => state.profile.favMovies)
+    const watchlist = useSelector(state => state.profile.watchlist)
 
     let loading = useSelector(state => state.profile.loading)
     let items = [1,2,3,4,5,6,7,8,9,10]
 
   return (
-    (favMovies?.length > 0 | favSeries?.length > 0 | !loading) &&
+    (watchlist?.length > 0 ) &&
         <div className='mt-10'>
             <div className='flex ListTitle relative items-center w-full space-x-4 px-16 pb-1 mb-2'>
                 {loading ?
@@ -35,16 +34,9 @@ function List() {
                             <WorkSkeleton key={key} />
                         ))
                     :
-                        (   
-                            <>
-                                {favSeries?.map((item,key)=>(
-                                    <Work item={item} key={key} />
-                                ))}
-                                {favMovies?.map((item,key)=>(
-                                    <Work item={item} key={key} />
-                                ))}
-                            </>
-                        )
+                        watchlist?.map((item,key)=>(
+                            <Work item={item} key={key} />
+                        ))
                 }
             </ul>
         </div>

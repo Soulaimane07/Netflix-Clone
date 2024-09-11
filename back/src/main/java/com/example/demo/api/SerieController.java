@@ -51,10 +51,10 @@ public class SerieController {
         repo.deleteById(id);
     }
 
-    @GetMapping(path = "/network/{id}")
-    public List<Series> getMoviesByNetwork(@PathVariable("id") int networkId) {
-        return repo.findByNetworkId(networkId);
-    }
+    // @GetMapping(path = "/network/{id}")
+    // public List<Series> getMoviesByNetwork(@PathVariable("id") int networkId) {
+    //     return repo.findByNetworkId(networkId);
+    // }
 
     @GetMapping(path = "/gendre/{id}")
     public List<Series> getMoviesByGenre(@PathVariable("id") int genreId) {
