@@ -72,20 +72,14 @@ export const GetGendres = () => {
     return data
 }
 
-export const GetGendreWorks = (id, page) => {
-    const [data, setData] = useState([])
-
-    useEffect(()=> {
-        axios.get(`${BaseUrl}/genres/${id}?page=${page}&size=8`)
-            .then(res => {
-                setData(res.data)
-            })    
-            .catch(err => {
-                console.log(err);
-            })
-    }, [id, page])
-
-    return data
+export const GetGendreWorks = async (id, page) => {
+    try {
+        const res = await axios.get(`${BaseUrl}/genres/${id}?page=${page}&size=8`)
+        return res.data
+    } catch (err) {
+        console.log(err)
+        throw err
+    }
 }
 
 

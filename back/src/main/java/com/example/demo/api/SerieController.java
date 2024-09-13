@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.Repo.GendreRepo;
 import com.example.demo.Repo.SerieRepo;
 import com.example.demo.Repo.UserProfileRepo;
+import com.example.demo.model.Gendre;
 import com.example.demo.model.Series;
 import com.example.demo.model.UserProfile;
 
@@ -26,6 +28,9 @@ import com.example.demo.model.UserProfile;
 public class SerieController {
     @Autowired
     SerieRepo repo;
+
+    @Autowired
+    GendreRepo genreRepo;
     
     @Autowired
     private UserProfileRepo profileRepo;
@@ -93,5 +98,21 @@ public class SerieController {
     @GetMapping("/search/{title}")
     public List<Series> searchByTitle(@PathVariable("title") String title) {
         return repo.findByTitleContainingIgnoreCase(title);
+    }
+
+
+
+
+
+
+    @PostMapping("/{serieId}/genres")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Series addGenres(@PathVariable int serieId, @RequestBody List<Integer> genreIds) {
+        Series serie = repo.findById(serieId).orElseThrow(() -> new RuntimeException("Serie not found"));
+        
+        List<Gendre> genres = genreRepo.findAllById(genreIds);
+        serie.setGenres(genres);
+        
+        return repo.save(serie);
     }
 }

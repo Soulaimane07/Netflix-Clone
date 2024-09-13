@@ -77,4 +77,8 @@ public class Series {
         this.seasons = seasons;
         this.actors = actors;
     }
+
+    public void setGenres(List<Gendre> genres){
+        this.genres = genres;
+    }
 }
