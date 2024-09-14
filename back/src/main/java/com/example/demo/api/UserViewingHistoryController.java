@@ -30,7 +30,7 @@ import com.example.demo.model.UserViewingHistory;
 
 @RequestMapping("api/v1/userviewing")
 @RestController
-@CrossOrigin(origins = {"http://localhost:3000", "https://d2m89m1u95dfaf.cloudfront.net", "https://d4aycj34v9pph.cloudfront.net"})
+@CrossOrigin(origins = {"http://localhost:3000", "https://d22pl7wi9vfqrc.cloudfront.net"})
 public class UserViewingHistoryController {
     @Autowired
     UserViewingHistoryRepo repo;
@@ -114,6 +114,19 @@ public class UserViewingHistoryController {
         }
 
         return ResponseEntity.ok(updatedRecord);
+    }
+
+
+
+
+    // @PostMapping
+    // public UserViewingHistory createProfileViewingHistory(@RequestBody UserViewingHistory profileViewingHistory) {
+    //     return repo.save(profileViewingHistory);
+    // }
+
+    @GetMapping("/{id}")
+    public UserViewingHistory getProfileViewingHistory(@PathVariable UUID id) {
+        return repo.findById(id).orElse(null);
     }
 
 

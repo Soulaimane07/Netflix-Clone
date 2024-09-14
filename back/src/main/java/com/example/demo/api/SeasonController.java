@@ -21,7 +21,7 @@ import com.example.demo.model.Series;
 
 @RequestMapping("api/v1/seasons")
 @RestController
-@CrossOrigin(origins = {"http://localhost:3000", "https://d2m89m1u95dfaf.cloudfront.net", "https://d4aycj34v9pph.cloudfront.net"})
+@CrossOrigin(origins = {"http://localhost:3000", "https://d22pl7wi9vfqrc.cloudfront.net"})
 public class SeasonController {
     @Autowired
     SeasonRepo repo;

@@ -25,7 +25,7 @@ import org.springframework.http.ResponseEntity;
 
 @RequestMapping("api/v1/genres")
 @RestController
-@CrossOrigin(origins = {"http://localhost:3000", "https://d2m89m1u95dfaf.cloudfront.net", "https://d4aycj34v9pph.cloudfront.net"})
+@CrossOrigin(origins = {"http://localhost:3000", "https://d22pl7wi9vfqrc.cloudfront.net"})
 public class GenresWorksController {
     @Autowired
     private SerieRepo serieRepo;
