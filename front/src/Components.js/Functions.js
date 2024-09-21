@@ -136,7 +136,7 @@ export const GetEpisodes = (seasonId) => {
     const [data, setData] = useState([])
 
     useEffect(()=> {
-        axios.get(`${BaseUrl}/episodes/season/${seasonId}`)
+        axios.get(`${BaseUrl}/episodes`)
             .then(res => {
                 setData(res.data)
             })    

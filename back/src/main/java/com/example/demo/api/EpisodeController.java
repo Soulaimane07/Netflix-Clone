@@ -15,9 +15,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.Repo.EpisodeRepo;
-import com.example.demo.Repo.SeasonRepo;
 import com.example.demo.model.Episode;
-import com.example.demo.model.Season;
 
 @RequestMapping("api/v1/episodes")
 @RestController
@@ -26,15 +24,9 @@ public class EpisodeController {
     @Autowired
     EpisodeRepo repo;
 
-    @Autowired
-    SeasonRepo Seasonrepo;
-
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
     public Episode addProfile(@RequestBody Episode episode){
-        Season season = Seasonrepo.findById(episode.getSeasonId()).get();
-        season.setEpisodes( season.getEpisodes() + 1);
-        Seasonrepo.save(season);
         return repo.save(episode);
     }
 
@@ -50,15 +42,6 @@ public class EpisodeController {
 
     @DeleteMapping(path = "{id}")
     public void deleteProfileById(@PathVariable("id") Integer id){
-        Season season = Seasonrepo.findById(id).get();
-        season.setEpisodes( season.getEpisodes() - 1);
-        Seasonrepo.save(season);
-
         repo.deleteById(id);
-    }
-
-    @GetMapping("/season/{seasonId}")
-    public List<Episode> getSeasonsBySeriesId(@PathVariable("seasonId") int seasonId) {
-        return repo.findBySeason(Seasonrepo.findById(seasonId).get());
     }
 }

@@ -31,24 +31,32 @@ public class Episode {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name="seasonId")
-    private Season season;
+    @JoinColumn(name="serieId")
+    private Series serie;
+
+    @Column(name="season")
+    private Integer season;
+
+    @Column(name="episode")
+    private Integer episode;
 
 
 
     public Episode() {
     }
 
-    public Episode(String title, String cardimage, String desc, String video, Season season){
+    public Episode(String title, String cardimage, String desc, String video, Series serie, Integer episode, Integer season){
         super();
         this.title = title;
         this.cardimage = cardimage;
         this.video = video;
         this.description = desc;
+        this.episode = episode;
         this.season = season;
+        this.serie = serie;
     }
 
-    public int getSeasonId(){
-        return season.getId();
+    public int getSerieId(){
+        return serie.getId();
     }
 }

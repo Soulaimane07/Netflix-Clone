@@ -23,7 +23,7 @@ function Header({item, type, loading}) {
             if (videoRef?.current) {
                 setShowVideo(true)
                 try {
-                    // videoRef?.current?.play()
+                    videoRef?.current?.play()
                 } catch (error) {
                     console.error(error);
                 }
