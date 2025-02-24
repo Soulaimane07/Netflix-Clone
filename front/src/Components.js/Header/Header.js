@@ -82,62 +82,62 @@ function Header({item, type, loading}) {
 
 
     
-    const userId = useSelector(state => state.user.profile.id)
+    // const userId = useSelector(state => state.user.profile.id)
 
     const [addedLoading, setAddedLoading] = useState(false)
     
     const AddToWatchList = async () => {
         setAddedLoading(true)
 
-        if(type === "movie"){
-            await axios.post(`${BaseUrl}/movies/${userId}/favorites/${item?.id}`)
-                .then(()=>{
-                    dispatch(getWatchlist(userId)).then(()=>{
-                        setAddedLoading(false)
-                    })
-                })
-                .catch(()=> {
-                    setAddedLoading(false)
-                })
-        }
-        if(type === "serie"){
-            await axios.post(`${BaseUrl}/series/${userId}/favorites/${item?.id}`)
-                .then(()=>{
-                    dispatch(getWatchlist(userId)).then(()=>{
-                        setAddedLoading(false)
-                    })
-                })
-                .catch(()=> {
-                    setAddedLoading(false)
-                })
-        }
+        // if(type === "movie"){
+        //     await axios.post(`${BaseUrl}/movies/${userId}/favorites/${item?.id}`)
+        //         .then(()=>{
+        //             dispatch(getWatchlist(userId)).then(()=>{
+        //                 setAddedLoading(false)
+        //             })
+        //         })
+        //         .catch(()=> {
+        //             setAddedLoading(false)
+        //         })
+        // }
+        // if(type === "serie"){
+        //     await axios.post(`${BaseUrl}/series/${userId}/favorites/${item?.id}`)
+        //         .then(()=>{
+        //             dispatch(getWatchlist(userId)).then(()=>{
+        //                 setAddedLoading(false)
+        //             })
+        //         })
+        //         .catch(()=> {
+        //             setAddedLoading(false)
+        //         })
+        // }
     };
 
     const RemoveFromWatchList = async () => {
         setAddedLoading(true)
 
-        if(type === "movie"){
-            await axios.delete(`${BaseUrl}/movies/${userId}/favorites/${item?.id}`)
-                .then(()=>{
-                    dispatch(getWatchlist(userId)).then(()=>{
-                        setAddedLoading(false)
-                    })
-                })
-                .catch(()=> {
-                    setAddedLoading(false)
-                })
-        }
-        if(type === "serie"){
-            await axios.delete(`${BaseUrl}/series/${userId}/favorites/${item?.id}`)
-                .then(()=>{
-                    dispatch(getWatchlist(userId)).then(()=>{
-                        setAddedLoading(false)
-                    })
-                })
-                .catch(()=> {
-                    setAddedLoading(false)
-                })
-        }
+        // if(type === "movie"){
+        //     await axios.delete(`${BaseUrl}/movies/${userId}/favorites/${item?.id}`)
+        //         .then(()=>{
+        //             dispatch(getWatchlist(userId)).then(()=>{
+        //                 setAddedLoading(false)
+        //             })
+        //         })
+        //         .catch(()=> {
+        //             setAddedLoading(false)
+        //         })
+        // }
+        // if(type === "serie"){
+        //     await axios.delete(`${BaseUrl}/series/${userId}/favorites/${item?.id}`)
+        //         .then(()=>{
+        //             dispatch(getWatchlist(userId)).then(()=>{
+        //                 setAddedLoading(false)
+        //             })
+        //         })
+        //         .catch(()=> {
+        //             setAddedLoading(false)
+        //         })
+        // }
     }
 
 
@@ -167,7 +167,7 @@ function Header({item, type, loading}) {
             :
                 item && (
                     <>
-                        <video ref={videoRef} muted={muted} className='w-full relative object-cover h-full' src={item?.trailer}  poster={item?.bgimage} />
+                        {/* <video ref={videoRef} muted={muted} className='w-full relative object-cover h-full' src={item?.trailer}  poster={item?.bgimage} /> */}
                         <div className=' absolute justify-between top-0 left-0 px-20 GradientTop h-full w-full flex items-end pb-28'>
                             <div className=' w-1/3'>
                                 <img src={item?.logoimage} alt='logo' className='w-full slide-up-element' />

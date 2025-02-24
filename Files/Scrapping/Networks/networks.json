@@ -1,0 +1,344 @@
+[
+    {
+        "name": "A&E",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/A&E.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/A&E.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/A&E.jpg"
+    },
+    {
+        "name": "ABC",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/ABC.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/ABC.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/ABC.jpg"
+    },
+    {
+        "name": "Adult Swim",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Adult_Swim.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Adult_Swim.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Adult_Swim.jpg"
+    },
+    {
+        "name": "AMC",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/AMC.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/AMC.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/AMC.jpg"
+    },
+    {
+        "name": "CBS",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/CBS.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/CBS.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/CBS.jpg"
+    },
+    {
+        "name": "CINEMAX",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/CINEMAX.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/CINEMAX.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/CINEMAX.jpg"
+    },
+    {
+        "name": "Comedy Central",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Comedy_Central.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Comedy_Central.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Comedy_Central.jpg"
+    },
+    {
+        "name": "FOX",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/FOX.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/FOX.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/FOX.jpg"
+    },
+    {
+        "name": "Freeform",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Freeform.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Freeform.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Freeform.jpg"
+    },
+    {
+        "name": "FX",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/FX.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/FX.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/FX.jpg"
+    },
+    {
+        "name": "The HISTORY Channel",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/The_HISTORY_Channel.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/The_HISTORY_Channel.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/The_HISTORY_Channel.jpg"
+    },
+    {
+        "name": "Hulu Original Series",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Hulu_Original_Series.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Hulu_Original_Series.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Hulu_Original_Series.jpg"
+    },
+    {
+        "name": "Lifetime",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Lifetime.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Lifetime.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Lifetime.jpg"
+    },
+    {
+        "name": "Max",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Max.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Max.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Max.jpg"
+    },
+    {
+        "name": "MTV",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/MTV.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/MTV.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/MTV.jpg"
+    },
+    {
+        "name": "MyNetworkTV",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/MyNetworkTV.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/MyNetworkTV.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/MyNetworkTV.jpg"
+    },
+    {
+        "name": "National Geographic",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/National_Geographic.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/National_Geographic.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/National_Geographic.jpg"
+    },
+    {
+        "name": "Paramount+ with SHOWTIME",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Paramount+_with_SHOWTIME.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Paramount+_with_SHOWTIME.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Paramount+_with_SHOWTIME.jpg"
+    },
+    {
+        "name": "Starz",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Starz.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Starz.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Starz.jpg"
+    },
+    {
+        "name": "SYFY",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/SYFY.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/SYFY.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/SYFY.jpg"
+    },
+    {
+        "name": "Telemundo",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Telemundo.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Telemundo.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Telemundo.jpg"
+    },
+    {
+        "name": "USA",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/USA.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/USA.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/USA.jpg"
+    },
+    {
+        "name": "Cartoon Network",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Cartoon_Network.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Cartoon_Network.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Cartoon_Network.jpg"
+    },
+    {
+        "name": "Disney Channel",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Disney_Channel.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Disney_Channel.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Disney_Channel.jpg"
+    },
+    {
+        "name": "Disney Junior",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Disney_Junior.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Disney_Junior.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Disney_Junior.jpg"
+    },
+    {
+        "name": "Disney XD",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Disney_XD.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Disney_XD.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Disney_XD.jpg"
+    },
+    {
+        "name": "Universal Kids",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Universal_Kids.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Universal_Kids.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Universal_Kids.jpg"
+    },
+    {
+        "name": "ABC News",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/ABC_News.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/ABC_News.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/ABC_News.jpg"
+    },
+    {
+        "name": "Bloomberg Television",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Bloomberg_Television.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Bloomberg_Television.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Bloomberg_Television.jpg"
+    },
+    {
+        "name": "Fox News",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Fox_News.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Fox_News.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Fox_News.jpg"
+    },
+    {
+        "name": "pocket.watch",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/pocket.watch.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/pocket.watch.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/pocket.watch.jpg"
+    },
+    {
+        "name": "Advocate Channel",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Advocate_Channel.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Advocate_Channel.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Advocate_Channel.jpg"
+    },
+    {
+        "name": "Complex",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Complex.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Complex.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Complex.jpg"
+    },
+    {
+        "name": "Crunchyroll",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Crunchyroll.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Crunchyroll.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Crunchyroll.jpg"
+    },
+    {
+        "name": "ESPN+",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/ESPN+.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/ESPN+.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/ESPN+.jpg"
+    },
+    {
+        "name": "FilmRise",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/FilmRise.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/FilmRise.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/FilmRise.jpg"
+    },
+    {
+        "name": "Funimation",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Funimation.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Funimation.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Funimation.jpg"
+    },
+    {
+        "name": "IFC Films",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/IFC_Films.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/IFC_Films.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/IFC_Films.jpg"
+    },
+    {
+        "name": "Lionsgate",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Lionsgate.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Lionsgate.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Lionsgate.jpg"
+    },
+    {
+        "name": "Magnolia",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Magnolia.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Magnolia.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Magnolia.jpg"
+    },
+    {
+        "name": "Mar Vista",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Mar_Vista.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Mar_Vista.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Mar_Vista.jpg"
+    },
+    {
+        "name": "NASA",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/NASA.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/NASA.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/NASA.jpg"
+    },
+    {
+        "name": "Neon",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Neon.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Neon.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Neon.jpg"
+    },
+    {
+        "name": "Paramount",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Paramount.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Paramount.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Paramount.jpg"
+    },
+    {
+        "name": "Rakuten Viki",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Rakuten_Viki.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Rakuten_Viki.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Rakuten_Viki.jpg"
+    },
+    {
+        "name": "Roadside Attractions",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Roadside_Attractions.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Roadside_Attractions.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Roadside_Attractions.jpg"
+    },
+    {
+        "name": "Saban Films",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Saban_Films.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Saban_Films.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Saban_Films.jpg"
+    },
+    {
+        "name": "Samuel Goldwyn Films",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Samuel_Goldwyn_Films.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Samuel_Goldwyn_Films.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Samuel_Goldwyn_Films.jpg"
+    },
+    {
+        "name": "Screen Media",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Screen_Media.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Screen_Media.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Screen_Media.jpg"
+    },
+    {
+        "name": "Sentai Filmworks",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Sentai_Filmworks.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Sentai_Filmworks.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Sentai_Filmworks.jpg"
+    },
+    {
+        "name": "Shout! Factory",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Shout!_Factory.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Shout!_Factory.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Shout!_Factory.jpg"
+    },
+    {
+        "name": "Sony Pictures Television",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Sony_Pictures_Television.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Sony_Pictures_Television.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Sony_Pictures_Television.jpg"
+    },
+    {
+        "name": "Twentieth Century Studios",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Twentieth_Century_Studios.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Twentieth_Century_Studios.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Twentieth_Century_Studios.jpg"
+    },
+    {
+        "name": "Universal Pictures",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Universal_Pictures.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Universal_Pictures.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Universal_Pictures.jpg"
+    },
+    {
+        "name": "Vertical Entertainment",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Vertical_Entertainment.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Vertical_Entertainment.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Vertical_Entertainment.jpg"
+    },
+    {
+        "name": "Viva Pictures",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Viva_Pictures.jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Viva_Pictures.jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Viva_Pictures.jpg"
+    },
+    {
+        "name": "Warner Bros.",
+        "bgurl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/bg/Warner_Bros..jpg",
+        "logourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/logo/Warner_Bros..jpg",
+        "videourl": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/networks/videos/Warner_Bros..jpg"
+    }
+]

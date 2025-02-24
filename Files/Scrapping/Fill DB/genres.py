@@ -3,29 +3,30 @@ import json
 
 # JSON data
 data = [
-    {"id": 1, "image": "https://netflix-datafiles.s3.eu-west-3.amazonaws.com/Gendres/1687804354562.webp", "title": "Adventure"},
-    {"id": 2, "image": "https://netflix-datafiles.s3.eu-west-3.amazonaws.com/Gendres/wp9655792.jpg", "title": "Action"},
-    {"id": 3, "image": "https://netflix-datafiles.s3.eu-west-3.amazonaws.com/Gendres/animation-movies-1197-x-704-wallpaper-nlgddr8e66de5g41.jpg", "title": "Animation"},
-    {"id": 4, "image": "https://netflix-datafiles.s3.eu-west-3.amazonaws.com/Gendres/d8e63160f5e22347-1200x675.jpg", "title": "Comedy"},
-    {"id": 5, "image": "https://netflix-datafiles.s3.eu-west-3.amazonaws.com/Gendres/crime.png", "title": "Crime"},
-    {"id": 6, "image": "https://netflix-datafiles.s3.eu-west-3.amazonaws.com/Gendres/drama.jpg", "title": "Drama"},
-    {"id": 7, "image": "https://netflix-datafiles.s3.eu-west-3.amazonaws.com/Gendres/fantasy.jpg", "title": "Fantasy"},
-    {"id": 8, "image": "https://netflix-datafiles.s3.eu-west-3.amazonaws.com/Gendres/horror.jpg", "title": "Horror"},
-    {"id": 9, "image": "https://netflix-datafiles.s3.eu-west-3.amazonaws.com/Gendres/mystry.jpg", "title": "Mystery"},
-    {"id": 10, "image": "https://netflix-datafiles.s3.eu-west-3.amazonaws.com/Gendres/romance.jpg", "title": "Romance"},
-    {"id": 11, "image": "https://netflix-datafiles.s3.eu-west-3.amazonaws.com/Gendres/scifi.png", "title": "Sci-fi"},
-    {"id": 12, "image": "https://netflix-datafiles.s3.eu-west-3.amazonaws.com/Gendres/thriller.jpg", "title": "Thriller"},
-    {"id": 13, "image": "https://netflix-datafiles.s3.eu-west-3.amazonaws.com/Gendres/thriller.jpg", "title": "Family"},
-    {"id": 14, "image": "https://netflix-datafiles.s3.eu-west-3.amazonaws.com/Gendres/thriller.jpg", "title": "Kids"},
-    {"id": 15, "image": "https://netflix-datafiles.s3.eu-west-3.amazonaws.com/Gendres/thriller.jpg", "title": "Cartoons"}
+    {"id": 1, "image": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/genres/adventure.jpg", "title": "Adventure"},
+    {"id": 2, "image": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/genres/action.jpg", "title": "Action"},
+    {"id": 3, "image": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/genres/animation.jpg", "title": "Animation"},
+    {"id": 4, "image": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/genres/comedy.jpg", "title": "Comedy"},
+    {"id": 5, "image": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/genres/crime.jpg", "title": "Crime"},
+    {"id": 6, "image": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/genres/drama.jpg", "title": "Drama"},
+    {"id": 7, "image": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/genres/fantasy.jpg", "title": "Fantasy"},
+    {"id": 8, "image": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/genres/horror.jpg", "title": "Horror"},
+    {"id": 9, "image": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/genres/mystry.jpg", "title": "Mystery"},
+    {"id": 11, "image": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/genres/scifi.jpg", "title": "Sci-fi"},
+    {"id": 10, "image": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/genres/romance.jpg", "title": "Romance"},
+    {"id": 12, "image": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/genres/thriller.jpg", "title": "Thriller"},
+    {"id": 13, "image": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/genres/family.jpg", "title": "Family"},
+    {"id": 14, "image": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/genres/kids.jpg", "title": "Kids"},
+    {"id": 15, "image": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/genres/cartoons.jpg", "title": "Cartoons"}
 ]
 
 # Database connection
 conn = mysql.connector.connect(
-    host="netflix-relational.cjqo6ywc0hfl.eu-west-3.rds.amazonaws.com",
-    user="admin",
-    password="password1234",
-    database="netflix"
+    host="localhost",
+    user="root",
+    password="root",
+    database="netflix",
+    port="3307"
 )
 cursor = conn.cursor()
 

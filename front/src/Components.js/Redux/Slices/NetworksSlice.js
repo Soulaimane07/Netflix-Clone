@@ -5,6 +5,8 @@ import axios from 'axios';
 export const getNetworks = createAsyncThunk('networks', async ()=> {
     try {
       const response = await axios.get(`${BaseUrl}/networks`)
+      console.log(response.data);
+      
       return response.data
     } catch (error) {
       console.error(error);

@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-import mysql.connector
+# import mysql.connector
 
 
 
@@ -69,13 +69,12 @@ def ScrappingDetails(data, url, newName):
             logoimage_url = logoimage_element.get('src') if logoimage_element else None
 
 
-
         work = {
-            "bgimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/movies/bg/" + newName + ".jpg",
-            "cardimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/movies/card/" + newName + ".jpg",
-            "logoimage": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/movies/logo/" + newName + ".jpg",
-            "trailer": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/movies/trailer/" + newName + ".mp4",
-            "video": "https://netflix-movies-series.s3.eu-west-3.amazonaws.com/movies/video/" + newName + ".mp4",
+            "bgimage": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/movies/bg/" + newName + ".jpg",
+            "cardimage": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/movies/card/" + newName + ".jpg",
+            "logoimage": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/movies/logo/" + newName + ".jpg",
+            "trailer": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/movies/trailer/" + newName + ".mp4",
+            "video": "https://streaming-movies-datafiles.s3.us-east-1.amazonaws.com/movies/video/" + newName + ".mp4",
             "description": description[:200],
             "rating": "18+",
             "title": data["name"],
@@ -90,15 +89,13 @@ def ScrappingDetails(data, url, newName):
 
 
         if logoimage_element:
-        #  print()
-        #  print(logoimage_url)
-        #  print(bgimage_url)
-        #  print(data['cardimage'])
-        #  download_image(card, f"./Hulu/card/{newName}.jpg")
-        #  download_image(bg, f"./Hulu/bg/{newName}.jpg")
-        #  download_image(logo, f"./Hulu/logo/{newName}.jpg")
+            print()
+            print(work)
+            # download_image(data['cardimage'], f"./Hulu/card/{newName}.jpg")
+            # download_image(bgimage_url, f"./Hulu/bg/{newName}.jpg")
+            # download_image(logoimage_url, f"./Hulu/logo/{newName}.jpg")
 
-         insert_Data(work, newName, data['cardimage'], bgimage_url, logoimage_url)
+            insert_Data(work, newName, data['cardimage'], bgimage_url, logoimage_url)
     else:
         print(f'Failed to retrieve the webpage: {response.status_code}')
 

@@ -1,7 +1,7 @@
-import requests
-from bs4 import BeautifulSoup
-import mysql.connector
-import re
+import requests # type: ignore
+from bs4 import BeautifulSoup # type: ignore
+# import mysql.connector
+# import re
 
 
 
@@ -33,7 +33,10 @@ def ScrappingData(url):
 def ScrappingDetails(name, profile, details):
     response = requests.get(details)
     if response.status_code == 200:
-        insert_Data(name, profile)
+        print(name)
+        print(profile)
+        print("")
+        # insert_Data(name, profile)
     else:
         print(f'Failed to retrieve the webpage: {response.status_code}')
 
@@ -99,6 +102,6 @@ def download_image(url, save_path):
 
 
 if __name__ == "__main__":
-    for i in range(100):
-        url = f'https://www.themoviedb.org/person?page={i}'
+    for i in range(100):    
+        url = f'https://www.themoviedb.org/person?page=1'
         ScrappingData(url)

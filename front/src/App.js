@@ -20,22 +20,28 @@ function App() {
   const userprofile = JSON.parse(localStorage.getItem('movify-user-profile'));
 
   useEffect(() => {
+    dispatch(getShow())
+    dispatch(getNetworks())
+    dispatch(getMovies())
+    dispatch(getSeries())
+    dispatch(getGenres())
+
     if (user) {
       dispatch(prelog(user))
 
       if(userprofile){
-        dispatch(login(userprofile))
-        dispatch(logProfile(userprofile))
+        // dispatch(login(userprofile))
+        // dispatch(logProfile(userprofile))
 
-        dispatch(getShow())
-        dispatch(getNetworks())
-        dispatch(getMovies())
-        dispatch(getSeries())
-        dispatch(getGenres())
+        // dispatch(getShow())
+        // dispatch(getNetworks())
+        // dispatch(getMovies())
+        // dispatch(getSeries())
+        // dispatch(getGenres())
 
-        dispatch(getProfiles(user?.id))
-        dispatch(getWatchlist(userprofile?.id))
-        dispatch(getViewinghistory(userprofile?.id))
+        // dispatch(getProfiles(user?.id))
+        // dispatch(getWatchlist(userprofile?.id))
+        // dispatch(getViewinghistory(userprofile?.id))
       } else {
         dispatch(signout())
         // dispatch(logoutProfile())
@@ -51,7 +57,8 @@ function App() {
   const preLogged = useSelector(state => state.user.preLogged)
 
 
-  return ( logged ? <User /> : preLogged ? <PreLogged /> : <Auth /> )
+  // return ( logged ? <User /> : preLogged ? <PreLogged /> : <Auth /> )
+  return <User />
 }
 
 export default App;
