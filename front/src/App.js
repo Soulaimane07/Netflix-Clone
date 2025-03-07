@@ -12,7 +12,6 @@ import { getViewinghistory } from './Components.js/Redux/Slices/ViewingHistorySl
 import { getMovies } from './Components.js/Redux/Slices/MoviesSlice';
 import { getSeries } from './Components.js/Redux/Slices/SeriesSlice';
 import { getShow } from './Components.js/Redux/Slices/ShowsSlice';
-import { GetUserProfile } from './Components.js/Functions';
 
 function App() {
   let dispatch = useDispatch()
@@ -20,31 +19,25 @@ function App() {
   const userprofile = JSON.parse(localStorage.getItem('movify-user-profile'));
 
   useEffect(() => {
-    dispatch(getShow())
-    dispatch(getNetworks())
-    dispatch(getMovies())
-    dispatch(getSeries())
-    dispatch(getGenres())
-
     if (user) {
       dispatch(prelog(user))
 
       if(userprofile){
-        // dispatch(login(userprofile))
-        // dispatch(logProfile(userprofile))
+        dispatch(login(userprofile))
+        dispatch(logProfile(userprofile))
 
-        // dispatch(getShow())
-        // dispatch(getNetworks())
-        // dispatch(getMovies())
-        // dispatch(getSeries())
-        // dispatch(getGenres())
+        dispatch(getShow())
+        dispatch(getNetworks())
+        dispatch(getMovies())
+        dispatch(getSeries())
+        dispatch(getGenres())
 
-        // dispatch(getProfiles(user?.id))
-        // dispatch(getWatchlist(userprofile?.id))
-        // dispatch(getViewinghistory(userprofile?.id))
+        dispatch(getProfiles(user?.id))
+        dispatch(getWatchlist(userprofile?.id))
+        dispatch(getViewinghistory(userprofile?.id))
       } else {
         dispatch(signout())
-        // dispatch(logoutProfile())
+        dispatch(logoutProfile())
       }
     } else {
       dispatch(logout())
@@ -57,8 +50,7 @@ function App() {
   const preLogged = useSelector(state => state.user.preLogged)
 
 
-  // return ( logged ? <User /> : preLogged ? <PreLogged /> : <Auth /> )
-  return <User />
+  return ( logged ? <User /> : preLogged ? <PreLogged /> : <Auth /> )
 }
 
 export default App;

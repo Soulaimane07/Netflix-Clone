@@ -13,7 +13,7 @@ function Details() {
                 <h1 className=' text-4xl font-medium'> Interests </h1>
             </div>
 
-            {/* <div className='w-3/12  mx-auto text-white'>
+            <div className='w-3/12  mx-auto text-white'>
                 <h2 className=' opacity-70 text-center mb-4'>STEP 2 OF 4</h2>
                 <form onSubmit={SignupFun} className='mb-10'>
                     <h1 className='text-center text-3xl font-medium mb-10'> Create your account </h1>
@@ -54,7 +54,7 @@ function Details() {
                     <a href='#' className=' text-gray-400'>Terms of Service</a> 
                     apply.
                 </p>
-            </div> */}
+            </div>
         </div>
         <Footer />
     </>

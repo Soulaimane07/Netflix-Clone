@@ -8,7 +8,7 @@ import { GoUnmute } from "react-icons/go";
 import { useDispatch, useSelector } from 'react-redux';
 import { open } from '../Redux/Slices/WatchSlice';
 import axios from 'axios';
-import { getProfile, getWatchlist } from '../Redux/Slices/ProfileSlice';
+import { getWatchlist } from '../Redux/Slices/ProfileSlice';
 import { BaseUrl } from '../Variables';
 import HeaderSkeleton from './HeaderSkeleton';
 import Spinner from '../Spinner';
@@ -82,62 +82,62 @@ function Header({item, type, loading}) {
 
 
     
-    // const userId = useSelector(state => state.user.profile.id)
+    const userId = useSelector(state => state.user.profile.id)
 
     const [addedLoading, setAddedLoading] = useState(false)
     
     const AddToWatchList = async () => {
         setAddedLoading(true)
 
-        // if(type === "movie"){
-        //     await axios.post(`${BaseUrl}/movies/${userId}/favorites/${item?.id}`)
-        //         .then(()=>{
-        //             dispatch(getWatchlist(userId)).then(()=>{
-        //                 setAddedLoading(false)
-        //             })
-        //         })
-        //         .catch(()=> {
-        //             setAddedLoading(false)
-        //         })
-        // }
-        // if(type === "serie"){
-        //     await axios.post(`${BaseUrl}/series/${userId}/favorites/${item?.id}`)
-        //         .then(()=>{
-        //             dispatch(getWatchlist(userId)).then(()=>{
-        //                 setAddedLoading(false)
-        //             })
-        //         })
-        //         .catch(()=> {
-        //             setAddedLoading(false)
-        //         })
-        // }
+        if(type === "movie"){
+            await axios.post(`${BaseUrl}/movies/${userId}/favorites/${item?.id}`)
+                .then(()=>{
+                    dispatch(getWatchlist(userId)).then(()=>{
+                        setAddedLoading(false)
+                    })
+                })
+                .catch(()=> {
+                    setAddedLoading(false)
+                })
+        }
+        if(type === "serie"){
+            await axios.post(`${BaseUrl}/series/${userId}/favorites/${item?.id}`)
+                .then(()=>{
+                    dispatch(getWatchlist(userId)).then(()=>{
+                        setAddedLoading(false)
+                    })
+                })
+                .catch(()=> {
+                    setAddedLoading(false)
+                })
+        }
     };
 
     const RemoveFromWatchList = async () => {
         setAddedLoading(true)
 
-        // if(type === "movie"){
-        //     await axios.delete(`${BaseUrl}/movies/${userId}/favorites/${item?.id}`)
-        //         .then(()=>{
-        //             dispatch(getWatchlist(userId)).then(()=>{
-        //                 setAddedLoading(false)
-        //             })
-        //         })
-        //         .catch(()=> {
-        //             setAddedLoading(false)
-        //         })
-        // }
-        // if(type === "serie"){
-        //     await axios.delete(`${BaseUrl}/series/${userId}/favorites/${item?.id}`)
-        //         .then(()=>{
-        //             dispatch(getWatchlist(userId)).then(()=>{
-        //                 setAddedLoading(false)
-        //             })
-        //         })
-        //         .catch(()=> {
-        //             setAddedLoading(false)
-        //         })
-        // }
+        if(type === "movie"){
+            await axios.delete(`${BaseUrl}/movies/${userId}/favorites/${item?.id}`)
+                .then(()=>{
+                    dispatch(getWatchlist(userId)).then(()=>{
+                        setAddedLoading(false)
+                    })
+                })
+                .catch(()=> {
+                    setAddedLoading(false)
+                })
+        }
+        if(type === "serie"){
+            await axios.delete(`${BaseUrl}/series/${userId}/favorites/${item?.id}`)
+                .then(()=>{
+                    dispatch(getWatchlist(userId)).then(()=>{
+                        setAddedLoading(false)
+                    })
+                })
+                .catch(()=> {
+                    setAddedLoading(false)
+                })
+        }
     }
 
 

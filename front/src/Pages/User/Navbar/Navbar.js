@@ -45,7 +45,7 @@ function Navbar() {
 
         <div className='flex items-center space-x-6'>
             <SearchBox />
-            {/* <Profile /> */}
+            <Profile />
         </div>
     </nav>
   )

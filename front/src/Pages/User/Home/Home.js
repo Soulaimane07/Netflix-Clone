@@ -8,7 +8,6 @@ import { GoTop } from '../../../Components.js/Functions';
 import List from '../../../Components.js/Gendres/List';
 import { useSelector, useDispatch } from 'react-redux';
 import { getShows } from '../../../Components.js/Redux/Slices/ShowsSlice';
-import WorkSkeleton from '../../../Components.js/Work/WorkSkeleton';
 import GendresVerSkeleton from '../../../Components.js/Gendres/GendresVerSkeleton';
 
 function Home() {
@@ -20,7 +19,6 @@ function Home() {
     const [endReached, setEndReached] = useState(false); // Track if all pages are loaded
     const [allWorks, setAllWorks] = useState([]); // Store all fetched works
     const loadMoreRef = useRef(null); // Ref to detect when to load more
-    const items = [1, 2, 3]; // Skeleton loader keys
 
     // Fetch shows when the page changes
     useEffect(() => {
@@ -64,7 +62,6 @@ function Home() {
         };
     }, [isLoading, endReached]);
 
-    const loading = useSelector((state) => state.shows.loading); // Loading state from Redux
     const show = useSelector((state) => state.shows.show); // Random show for header
     const loadingshow = useSelector((state) => state.shows.loadingshow); // Loading state for header
 

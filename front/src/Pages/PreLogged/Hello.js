@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Footer from '../../Components.js/Footer'
 import { useDispatch, useSelector } from 'react-redux'
-import { getProfile, getProfiles, logProfile } from '../../Components.js/Redux/Slices/ProfileSlice'
+import { getProfiles, logProfile } from '../../Components.js/Redux/Slices/ProfileSlice'
 import { GoPlus } from 'react-icons/go'
 import { Link } from 'react-router-dom'
 import { logo } from '../../Components.js/Variables'

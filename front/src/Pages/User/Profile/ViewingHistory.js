@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import WorkViewing from '../../../Components.js/Work/WorkViewing';
 
-function ViewingHistory({profile}) {
+function ViewingHistory() {
     const data = useSelector(state => state.viewingHistory.data)
     const [showFinished, setShowFinished] = useState(false)
   
