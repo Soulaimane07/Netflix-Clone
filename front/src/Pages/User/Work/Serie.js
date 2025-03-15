@@ -27,7 +27,7 @@ function Serie({data}) {
         </div>
 
         <div id='More%20Like%20This' className='pt-20'>
-          <h2 className='mb-4 font-medium text-xl px-16'> Trailers & More </h2>
+          <h2 className='mb-4 font-medium text-xl px-16'> More Like This </h2>
           <LikeThis />
         </div>
 

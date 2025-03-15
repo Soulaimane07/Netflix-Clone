@@ -1,0 +1,206 @@
+{
+    "ar": {
+        "language": "العربية",
+        "lang": "ar",
+        "title": "موفي فاي",
+        "pages": {
+            "landing": {
+                "header": "شاهد أحدث الأعمال الأصلية من موفي فاي، الأفلام الضخمة، والمسلسلات المثيرة والمزيد",
+                "chooseLang": "اختر اللغة",
+                "box1": {
+                    "title": "شاهد بالطريقة التي تريدها",
+                    "text": "اكتشف أعظم القصص في العالم، كلها في مكان واحد."
+                },
+                "box2": {
+                    "title": "أصلي حصري",
+                    "text": "مسلسلات تلفزيونية، أفلام، ومستندات لا يمكنك رؤيتها في أي مكان آخر، من أعظم القصص في العالم."
+                },
+                "faq": [
+                    {
+                        "title": "ما هو موفي فاي؟",
+                        "text": "موفي فاي هو المنزل المخصص للبث لأفلامك المفضلة من موفي فاي، بيكسار، مارفل، ستار وورز، ناشيونال جيوغرافيك؛ بالإضافة إلى مجموعة ضخمة من الترفيه العام مع Star - كل ذلك في مكان واحد. مع الآلاف من الأفلام، المسلسلات، والأصلي الحصري للاختيار من بينها، هناك شيء للجميع في موفي فاي. يمكن للمشتركين أيضًا الاستمتاع بعدد من الفوائد المضمنة في اشتراكهم، مثل:"
+                    },
+                    {
+                        "title": "كم يكلف موفي فاي؟",
+                        "text": "يقدم موفي فاي مجموعة من الخطط لتلبية احتياجاتك. سيحدد خطتك عدد الأشخاص الذين يمكنهم بث محتوى موفي فاي في نفس الوقت، وما إذا كنت تستطيع المشاهدة بجودة تعريف قياسي (SD)، أو تعريف عالي (HD)، أو تعريف فائق الجودة (UHD)."
+                    },
+                    {
+                        "title": "ماذا يمكنني مشاهدة في موفي فاي؟",
+                        "text": "يحتوي موفي فاي على مكتبة واسعة من الأفلام الطويلة، الوثائقيات، المسلسلات التلفزيونية، المسلسلات المتحركة، الأفلام القصيرة، وغيرها من المحتويات. يمكنك المشاهدة كما تريد، متى تريد، بدون أي إعلانات – كل ذلك مقابل سعر شهري منخفض. هناك دائمًا شيء جديد لاكتشافه، ويتم إضافة مسلسلات وأفلام جديدة كل أسبوع!"
+                    }
+                ]
+            },
+            "login": {
+                "header": "تسجيل الدخول للاستمرار إلى موفي فاي",
+                "email": "البريد الإلكتروني",
+                "password": "كلمة المرور",
+                "forgot": "نسيت كلمة المرور؟",
+                "remember": "تذكرني",
+                "login": "تسجيل الدخول",
+                "signup": "التسجيل",
+                "signupnow": "سجل الآن!",
+                "account": "ليس لديك حساب؟"
+            }
+        },
+        "footer": {
+            "about": "حول",
+            "contact": "اتصل",
+            "privacy": "الخصوصية",
+            "terms": "الشروط"
+        },
+        "other": {
+            "languages": {
+                "arabic": "العربية",
+                "ar": "ar",
+                "french": "Français",
+                "fr": "fr",
+                "english": "English",
+                "en": "en"
+            },
+            "buttons": {
+                "signup": "التسجيل",
+                "signupnow": "سجل الآن",
+                "login": "تسجيل الدخول"
+            },
+            "alerts": {
+                "loginorpassword": "اسم المستخدم أو كلمة المرور خاطئة!"
+            }
+        }
+    },
+    "fr": {
+        "language": "Français",
+        "lang": "fr",
+        "title": "Movify",
+        "pages": {
+            "landing": {
+                "header": "Regardez les nouveaux originaux de Movify, des blockbusters, des séries à ne pas manquer et plus encore",
+                "chooseLang": "Choisir la langue",
+                "box1": {
+                    "title": "Regardez à votre manière",
+                    "text": "Découvrez les meilleures histoires du monde, toutes en un seul endroit."
+                },
+                "box2": {
+                    "title": "Originaux exclusifs",
+                    "text": "Séries télévisées, films et documentaires que vous ne pouvez voir nulle part ailleurs, venant des meilleurs conteurs du monde."
+                },
+                "faq": [
+                    {
+                        "title": "Qu'est-ce que Movify ?",
+                        "text": "Movify est la maison de streaming dédiée à vos histoires préférées de Movify, Pixar, Marvel, Star Wars, National Geographic ; ainsi qu'une vaste gamme de divertissement général avec Star - tout cela en un seul endroit. Avec des milliers de films, de séries télévisées et d'originaux exclusifs, il y en a pour tous les goûts sur Movify. Les abonnés peuvent également profiter de nombreux avantages inclus dans leur abonnement, tels que :"
+                    },
+                    {
+                        "title": "Combien coûte Movify ?",
+                        "text": "Movify propose une gamme de plans pour répondre à vos besoins. Votre plan déterminera combien de personnes peuvent diffuser du contenu Movify simultanément, et si vous pouvez regarder en définition standard (SD), haute définition (HD) ou ultra-haute définition (UHD)."
+                    },
+                    {
+                        "title": "Que puis-je regarder sur Movify ?",
+                        "text": "Movify possède une vaste bibliothèque de longs métrages, de documentaires, de séries télévisées, de séries animées, de courts-métrages et d'autres contenus. Vous pouvez regarder autant que vous voulez, quand vous voulez, sans aucune publicité – tout cela pour un faible prix mensuel. Il y a toujours quelque chose de nouveau à découvrir, et de nouvelles séries et films sont ajoutés chaque semaine !"
+                    }
+                ]
+            },
+            "login": {
+                "header": "Connectez-vous pour continuer sur Movify",
+                "email": "Email",
+                "password": "Mot de passe",
+                "forgot": "Mot de passe oublié ?",
+                "remember": "Se souvenir de moi",
+                "login": "Se connecter",
+                "signup": "S'inscrire",
+                "signupnow": "Inscrivez-vous maintenant !",
+                "account": "Vous n'avez pas de compte ?"
+            }
+        },
+        "footer": {
+            "about": "À propos",
+            "contact": "Contact",
+            "privacy": "Confidentialité",
+            "terms": "Conditions"
+        },
+        "other": {
+            "languages": {
+                "arabic": "العربية",
+                "ar": "ar",
+                "french": "Français",
+                "fr": "fr",
+                "english": "English",
+                "en": "en"
+            },
+            "buttons": {
+                "signup": "S'inscrire",
+                "signupnow": "Inscrivez-vous maintenant",
+                "login": "Se connecter"
+            },
+            "alerts": {
+                "loginorpassword": "Le nom d'utilisateur ou le mot de passe est incorrect !"
+            }
+        }
+    },
+    "en": {
+        "language": "English",
+        "lang": "en",
+        "title": "Movify",
+        "pages": {
+            "landing": {
+                "header": "Stream brand new Movify Originals, blockbusters, binge-worthy series and more",
+                "chooseLang": "Choose language",
+                "box1": {
+                    "title": "Watch the way you want",
+                    "text": "Discover the world's greatest stories, all in one place."
+                },
+                "box2": {
+                    "title": "Exclusive originals",
+                    "text": "TV series, movies and documentaries you can't see anywhere else, from the world's greatest storytellers."
+                },
+                "faq": [
+                    {
+                        "title":"What is Movify ?",
+                        "text":"Movify is the dedicated streaming home of your favourite stories from Movify, Pixar, Marvel, Star Wars, National Geographic; as well as a huge range of general entertainment with Star - all in one place. With thousands of movies, TV series, and exclusive Originals to choose from, there's something for everyone on Movify. Subscribers can also enjoy a number of benefits included in their subscription, such as:"
+                    },
+                    {
+                        "title":"How much does Movify cost ?",
+                        "text":"Movify offers a range of plans to meet your needs. Your plan will determine how many people can stream Movify content at once, and whether you can view in Standard Definition (SD), High Definition (HD), or Ultra High Definition (UHD)."
+                    },
+                    {
+                        "title":"What can I watch on Movify ?",
+                        "text":"Movify has an extensive library of feature films, documentaries, TV series, animated series, short films, and other content. You can watch as much as you want, whenever you want, without a single commercial – all for one low monthly price. There's always something new to discover, and new TV series and movies are added every week!"
+                    }
+                ]
+            },
+            "login": {
+                "header": "Log in to continue to Movify",
+                "email": "Email",
+                "password": "Password",
+                "forgot": "Forgot your password?",
+                "remember": "Remember me",
+                "login": "Log In",
+                "signup": "Sign Up",
+                "signupnow": "Sign Up Now !",
+                "account":"Don't you have an account ?"
+            }
+        },
+        "footer": {
+            "about": "About",
+            "contact": "Contact",
+            "privacy": "Privacy",
+            "terms": "Terms"
+        },
+        "other": {
+            "languages": {
+                "arabic": "العربية",
+                "ar": "ar",
+                "french": "Français",
+                "fr": "fr",
+                "english": "English",
+                "en": "en"
+            },
+            "buttons": {
+                "signup": "Sign Up",
+                "signupnow": "Sign Up Now",
+                "login": "Log In"
+            },
+            "alerts": {
+                "loginorpassword": "Login or password are wrong !"
+            }
+        }
+    }
+}

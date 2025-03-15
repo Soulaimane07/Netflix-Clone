@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
 import Auth from './Interfaces/Auth';
 import User from './Interfaces/User';
-import { login, logout, prelog, signout } from './Components.js/Redux/Slices/UserSlice';
+import { changeLange, login, logout, prelog, signout } from './Components.js/Redux/Slices/UserSlice';
 import PreLogged from './Interfaces/PreLogged';
 import { getProfiles, getWatchlist, logoutProfile, logProfile } from './Components.js/Redux/Slices/ProfileSlice';
 import { getNetworks } from './Components.js/Redux/Slices/NetworksSlice';
@@ -12,45 +12,55 @@ import { getViewinghistory } from './Components.js/Redux/Slices/ViewingHistorySl
 import { getMovies } from './Components.js/Redux/Slices/MoviesSlice';
 import { getSeries } from './Components.js/Redux/Slices/SeriesSlice';
 import { getShow } from './Components.js/Redux/Slices/ShowsSlice';
+import LanguagePath from './languages.json';
 
 function App() {
-  let dispatch = useDispatch()
+  const dispatch = useDispatch();
   const user = JSON.parse(localStorage.getItem('movify-user'));
   const userprofile = JSON.parse(localStorage.getItem('movify-user-profile'));
 
   useEffect(() => {
     if (user) {
-      dispatch(prelog(user))
+      dispatch(prelog(user));
 
-      if(userprofile){
-        dispatch(login(userprofile))
-        dispatch(logProfile(userprofile))
+      if (userprofile) {
+        dispatch(login(userprofile));
+        dispatch(logProfile(userprofile));
 
-        dispatch(getShow())
-        dispatch(getNetworks())
-        dispatch(getMovies())
-        dispatch(getSeries())
-        dispatch(getGenres())
+        dispatch(getShow());
+        dispatch(getNetworks());
+        dispatch(getMovies());
+        dispatch(getSeries());
+        dispatch(getGenres());
 
-        dispatch(getProfiles(user?.id))
-        dispatch(getWatchlist(userprofile?.id))
-        dispatch(getViewinghistory(userprofile?.id))
+        dispatch(getProfiles(user?.id));
+        dispatch(getWatchlist(userprofile?.id));
+        dispatch(getViewinghistory(userprofile?.id));
       } else {
-        dispatch(signout())
-        dispatch(logoutProfile())
+        dispatch(signout());
+        dispatch(logoutProfile());
       }
     } else {
-      dispatch(logout())
-      dispatch(logoutProfile())
+      dispatch(logout());
+      dispatch(logoutProfile());
     }
-  }, [user, dispatch])
+  }, [user, userprofile, dispatch]);
 
+  const logged = useSelector((state) => state.user.logged);
+  const preLogged = useSelector((state) => state.user.preLogged);
   
-  const logged = useSelector(state => state.user.logged)
-  const preLogged = useSelector(state => state.user.preLogged)
+  const langLoc = localStorage.getItem('movify-user-language');
+  const lang = useSelector((state) => state.user.language);
 
+  useEffect(() => {
+    if (langLoc) {
+      dispatch(changeLange(langLoc));
+    }
+  }, [langLoc, dispatch]);
 
-  return ( logged ? <User /> : preLogged ? <PreLogged /> : <Auth /> )
+  const langPath = LanguagePath[lang] || LanguagePath.en;
+
+  return logged ? <User lang={lang} /> : preLogged ? <PreLogged lang={lang} /> : <Auth lang={lang} LanguagePath={langPath} />;
 }
 
 export default App;

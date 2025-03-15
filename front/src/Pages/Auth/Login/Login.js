@@ -10,7 +10,7 @@ import Error from '../../../Components.js/Alerts/Error'
 import Policies from '../Policies'
 import { setProfiles } from '../../../Components.js/Redux/Slices/ProfileSlice'
 
-function Login() {
+function Login({LanguagePath}) {
     useEffect(() => {
         document.title = 'Movify | Login';
     }, []);
@@ -63,21 +63,21 @@ function Login() {
             
             <div className='w-3/12 mt-20  mx-auto'>
                 <form onSubmit={LoginFun} className='mb-10'>
-                    <h1 className='text-center text-3xl font-medium mb-10'> Log in to continue </h1>
-                    <div className='h-12 flex items-center justify-center'><Error display={error} text="Login or password are wrong !" /></div>
+                    <h1 className='text-center text-3xl font-medium mb-10'> {LanguagePath.pages.login.header} </h1>
+                    <div className='h-12 flex items-center justify-center'><Error display={error} text={LanguagePath.other.alerts.loginorpassword} /></div>
                     <div className='flex flex-col space-y-2 mb-6'>
-                        <label> Email Adress </label>
+                        <label> {LanguagePath.pages.login.email} </label>
                         <input onChange={(e)=> setEmail(e.target.value)} placeholder='' type='email' className={`${error ? 'ring-red-500 ring-2 border-transparent' : 'ring-0'}  ring transition-all  outline-none text-md bg-transparent border border-white border-opacity-40 rounded-md py-2 px-4`} />
                     </div>
                     <div className='flex flex-col space-y-2 mb-8'>
-                        <label> Password </label>
+                        <label> {LanguagePath.pages.login.password} </label>
                         <input onChange={(e)=> setPass(e.target.value)} placeholder='' type='password' className={`${error ? 'ring-red-500 ring-2 border-transparent' : 'ring-0'}  ring transition-all outline-none text-md bg-transparent border border-white border-opacity-40 rounded-md py-2 px-4`} />
                     </div> 
 
                     <button disabled={cond || error} className={`${cond || error ? 'opacity-60' : 'opacity-100 hover:scale-105'} w-full flex justify-center items-center transition-all bg-myorange px-12 py-3 rounded-md`}> 
                         {loading 
                             ?   <Spinner />
-                            :   <span> Login </span>
+                            :   <span> {LanguagePath.pages.login.login} </span>
                         }
                     </button>
                 </form>
@@ -85,8 +85,8 @@ function Login() {
                 <Policies />
 
                 <div className='flex space-x-2 mt-20 justify-center'>
-                    <h2 className=' opacity-50'>Don't you have an account ? </h2>
-                    <Link className=' text-myorange hover:underline transition-all' to={"/register"}>Sign Up Now !</Link>
+                    <h2 className=' opacity-50'> {LanguagePath.pages.login.account} </h2>
+                    <Link className=' text-myorange hover:underline transition-all' to={"/register"}> {LanguagePath.pages.login.signupnow} </Link>
                 </div>
             </div>
         </div>

@@ -6,12 +6,12 @@ import Phase1 from '../Pages/Auth/Register/Phase1'
 import Signup from '../Pages/Auth/Register/Signup'
 import Profile from '../Pages/Auth/Register/Profile'
 
-function Auth() {
+function Auth({LanguagePath}) {
   return (
     <BrowserRouter>
         <Routes>
-            <Route path='/' element={<Welcome />} />
-            <Route path='/login' element={<Login />} />
+            <Route path='/' element={<Welcome LanguagePath={LanguagePath} />} />
+            <Route path='/login' element={<Login LanguagePath={LanguagePath} />} />
             <Route path='/register'>
               <Route index element={<Phase1 />} />
               <Route path='signup' element={<Signup />} />

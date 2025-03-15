@@ -5,6 +5,7 @@ export const userSlice = createSlice({
   initialState: {
     user: null,
     profile: null,
+    language: 'en',
     preLogged: false,
     logged: false
   },
@@ -35,8 +36,12 @@ export const userSlice = createSlice({
     createAccount: (state, action) => {
       localStorage.setItem('movify-user', JSON.stringify(action.payload))
     },
+    changeLange: (state, action) => {
+      state.language = action.payload
+      localStorage.setItem('movify-user-language', state.language)
+    },
   },
 })
 
-export const { prelog, login, logout, signout, createAccount } = userSlice.actions
+export const { prelog, login, logout, signout, createAccount, changeLange, language } = userSlice.actions
 export default userSlice.reducer
