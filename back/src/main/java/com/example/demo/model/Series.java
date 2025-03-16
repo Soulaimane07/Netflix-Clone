@@ -81,4 +81,8 @@ public class Series {
     public void setGenres(List<Gendre> genres){
         this.genres = genres;
     }
+
+    public int getId(){
+        return id;
+    }
 }

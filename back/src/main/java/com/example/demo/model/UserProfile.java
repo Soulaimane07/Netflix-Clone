@@ -94,4 +94,20 @@ public class UserProfile {
         
         return combinedWatchlist;
     }
+
+    public List<Movie> getFavoriteMovies(){
+        return favoriteMovies;
+    }
+
+    public List<Series> getFavoriteSeries(){
+        return favoriteSeries;
+    }
+
+    public void setFavoriteMovies(List<Movie> favoriteMovies){
+        this.favoriteMovies = favoriteMovies;
+    }
+
+    public void setFavoriteSeries(List<Series> favoriteSeries){
+        this.favoriteSeries = favoriteSeries;
+    }
 }

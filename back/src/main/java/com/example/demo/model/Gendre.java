@@ -46,4 +46,8 @@ public class Gendre {
     public void setImage(String image){
         this.image = image;
     }
+
+    public void setTitle(String title){
+        this.title = title;
+    }
 }
