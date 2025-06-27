@@ -43,7 +43,3 @@ Built with modern technologies, Movify demonstrates skills in frontend developme
 - AWS Keyspaces for Cassandra NoSQL database  
 - Docker (for staging dev)
 
----
-
-## 📁 Project Structure
-
